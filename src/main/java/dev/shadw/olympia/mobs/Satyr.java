@@ -54,6 +54,7 @@ public class Satyr extends Zombie {
 				.add(Attributes.ATTACK_DAMAGE, 3.0)
 				.add(Attributes.ARMOR, 0.0)
 				.add(Attributes.MOVEMENT_SPEED, 0.27)
+				.add(Attributes.SCALE, 0.87)
 				.add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0.0);
 	}
 

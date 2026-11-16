@@ -1,5 +1,6 @@
 package dev.shadw.olympia.mobs;
 
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ZombieRenderer;
@@ -32,9 +33,11 @@ public final class GeneratedMobsClient {
 	/** Registers the renderers. Call from the client entrypoint. */
 	public static void initClient() {
 		EntityRendererRegistry.register(GeneratedMobs.CYCLOPS, ctx -> new SkinnedZombieRenderer(ctx, texture("cyclops")));
-		EntityRendererRegistry.register(GeneratedMobs.GORGON, ctx -> new SkinnedZombieRenderer(ctx, texture("gorgon")));
+		EntityModelLayerRegistry.registerModelLayer(GorgonModel.LAYER, GorgonModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.GORGON, GorgonRenderer::new);
 		EntityRendererRegistry.register(GeneratedMobs.HOPLITE, ctx -> new SkinnedZombieRenderer(ctx, texture("hoplite")));
 		EntityRendererRegistry.register(GeneratedMobs.MINOTAUR, ctx -> new SkinnedZombieRenderer(ctx, texture("minotaur")));
-		EntityRendererRegistry.register(GeneratedMobs.SATYR, ctx -> new SkinnedZombieRenderer(ctx, texture("satyr")));
+		EntityModelLayerRegistry.registerModelLayer(SatyrModel.LAYER, SatyrModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.SATYR, SatyrRenderer::new);
 	}
 }

@@ -1,0 +1,81 @@
+{
+  "out": "playtest/models",
+  "settle": 8,
+  "setup": [
+    "forceload add -20 -40 20 0",
+    "kill @e[type=slime]",
+    "kill @e[type=item]",
+    "gamerule doMobSpawning false",
+    "kill @e[type=olympia:satyr]",
+    "kill @e[type=olympia:gorgon]",
+    "summon olympia:satyr 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ],
+  "steps": [
+    {
+      "tp": [
+        0,
+        "G+0.2",
+        -15.2,
+        180,
+        2
+      ],
+      "capture": "satyr-front",
+      "wait": 6
+    },
+    {
+      "tp": [
+        3.0,
+        "G+0.2",
+        -17.0,
+        140,
+        2
+      ],
+      "capture": "satyr-three-quarter",
+      "wait": 6
+    },
+    {
+      "tp": [
+        4.4,
+        "G+0.2",
+        -20,
+        90,
+        2
+      ],
+      "capture": "satyr-side",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+0.2",
+        -24.5,
+        0,
+        2
+      ],
+      "capture": "satyr-back",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+0.1",
+        -17.6,
+        180,
+        0
+      ],
+      "capture": "satyr-face",
+      "wait": 6
+    },
+    {
+      "tp": [
+        1.5,
+        "G+0.1",
+        -18.2,
+        153,
+        0
+      ],
+      "capture": "satyr-face-side",
+      "wait": 6
+    }
+  ]
+}

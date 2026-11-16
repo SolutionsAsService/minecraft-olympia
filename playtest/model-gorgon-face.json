@@ -1,0 +1,37 @@
+{
+  "out": "playtest/models",
+  "settle": 8,
+  "setup": [
+    "forceload add -20 -40 20 0",
+    "kill @e[type=slime]",
+    "kill @e[type=item]",
+    "gamerule doMobSpawning false",
+    "kill @e[type=olympia:satyr]",
+    "kill @e[type=olympia:gorgon]",
+    "summon olympia:gorgon 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ],
+  "steps": [
+    {
+      "tp": [
+        0,
+        "G+0.35",
+        -17.6,
+        180,
+        0
+      ],
+      "capture": "gorgon-face",
+      "wait": 6
+    },
+    {
+      "tp": [
+        1.5,
+        "G+0.35",
+        -18.2,
+        153,
+        0
+      ],
+      "capture": "gorgon-face-side",
+      "wait": 6
+    }
+  ]
+}

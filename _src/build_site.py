@@ -666,8 +666,8 @@ def build_creatures():
     cards = ""
     info = (("hoplite", "creatures", "A citizen-soldier in a bronze Corinthian helmet and breastplate with a sword and shield. As written in the data (watched only in tests): it does not burn in sunlight and calls no reinforcements.", "Plains: groups of 1 to 3; set to patrol the Greek ruin and to guard the temples of Zeus and Athena."),
             ("cyclops", "cyclops", "A one-eyed brute, 1.4 times your size. Hard to push, and its blows throw you into the air.", None),
-            ("satyr", "satyr", "A goat-legged forest dweller. Neutral: it leaves you alone until you strike it, then its blows make you queasy (Nausea).", None),
-            ("gorgon", "gorgon", "A snake-crowned swamp hunter. Each blow slows you to a crawl, tires your arms and blinds you for a moment: a petrification of sorts, without the stone.", None),
+            ("satyr", "satyr", "A goat-legged forest dweller with curling ram horns, a goatee and a set of pan-pipes at its lips. It has its own model: digitigrade goat legs with hooves, swaying ears and tail. Neutral: it leaves you alone until you strike it, then its blows make you queasy (Nausea).", None),
+            ("gorgon", "gorgon", "A serpent-bodied swamp hunter with a mane of twelve living snakes (each a chain of four moving parts), tusks, bronze gauntlets with claws and golden wings. It has its own model and a tail that slithers as it moves. Each blow slows you to a crawl, tires your arms and blinds you for a moment: a petrification of sorts, without the stone.", None),
             ("minotaur", "minotaur", "The bull-headed thing of the labyrinth. See <a href=\"/labyrinth.html\">its page</a>. It has no natural spawn: the labyrinth places it.", "None; the labyrinth places one."))
     for key, shotn, blurb, spawn in info:
         spec = MOBS[key]
@@ -683,7 +683,7 @@ def build_creatures():
         if meas:
             reach = f"reached a player {meas['reach_distance']} blocks away in {meas['reach_seconds']} s" if meas.get("reach_seconds") else ("did not attack until struck" if not meas.get("hostile", True) else "did not reach the player")
             mrow = f'<tr><th scope="row">Measured</th><td>In a flat test world: {esc(reach)}; first hit took {meas["first_hit_damage"]:g} health on Easy; effects on the player: {esc(", ".join(label(e) for e in meas["effects_on_player"]) or "none")}. (One run each; <code>shadw-mod playtest mobtest</code>.)</td></tr>' if meas.get("first_hit_damage") is not None else ""
-        cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{blurb}</p>{fig(shotn if key != 'hoplite' else 'creatures', name + ", with the AI off for the photograph.", name + " standing on grass")}
+        cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{blurb}</p><div class="shots two">{fig(shotn if key != 'hoplite' else 'creatures', name + ", with the AI off for the photograph.", name + " standing on grass")}{fig(key + "-full", name + " full length, three-quarter view.", name + " seen full length") if key in ("satyr", "gorgon") else ""}</div>
   <table class="data"><caption class="sr">{name}: facts</caption><tbody>
   <tr><th scope="row">Stats</th><td>{a['health']:g} health ({a['health'] / 2:g} hearts), {a['damage']:g} attack damage, {a['armor']:g} armour{(', ' + fx + ' on hit') if fx else ''}</td></tr>
   <tr><th scope="row">Spawns</th><td>{esc(spawn)}</td></tr>
@@ -693,10 +693,10 @@ def build_creatures():
     body = f"""
 <section class="page">
   <p class="eyebrow">Creatures</p><h1>Bronze, one eye, goat legs and a bull</h1><div class="rule"></div>
-  <p class="lede">Five creatures from the design's Phase 3, each defined in a small data file (<code>mobs/*.json</code>) from which the mod's classes, skins, eggs and loot are generated. They use the zombie model with skins painted for the mod; the Minotaur's horns are painted on the head, not modelled.</p>
+  <p class="lede">Five creatures from the design's Phase 3, each defined in a small data file (<code>mobs/*.json</code>) from which the mod's classes, skins, eggs and loot are generated. The satyr and the gorgon have their own models, built from many small moving parts with a texture packed and painted by the generator; the hoplite, cyclops and Minotaur use the zombie model with painted skins (the Minotaur's horns are painted on the head, not modelled).</p>
   {cards}
   {status(["All five load, render with their skins and are summoned and photographed.", "A test harness measured each in a running game: time to reach a player, the first hit, the effects it gives and its drops (the numbers above).", "The Minotaur's behaviour was watched in play (see the labyrinth page)."],
-          ["Hoplites, cyclopes, satyrs and gorgons spawning on their own, and a real fight with any of them.", "Custom models and animations: they reuse the zombie's.", "Whether the numbers are fun: that needs a person."])}
+          ["Hoplites, cyclopes, satyrs and gorgons spawning on their own, and a real fight with any of them.", "Custom models for the other three: the hoplite, cyclops and Minotaur still use the zombie model.", "How the satyr and gorgon move in a fight (animation was checked only in still photographs).", "Whether the numbers are fun: that needs a person."])}
 </section>"""
     return page("Creatures: hoplite, cyclops, satyr, gorgon and Minotaur", "The five creatures of the Olympia mod: stats, spawns, drops, measured behaviour and what they do.", body, "creatures", "creatures.html", "creatures")
 
