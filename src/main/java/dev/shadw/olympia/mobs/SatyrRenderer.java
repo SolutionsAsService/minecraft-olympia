@@ -21,6 +21,7 @@ public class SatyrRenderer extends MobRenderer<Satyr, SatyrModel.State, SatyrMod
 	public void extractRenderState(Satyr entity, SatyrModel.State state, float partialTick) {
 		super.extractRenderState(entity, state, partialTick);
 		state.attackTime = entity.getAttackAnim(partialTick);
+		state.airborne = !entity.onGround() && !entity.isNoAi();        // a mob with its AI off is posed, not flying
 	}
 
 	@Override

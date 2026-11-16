@@ -59,3 +59,4 @@ sh playtest/run.sh                                            # rebuild the test
 ## Credit
 
 All work in this repository is credited only to SolutionsAsService.
+\n\n**Mounts:** the **Pegasus** (a winged white horse: tame, saddle and ride it, and it flies; rare in meadows). Checked by summoning and riding by command, and photographed; flight and taming not driven.\n

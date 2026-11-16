@@ -151,7 +151,7 @@ class Rig:
     # ---------- a finely shaped four-legged beast (wolf, hound, boar, big cat) ----------
     def quadruped(self, fur, belly=None, mane=None, claw=None, nose=None, body=(8, 8, 17), head=(7, 6, 6), snout=(4, 3.4, 5.5), leg_w=3.0,
                   front=(6.5, 6, 3), hind=(6.5, 6.5, 3), tail=None, ears=(2.2, 3.4), neck=(5.5, 6, 5), walk=0.9, eye="#ffd040", eye_glow=None,
-                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100):
+                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100, hoof_paint=None, extra=None):
         """Builds a lean body with a deeper chest and a mane, a neck, a head with a stepped snout, jaw, ears and fangs, four legs of three
         segments (thigh, lower leg, paw) in a diagonal walk, and an optional tail chain. The hip height is solved from the leg angles so the
         paws meet the ground. Returns the part names."""
@@ -223,7 +223,7 @@ class Rig:
     # ---------- a finely shaped four-legged beast (wolf, hound, boar, big cat) ----------
     def quadruped(self, fur, belly=None, mane=None, claw=None, nose=None, body=(8, 8, 17), head=(7, 6, 6), snout=(4, 3.4, 5.5), leg_w=3.0,
                   front=(6.5, 6, 3), hind=(6.5, 6.5, 3), tail=None, ears=(2.2, 3.4), neck=(5.5, 6, 5), walk=0.9, eye="#ffd040", eye_glow=None,
-                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100):
+                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100, hoof_paint=None, extra=None):
         """Builds a lean body with a deeper chest and a mane, a neck, a head with a stepped snout, jaw, ears and fangs, four legs of three
         segments (thigh, lower leg, paw) in a diagonal walk, and an optional tail chain. The hip height is solved from the leg angles so the
         paws meet the ground. Returns the part names."""
@@ -276,27 +276,82 @@ class Rig:
             self.part(f"ear_{side}", "head", (sx * (hw / 2 - 1.1), -hh / 2 + 0.2, -hd / 2 + 2.2), (-8, 0, sx * -10), [
                 box((-ew / 2, -eh, -0.6), (ew, eh, 1.2), fur), box((-ew / 2 + 0.5, -eh + 0.5, -0.65), (ew - 1.0, eh - 1.0, 0.4), belly, 0.0)])
             self.anim(f"ear_{side}", "sway", axis="z", amp=0.05, freq=0.11, phase=0 if sx > 0 else 2.0)
-        # four legs: thigh, lower leg, paw (+ claws)
-        for who, seg, pose, z, w in (("f", front, front_pose, -bl / 2 + 4.2, leg_w), ("b", hind, hind_pose, bl / 2 - 1.6, leg_w + 0.4)):
+        # four legs (plus any extra pairs): thigh, lower leg, paw (+ claws)
+        def leg(who, seg, pose, z, w, flip):
             for sx in (-1, 1):
                 side = "l" if sx > 0 else "r"
                 k = f"{who}{side}"
-                x = sx * (bw / 2 - w / 2 + (0.2 if who == "f" else 0.4))
-                self.part(f"leg_{k}", "body", (x, -1.4 if who == "b" else -0.5, z), (pose[0], 0, 0), [
-                    box((-w / 2, 0, -w / 2 - (0.4 if who == "b" else 0)), (w, seg[0], w + (0.8 if who == "b" else 0)), fur)])
+                hind = who == "b"
+                x = sx * (bw / 2 - w / 2 + (0.4 if hind else 0.2))
+                self.part(f"leg_{k}", "body", (x, -1.4 if hind else -0.5, z), (pose[0], 0, 0), [
+                    box((-w / 2, 0, -w / 2 - (0.4 if hind else 0)), (w, seg[0], w + (0.8 if hind else 0)), fur)])
                 self.part(f"shin_{k}", f"leg_{k}", (0, seg[0] - 0.4, 0), (pose[1], 0, 0), [box((-w / 2 + 0.4, 0, -w / 2 + 0.4), (w - 0.8, seg[1], w - 0.8), fur)])
                 self.part(f"paw_{k}", f"shin_{k}", (0, seg[1] - 0.3, 0), (pose[2], 0, 0), [
-                    box((-w / 2 - 0.1, 0, -w / 2 - 1.4), (w + 0.2, 1.4 if seg[2] <= 3 else seg[2] - 2, w + 1.6), claw and fur or fur),
+                    box((-w / 2 - 0.1, 0, -w / 2 - 1.4), (w + 0.2, 1.4 if seg[2] <= 3 else seg[2] - 2, w + 1.6), hoof_paint or fur),
                     box((-w / 2 - 0.1, 0.9, -w / 2 - 1.8), (w + 0.2, 0.5, 0.6), claw or "bone")])
-                ph = 0.0 if (who == "f") == (side == "l") else math.pi
+                ph = (0.0 if (side == "l") != flip else math.pi)
                 self.anim(f"leg_{k}", "walk", axis="x", amp=walk, phase=ph)
                 self.anim(f"shin_{k}", "walk", axis="x", amp=-walk * 0.4, phase=ph + 1.0)
+        leg("f", front, front_pose, -bl / 2 + 4.2, leg_w, False)
+        leg("b", hind, hind_pose, bl / 2 - 1.6, leg_w + 0.4, True)
+        for ex in (extra or []):
+            leg(ex["tag"], ex.get("seg", front), ex.get("pose", front_pose), ex["z"], leg_w + ex.get("grow", 0.2), ex.get("flip", False))
         if tail:
             segs = tail["segs"]
             first = self.chain("tail", "body", (0, -bh + 1.5, bl / 2 - 0.5), [(segs[0][0], segs[0][1], segs[0][2], tail_rot, 0)] + [(a, b, c, d, 0) for a, b, c, d in segs[1:]],
                                tail.get("paint", fur), sway="z", amp=0.12, freq=0.13, walk_amp=0.15)
             n["tail"] = first
         return n
+
+
+    # ---------- a riding horse (and variants: winged, many-legged) ----------
+    def horse(self, coat, mane, belly=None, hoof=None, nose=None, saddle="saddle", trim="trim", eye="#2a1c10", eye_glow=None, tail_paint=None, extra=None, body=(9, 9.5, 22), scale_legs=1.0):
+        """A saddled riding horse built on quadruped(): a long arched neck with a mane down its back, a long head with a forelock, a deep chest,
+        long legs with hooves, a hanging tail and a saddle with stirrups on the back. Returns the part names; `extra` adds leg pairs (Sleipnir's eight)."""
+        sl = lambda t: tuple(round(v * scale_legs, 2) for v in t)
+        n = self.quadruped(coat, belly=belly or coat, mane=mane, claw=hoof or "hoof", nose=nose or hoof or "hoof", body=body, head=(5.4, 6.2, 7), snout=(4.0, 4.2, 7), leg_w=3.4, ears=(1.8, 3.2),
+                           neck=(5.6, 12, 6.4), neck_rot=34, front=sl((7, 7, 2.6)), hind=sl((7, 7.8, 2.6)), front_pose=(4, -4, 0), hind_pose=(-18, 34, -16), walk=0.8, eye=eye, eye_glow=eye_glow,
+                           fangs=False, jaw_open=2, ruff=False, hoof_paint=hoof or "hoof", extra=extra,
+                           tail={"segs": [(5, 2.4, 2.4, 0), (6, 3.2, 3.2, -4), (6, 3.0, 3.0, -4), (5, 2.0, 2.0, -4)], "paint": tail_paint or mane}, tail_rot=30)
+        bw, bh, bl = body
+        nw, nl, nd = 5.6, 12, 6.4
+        for p_ in self.parts:
+            if p_["name"] == "neck":
+                p_["boxes"].append(box((-0.9, -nl - 0.2, nd / 2 - 0.4), (1.8, nl + 0.6, 2.4), mane))              # the mane down the back of the neck
+                p_["boxes"].append(box((-nw / 2 + 0.3, -3, -nd / 2 - 0.8), (nw - 0.6, 5.5, 1.2), coat))           # the throat
+            if p_["name"] == "head":
+                p_["boxes"].append(box((-1.2, -3.6, -6.4), (2.4, 2.0, 1.8), mane))                                # the forelock
+            if p_["name"] == "body":
+                p_["boxes"].append(box((-bw / 2 - 0.4, -bh - 0.9, -5.0), (bw + 0.8, 1.2, 9), saddle))             # the saddle
+                p_["boxes"].append(box((-bw / 2 - 0.5, -bh - 1.6, -5.4), (bw + 1.0, 1.0, 1.8), trim))             # pommel and cantle
+                p_["boxes"].append(box((-bw / 2 - 0.5, -bh - 1.6, 3.4), (bw + 1.0, 1.0, 1.8), trim))
+                p_["boxes"].append(box((-bw / 2 - 0.8, -bh * 0.2, -2.0), (bw + 1.6, 0.8, 5), trim))                # the girth blanket
+        return n
+
+    def wings(self, parent, pivot_y, pivot_z, paint, light, span=(9, 9), feathers=6, flen=15, flap=0.8, spread=1.0, shoulder_x=3.5, raise_=1.3, curl=0.55):
+        """A pair of feathered wings: an arm, a forearm and a fan of long primaries, that beat while the entity is off the ground; on the ground they
+        stand raised (an angel's pose: the arm up, the forearm curled outward). The raised pose is the model's own pose and the `wing` animation undoes it in the
+        air. Positive x is the left wing."""
+        for side, sx in (("l", 1), ("r", -1)):
+            a, b_ = span
+            x0 = lambda ln: 0 if sx > 0 else -ln
+            fz, fz2 = sx * -raise_, sx * curl
+            self.part(f"wing_{side}", parent, (sx * shoulder_x, pivot_y, pivot_z), (0, 0, math.degrees(fz)), [box((x0(a), -0.9, -2.6), (a, 1.8, 5.4), paint), box((x0(a - 0.4), -1.3, -2.4), (a - 0.4, 0.6, 4.8), light, 0.0)])
+            self.part(f"wing_{side}2", f"wing_{side}", (sx * a, 0, 0), (0, 0, math.degrees(fz2)), [box((x0(b_), -0.8, -2.4), (b_, 1.6, 5.0), paint)])
+            for i in range(feathers):
+                ln = flen - abs(i - feathers * 0.35) * 0.9
+                self.part(f"prim_{side}{i}", f"wing_{side}2", (sx * (b_ - 0.4), 0, 2.2 - i * (4.6 / max(1, feathers - 1))), (0, sx * (-5 + i * 3 * spread), 0), [box((x0(ln), -0.4, -0.9), (ln, 0.8, 1.9), paint if i % 2 else light)])
+            self.anim(f"wing_{side}", "wing", axis="z", amp=flap * sx, freq=1.0, phase=0, air=-fz)
+            self.anim(f"wing_{side}2", "wing", axis="z", amp=flap * 0.55 * sx, freq=1.0, phase=0.9, air=-fz2)
+
+
+def merge(into, other, prefix, dx=0.0, dz=0.0, dy=0.0, rot=(0, 0, 0)):
+    """Copy another Rig's parts into this one under a wrapper part `<prefix>` placed at (dx, dy, dz): two horses drawn from one builder."""
+    into.part(prefix, "root", (dx, dy, dz), rot, [])
+    for p in other.parts:
+        into.part(prefix + p["name"], prefix if p["parent"] == "root" else prefix + p["parent"], p["pivot"], p["rot"], p["boxes"])
+    for a in other.anims:
+        into.anims.append({**a, "part": prefix + a["part"]})
 
 
 def mirror(v):

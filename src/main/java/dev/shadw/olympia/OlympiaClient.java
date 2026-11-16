@@ -16,5 +16,7 @@ public class OlympiaClient implements ClientModInitializer {
 		// textures with transparent pixels: without a cutout layer they render with a black background
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(), OlympiaBlocks.LAUREL, OlympiaBlocks.OLIVE_LEAVES);
 		dev.shadw.olympia.mobs.GeneratedMobsClient.initClient();
+		// the pegasus climbs while the jump key is held
+		net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.END_CLIENT_TICK.register(client -> Pegasus.clientJumpHeld = client.options.keyJump.isDown());
 	}
 }

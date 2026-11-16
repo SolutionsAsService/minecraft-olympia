@@ -127,5 +127,7 @@
   "entity.olympia.gorgon": "Gorgon",
   "item.olympia.gorgon_spawn_egg": "Gorgon Spawn Egg",
   "entity.olympia.satyr": "Satyr",
-  "item.olympia.satyr_spawn_egg": "Satyr Spawn Egg"
+  "item.olympia.satyr_spawn_egg": "Satyr Spawn Egg",
+  "entity.olympia.pegasus": "Pegasus",
+  "item.olympia.pegasus_spawn_egg": "Pegasus Spawn Egg"
 }

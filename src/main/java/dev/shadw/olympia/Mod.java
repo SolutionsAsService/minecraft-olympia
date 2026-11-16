@@ -45,6 +45,7 @@ public class Mod implements ModInitializer {
 		OlympiaBlocks.init();
 		OlympiaItems.init();
 		GeneratedMobs.init();
+		OlympiaEntities.init();
 		Favor.init();
 		OlympiaCommands.init();
 		JsonObject root = load();
@@ -111,7 +112,10 @@ public class Mod implements ModInitializer {
 				entries.accept(altar);
 			}
 		});
-		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(entries -> GeneratedMobs.EGGS.forEach(entries::accept));
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(entries -> {
+			GeneratedMobs.EGGS.forEach(entries::accept);
+			entries.accept(OlympiaEntities.PEGASUS_SPAWN_EGG);
+		});
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> entries.accept(OlympiaItems.THUNDERBOLT));
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> entries.accept(OlympiaItems.THREAD_OF_ARIADNE));
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(entries -> entries.accept(OlympiaItems.AMBROSIA));

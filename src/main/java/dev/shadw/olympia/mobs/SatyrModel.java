@@ -18,6 +18,7 @@ public class SatyrModel extends EntityModel<SatyrModel.State> {
 	/** The render state: the base state plus the swing progress of the attack animation. */
 	public static class State extends LivingEntityRenderState {
 		public float attackTime;
+		public boolean airborne;
 	}
 
 	public static final ModelLayerLocation LAYER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("olympia", "satyr"), "main");

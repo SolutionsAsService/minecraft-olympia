@@ -21,6 +21,7 @@ public class GorgonRenderer extends MobRenderer<Gorgon, GorgonModel.State, Gorgo
 	public void extractRenderState(Gorgon entity, GorgonModel.State state, float partialTick) {
 		super.extractRenderState(entity, state, partialTick);
 		state.attackTime = entity.getAttackAnim(partialTick);
+		state.airborne = !entity.onGround() && !entity.isNoAi();        // a mob with its AI off is posed, not flying
 	}
 
 	@Override

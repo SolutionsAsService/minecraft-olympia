@@ -251,6 +251,26 @@ def minotaur():
     return r.model(0.9)
 
 
+# ======================= PEGASUS (a mount: the class is hand-written, only the model is generated) =======================
+def pegasus():
+    r = Rig({
+        "coat": {"type": "fur", "base": "#f2f0ea", "dark": "#c4c0b6", "light": "#ffffff"}, "belly": {"type": "fur", "base": "#e0dcd0", "dark": "#b0aca0", "light": "#f8f6f0"},
+        "mane": {"type": "fur", "base": "#f0e2a0", "dark": "#b8a060", "light": "#fff8d0"}, "hoof": {"type": "plain", "base": "#8a7a5a"}, "nose": {"type": "skin", "base": "#d8b0a0", "shade": 3},
+        "saddle": {"type": "cloth", "base": "#6a2a78", "trim": "#e0c060"}, "trim": {"type": "metal", "base": "#e0b838", "dark": "#8a6a14", "light": "#fff0a0"},
+        "wing": {"type": "plain", "base": "#f2efe6"}, "wing_light": {"type": "plain", "base": "#ffffff"},
+    })
+    r.horse("coat", "mane", belly="belly", hoof="hoof", nose="nose", saddle="saddle", trim="trim", eye="#3a2a1a", tail_paint="mane")
+    r.wings("body", -8.4, -3.0, "wing", "wing_light", span=(9, 8), feathers=7, flen=13, flap=0.8, shoulder_x=4.0, raise_=0.85, curl=0.5, spread=2.4)
+    return r.model(0.9)
+
+
+PEGASUS_SPEC = {"id": "pegasus", "name": "Pegasus", "base": "zombie", "hostile": False,
+                "external": {"class": "dev.shadw.olympia.Pegasus", "type": "dev.shadw.olympia.OlympiaEntities.PEGASUS"},
+                "attributes": {"health": 30, "speed": 0.3},
+                "drops": [{"item": "minecraft:leather", "min": 0, "max": 2}, {"item": "minecraft:feather", "min": 1, "max": 3}],
+                "egg": ["#f2f0ea", "#e0b838"]}
+
+
 def main():
     for name, fn, scale in (("satyr", satyr, 0.87), ("gorgon", gorgon, 0.9), ("hoplite", hoplite, 1.0), ("cyclops", cyclops, 1.2), ("minotaur", minotaur, 1.25)):
         p = ROOT / "mobs" / f"{name}.json"
@@ -262,6 +282,11 @@ def main():
             spec["equipment"] = {}                       # the sword-less spear and shield are part of the model
         p.write_text(json.dumps(spec, indent=2) + "\n")
         print(name, len(spec["model"]["parts"]), "parts")
+    spec = json.loads(json.dumps(PEGASUS_SPEC))
+    spec["model"] = pegasus()
+    spec["skin"] = {"model": True}
+    (ROOT / "mobs" / "pegasus.json").write_text(json.dumps(spec, indent=2) + "\n")
+    print("pegasus", len(spec["model"]["parts"]), "parts")
 
 
 if __name__ == "__main__":

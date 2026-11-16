@@ -21,6 +21,7 @@ public class CyclopsRenderer extends MobRenderer<Cyclops, CyclopsModel.State, Cy
 	public void extractRenderState(Cyclops entity, CyclopsModel.State state, float partialTick) {
 		super.extractRenderState(entity, state, partialTick);
 		state.attackTime = entity.getAttackAnim(partialTick);
+		state.airborne = !entity.onGround() && !entity.isNoAi();        // a mob with its AI off is posed, not flying
 	}
 
 	@Override

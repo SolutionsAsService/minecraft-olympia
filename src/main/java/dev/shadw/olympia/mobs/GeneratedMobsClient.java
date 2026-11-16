@@ -40,6 +40,8 @@ public final class GeneratedMobsClient {
 		EntityRendererRegistry.register(GeneratedMobs.HOPLITE, HopliteRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(MinotaurModel.LAYER, MinotaurModel::createBodyLayer);
 		EntityRendererRegistry.register(GeneratedMobs.MINOTAUR, MinotaurRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(PegasusModel.LAYER, PegasusModel::createBodyLayer);
+		EntityRendererRegistry.register(dev.shadw.olympia.OlympiaEntities.PEGASUS, PegasusRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(SatyrModel.LAYER, SatyrModel::createBodyLayer);
 		EntityRendererRegistry.register(GeneratedMobs.SATYR, SatyrRenderer::new);
 	}
