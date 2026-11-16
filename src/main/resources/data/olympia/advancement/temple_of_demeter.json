@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:demeter_altar"
+    },
+    "title": {
+      "text": "The Harvest-Mother's House"
+    },
+    "description": {
+      "text": "Find the Temple of Demeter."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "olympia:temple_of_demeter"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:olive_grove"
+}

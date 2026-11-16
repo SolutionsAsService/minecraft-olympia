@@ -120,8 +120,8 @@ public class Mod implements ModInitializer {
 			entries.accept(OlympiaItems.CYCLOPS_BLOODSTONE);
 			entries.accept(OlympiaItems.MINOTAUR_HORN);
 		});
-		LOGGER.info("Olympia loaded: {} potions, {} brewing recipes, {} unknown effects skipped; {} blocks, 4 gods, {} creatures",
-				pending.size(), pending.size(), effectsSkipped, OlympiaBlocks.count(), GeneratedMobs.EGGS.size());
+		LOGGER.info("Olympia loaded: {} potions, {} brewing recipes, {} unknown effects skipped; {} blocks, {} gods, {} creatures",
+				pending.size(), pending.size(), effectsSkipped, OlympiaBlocks.count(), OlympiaBlocks.GODS.length, GeneratedMobs.EGGS.size());
 	}
 
 	private static ResourceKey<Item> itemKey(String path) {

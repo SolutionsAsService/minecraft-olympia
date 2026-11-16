@@ -28,7 +28,7 @@ public final class OlympiaBlocks {
 	/** Stones that also come as stairs and slabs. */
 	public static final String[] FAMILIES = {"white_marble", "polished_marble", "marble_bricks", "roof_tile"};
 	public static final String[] COLUMNS = {"doric_column", "ionic_column", "corinthian_column"};
-	public static final String[] GODS = {"zeus", "athena", "poseidon", "hermes"};
+	public static final String[] GODS = {"zeus", "athena", "poseidon", "hermes", "apollo", "artemis", "ares", "demeter"};
 
 	private static int count;
 	public static final List<Block> BUILDING = new ArrayList<>();

@@ -29,6 +29,10 @@
     "olympia:zeus_altar",
     "olympia:athena_altar",
     "olympia:poseidon_altar",
-    "olympia:hermes_altar"
+    "olympia:hermes_altar",
+    "olympia:apollo_altar",
+    "olympia:artemis_altar",
+    "olympia:ares_altar",
+    "olympia:demeter_altar"
   ]
 }

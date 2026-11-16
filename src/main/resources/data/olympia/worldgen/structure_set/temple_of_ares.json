@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "olympia:temple_of_ares",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 38,
+    "separation": 10,
+    "salt": 9123413
+  }
+}

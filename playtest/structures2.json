@@ -1,0 +1,54 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "forceload add -30 -400 200 -320",
+    "kill @e[type=slime]"
+  ],
+  "steps": [
+    {
+      "tp": [
+        -12,
+        "G+7",
+        -362,
+        -28,
+        12
+      ],
+      "capture": "temple-of-apollo",
+      "wait": 9
+    },
+    {
+      "tp": [
+        28,
+        "G+7",
+        -362,
+        -28,
+        12
+      ],
+      "capture": "temple-of-artemis",
+      "wait": 9
+    },
+    {
+      "tp": [
+        68,
+        "G+7",
+        -362,
+        -28,
+        12
+      ],
+      "capture": "temple-of-ares",
+      "wait": 9
+    },
+    {
+      "tp": [
+        108,
+        "G+7",
+        -362,
+        -28,
+        12
+      ],
+      "capture": "temple-of-demeter",
+      "wait": 9
+    }
+  ]
+}

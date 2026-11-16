@@ -35,7 +35,7 @@ STONES = ["white_marble", "polished_marble", "weathered_marble", "cracked_marble
           "golden_marble", "marble_bricks", "marble_tiles", "greek_mosaic", "roof_tile"]
 FAMILIES = ["white_marble", "polished_marble", "marble_bricks", "roof_tile"]
 COLUMNS = ["doric_column", "ionic_column", "corinthian_column"]
-GODS = ["zeus", "athena", "poseidon", "hermes"]
+GODS = ["zeus", "athena", "poseidon", "hermes", "apollo", "artemis", "ares", "demeter"]
 
 
 def wj(path, obj):
@@ -278,13 +278,25 @@ def altar_top(god, accent):
         elif god == "hermes":    # a winged staff
             sym = {(7, y) for y in range(3, 13)} | {(8, y) for y in range(3, 13)}
             sym |= {(4, 5), (5, 5), (6, 5), (3, 6), (4, 6), (5, 6), (4, 7), (5, 7), (9, 5), (10, 5), (11, 5), (10, 6), (11, 6), (12, 6), (10, 7), (11, 7)}
+        elif god == "apollo":    # a sun: a disc with eight rays
+            sym = {(x, y) for x in range(16) for y in range(16) if math.hypot(x - 7.5, y - 7.5) <= 2.4}
+            sym |= {(7, 3), (8, 3), (7, 12), (8, 12), (3, 7), (3, 8), (12, 7), (12, 8), (4, 4), (11, 4), (4, 11), (11, 11), (7, 4), (8, 4), (7, 11), (8, 11), (4, 7), (4, 8), (11, 7), (11, 8)}
+        elif god == "artemis":   # a crescent moon and an arrow
+            sym = {(x, y) for x in range(16) for y in range(16) if math.hypot(x - 7.5, y - 7.5) <= 4.6 and math.hypot(x - 9.4, y - 7.0) > 3.7}
+            sym |= {(x, 12) for x in range(4, 13)} | {(12, 11), (12, 13), (11, 10), (11, 14)}
+        elif god == "ares":      # crossed spears
+            sym = {(i, i) for i in range(3, 13)} | {(15 - i, i) for i in range(3, 13)} | {(i + 1, i) for i in range(3, 12)} | {(14 - i, i) for i in range(3, 12)} | {(7, 7), (8, 7), (7, 8), (8, 8)}
+        elif god == "demeter":   # an ear of wheat
+            sym = {(7, y) for y in range(7, 14)} | {(8, y) for y in range(7, 14)} | {(7, 3), (8, 3)}
+            sym |= {(6, 4), (9, 4), (6, 5), (9, 5), (5, 6), (10, 6), (6, 6), (9, 6), (5, 8), (10, 8), (6, 9), (9, 9), (4, 7), (11, 7)}
         if (x, y) in sym:
             c = accent
         return c
     return fn
 
 
-ACCENT = {"zeus": GOLD, "athena": (88, 104, 128), "poseidon": TURQ, "hermes": (190, 196, 206)}
+ACCENT = {"zeus": GOLD, "athena": (88, 104, 128), "poseidon": TURQ, "hermes": (190, 196, 206), "apollo": (240, 150, 40), "artemis": (170, 190, 224),
+          "ares": (176, 48, 40), "demeter": (160, 170, 60)}
 
 
 def laurel():
@@ -417,7 +429,11 @@ LANG = {
     "block.olympia.corinthian_column": "Corinthian Column", "block.olympia.amphora": "Amphora",
     "block.olympia.greek_brazier": "Greek Fire Brazier", "block.olympia.laurel": "Laurel",
     "block.olympia.olive_log": "Olive Log", "block.olympia.olive_leaves": "Olive Leaves",
-    "block.olympia.zeus_altar": "Altar of Zeus", "block.olympia.athena_altar": "Altar of Athena",
+    "block.olympia.zeus_altar": "Altar of Zeus",
+    "block.olympia.apollo_altar": "Altar of Apollo",
+    "block.olympia.artemis_altar": "Altar of Artemis",
+    "block.olympia.ares_altar": "Altar of Ares",
+    "block.olympia.demeter_altar": "Altar of Demeter", "block.olympia.athena_altar": "Altar of Athena",
     "block.olympia.poseidon_altar": "Altar of Poseidon", "block.olympia.hermes_altar": "Altar of Hermes",
     "entity.olympia.hoplite": "Hoplite", "entity.olympia.cyclops": "Cyclops", "entity.olympia.minotaur": "Minotaur",
     "item.olympia.hoplite_spawn_egg": "Hoplite Spawn Egg", "item.olympia.cyclops_spawn_egg": "Cyclops Spawn Egg",

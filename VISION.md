@@ -26,8 +26,8 @@ terracotta, bronze, purple and black for the Underworld. Recognisably Minecraft 
 ## Must-haves
 Numbered, from the master prompt. Slice one builds those marked BUILT; the rest are the roadmap and are DEFERRED to the named phase.
 1. Marble block collection with stairs and slabs for builders (`owner`, Part III). BUILT: 12 stones, 4 stair and slab families, 3 column orders.
-2. Twelve Olympian gods, each with shrine, offerings, independent favor, blessings, artifacts (`owner`, Part V and VI). SLICE: 4 of 12 (Zeus, Athena, Poseidon, Hermes), five favor stages. DEFERRED (Phase 4): Hera, Ares, Apollo, Artemis, Aphrodite, Hephaestus, Demeter, Dionysus.
-3. Greek alchemy: divine potions and ingredients (`owner`, Part VII). SLICE: 5 potions and their ingredients, ambrosia. DEFERRED: alchemy table, Oracle's brazier, Styx water, the rest.
+2. Twelve Olympian gods, each with shrine, offerings, independent favor, blessings, artifacts (`owner`, Part V and VI). SLICE: 8 of 12 (Zeus, Athena, Poseidon, Hermes, Apollo, Artemis, Ares, Demeter), five favor stages. DEFERRED (Phase 4): Hera, Aphrodite, Hephaestus, Dionysus.
+3. Greek alchemy: divine potions and ingredients (`owner`, Part VII). SLICE: 9 potions and their ingredients, ambrosia. DEFERRED: alchemy table, Oracle's brazier, Styx water, the rest.
 4. The Minotaur's Labyrinth, signature dungeon: procedural maze, the Thread of Ariadne, a Minotaur that hunts and does not stay in an arena (`owner`, Part VIII; "A functional Minotaur encounter is more valuable than ten unfinished monsters"). BUILT as a slice: seeded maze with loops, three variants, Thread, Minotaur with charge, slam, enrage and a boss bar. DEFERRED: multiple floors, rotating walls, traps, puzzles, secret rooms, rewards beyond the horn and vault chests.
 5. Mythological creatures (`owner`, Part IX). SLICE: hoplite, cyclops, Minotaur (vanilla zombie model, own skins). DEFERRED (Phase 3): Pegasus, centaurs, satyrs, harpies, gorgons, Medusa, Hydra, Cerberus, the rest.
 6. Greek structures (`owner`, Part XI). SLICE: temples of Zeus, Athena and Poseidon, a roadside shrine of Hermes, olive groves, ruins. DEFERRED: cities, Delphi, amphitheaters, harbours, Olympus.
@@ -52,3 +52,4 @@ Which twelve-god order to build next (owner, before Phase 4). Whether the Minota
 ## Change log
 - 2026-11-16: "use gdada to make another mod pack this time for Greek gods ... read design docs here and build mod with gdada and
   shadw mod stack plus a website etc". Added Must-haves 7 and 8; the slice is the Frontier's first move.
+- 2026-11-16: "refine those mobs a lot now to really look like satyr and Gorgon ... continue mod slices". The Satyr and Gorgon got their own models; slice two added four gods.

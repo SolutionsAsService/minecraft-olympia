@@ -124,6 +124,98 @@
           "amplifier": 0
         }
       ]
+    },
+    {
+      "id": "apollo_light",
+      "name": "Apollo's Light",
+      "god": "Apollo",
+      "epithet": "God of Light",
+      "domain": "Sun and healing",
+      "hue": "#F0A828",
+      "realm": "olympia",
+      "ingredient": "lyre_string",
+      "lore": "A string from a golden lyre. Sight in the dark, and mending.",
+      "effects": [
+        {
+          "effect": "minecraft:night_vision",
+          "seconds": 300,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:regeneration",
+          "seconds": 90,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "artemis_blessing",
+      "name": "Artemis's Blessing",
+      "god": "Artemis",
+      "epithet": "The Huntress",
+      "domain": "The wild and the moon",
+      "hue": "#AEC0E0",
+      "realm": "olympia",
+      "ingredient": "moon_silver",
+      "lore": "Silver beaten under the moon. Swift, and light on the feet.",
+      "effects": [
+        {
+          "effect": "minecraft:speed",
+          "seconds": 180,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "seconds": 180,
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "id": "ares_rage",
+      "name": "Ares's Rage",
+      "god": "Ares",
+      "epithet": "God of War",
+      "domain": "Battle",
+      "hue": "#B03028",
+      "realm": "olympia",
+      "ingredient": "war_ember",
+      "lore": "An ember from a battlefield fire. Rage that does not tire.",
+      "effects": [
+        {
+          "effect": "minecraft:strength",
+          "seconds": 180,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:haste",
+          "seconds": 180,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "demeter_harvest",
+      "name": "Demeter's Harvest",
+      "god": "Demeter",
+      "epithet": "Giver of Grain",
+      "domain": "The harvest",
+      "hue": "#B8A038",
+      "realm": "olympia",
+      "ingredient": "golden_wheat",
+      "lore": "A sheaf that never rots. You will not go hungry.",
+      "effects": [
+        {
+          "effect": "minecraft:saturation",
+          "seconds": 20,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:absorption",
+          "seconds": 180,
+          "amplifier": 0
+        }
+      ]
     }
   ]
 }

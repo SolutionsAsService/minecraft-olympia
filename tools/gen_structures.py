@@ -182,6 +182,50 @@ def poseidon_extra(s, rnd, W, L, cx):
         s.put(x, 3, 4, M("prismarine_brick_slab", type="bottom", waterlogged="false")) if x % 2 else None
 
 
+def apollo_extra(s, rnd, W, L, cx):
+    # a sun disc of gold and glowstone over the door, and a lyre stand (gold blocks and a note block) by the altar
+    import math
+    for yy in range(-3, 4):
+        for xx in range(-3, 4):
+            d = math.hypot(xx, yy)
+            if 2.2 <= d <= 3.2:
+                s.put(cx + xx, 11 + yy, 2, M("gold_block"))
+            elif d < 2.2:
+                s.put(cx + xx, 11 + yy, 2, M("glowstone") if d < 1.2 else M("yellow_stained_glass"))
+    s.put(cx - 4, 3, L - 8, M("note_block")); s.put(cx - 4, 4, L - 8, M("gold_block"))
+
+
+def artemis_extra(s, rnd, W, L, cx):
+    # a crescent over the door in white concrete, with lanterns, and a pair of deer (white wool) at the steps
+    import math
+    for yy in range(-3, 4):
+        for xx in range(-3, 4):
+            if math.hypot(xx, yy) <= 3.2 and math.hypot(xx - 1.5, yy) > 2.6:
+                s.put(cx + xx, 11 + yy, 2, M("white_concrete"))
+    for x in (cx - 3, cx + 3):
+        s.put(x, 5, 1, M("lantern", hanging="false", waterlogged="false"))
+
+
+def ares_extra(s, rnd, W, L, cx):
+    # weapon racks along the cella wall (iron bars with anvils below) and red banners at the door
+    for z in range(L - 10, L - 6, 2):
+        s.put(6, 3, z, M("anvil", facing="east"))
+        s.put(W - 7, 3, z, M("anvil", facing="west"))
+        for y in (4, 5):
+            s.put(6, y, z, M("iron_bars")); s.put(W - 7, y, z, M("iron_bars"))
+    for x in (cx - 1, cx + 1):
+        for y in (6, 7, 8):
+            s.put(x, y, 7, M("red_wool"))
+
+
+def demeter_extra(s, rnd, W, L, cx):
+    # sheaves of hay beside the altar and a little crop plot of wheat in front of the steps
+    for x in (cx - 3, cx + 3):
+        s.put(x, 3, L - 7, M("hay_block", axis="y"))
+    for x in range(cx - 2, cx + 3):
+        s.put(x, 3, 1, M("hay_block", axis="y"))
+
+
 # ---------- the shrine of Hermes: a roadside herm ----------
 
 def hermes_shrine(seed):
@@ -460,6 +504,10 @@ STRUCTURES = {
     "temple_of_zeus": (lambda i: temple("zeus", "doric", i == 1, i, M("gold_block"), "olympia:chests/temple_of_zeus", zeus_extra), 2),
     "temple_of_athena": (lambda i: temple("athena", "ionic", i == 1, i, M("light_gray_concrete"), "olympia:chests/temple_of_athena", athena_extra), 2),
     "temple_of_poseidon": (lambda i: temple("poseidon", "corinthian", i == 1, i, M("prismarine_bricks"), "olympia:chests/temple_of_poseidon", poseidon_extra), 2),
+    "temple_of_apollo": (lambda i: temple("apollo", "ionic", i == 1, i, M("gold_block"), "olympia:chests/temple_of_apollo", apollo_extra), 2),
+    "temple_of_artemis": (lambda i: temple("artemis", "corinthian", i == 1, i, M("white_concrete"), "olympia:chests/temple_of_artemis", artemis_extra), 2),
+    "temple_of_ares": (lambda i: temple("ares", "doric", i == 1, i, M("red_terracotta"), "olympia:chests/temple_of_ares", ares_extra), 2),
+    "temple_of_demeter": (lambda i: temple("demeter", "ionic", i == 1, i, M("hay_block", axis="y"), "olympia:chests/temple_of_demeter", demeter_extra), 2),
     "hermes_shrine": (hermes_shrine, 2),
     "olive_grove": (olive_grove, 2),
     "greek_ruin": (greek_ruin, 3),

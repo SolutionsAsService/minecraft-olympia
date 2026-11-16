@@ -8,11 +8,11 @@ $SM playtest $MOD down
 $SM playtest $MOD up --deep 40 || exit 1
 $SM playtest $MOD client || exit 1
 for t in "temple_of_zeus_0 0 -300" "temple_of_zeus_1 40 -300" "temple_of_athena_0 80 -300" "temple_of_poseidon_0 120 -300" \
-         "hermes_shrine_0 160 -300" "olive_grove_0 190 -300" "greek_ruin_0 235 -300"; do
+         "hermes_shrine_0 160 -300" "temple_of_apollo_0 0 -340" "temple_of_artemis_0 40 -340" "temple_of_ares_0 80 -340" "temple_of_demeter_0 120 -340" "olive_grove_0 190 -300" "greek_ruin_0 235 -300"; do
   set -- $t
   $SM playtest $MOD place olympia:$1 $2 -21 $3
 done
-for s in structures zeus-interior blocks creatures relics; do
+for s in structures structures2 altars zeus-interior blocks creatures relics; do
   $SM playtest $MOD shoot playtest/$s.json
 done
 # the labyrinth last: its Minotaur has a boss bar that shows from far away, and would be in every earlier photograph

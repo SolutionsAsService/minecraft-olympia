@@ -297,6 +297,290 @@
           ]
         }
       ]
+    },
+    "apollo": {
+      "name": "Apollo",
+      "title": "God of Light, Music and Prophecy",
+      "domain": "The sun, healing, the lyre and the oracle",
+      "temple": "Temple of Apollo",
+      "offerings": [
+        {
+          "item": "minecraft:sunflower",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:gold_ingot",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:music_disc_cat",
+          "favor": 6
+        },
+        {
+          "item": "olympia:lyre_string",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:night_vision",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:regeneration",
+              120,
+              0
+            ],
+            [
+              "minecraft:night_vision",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:regeneration",
+              180,
+              1
+            ],
+            [
+              "minecraft:night_vision",
+              300,
+              0
+            ],
+            [
+              "minecraft:speed",
+              180,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "artemis": {
+      "name": "Artemis",
+      "title": "Goddess of the Hunt",
+      "domain": "The wild, the moon and the bow",
+      "temple": "Temple of Artemis",
+      "offerings": [
+        {
+          "item": "minecraft:arrow",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:feather",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "favor": 2
+        },
+        {
+          "item": "olympia:moon_silver",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:speed",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:speed",
+              180,
+              0
+            ],
+            [
+              "minecraft:jump_boost",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:speed",
+              240,
+              1
+            ],
+            [
+              "minecraft:jump_boost",
+              240,
+              1
+            ],
+            [
+              "minecraft:night_vision",
+              300,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "ares": {
+      "name": "Ares",
+      "title": "God of War",
+      "domain": "Battle, blood and bronze",
+      "temple": "Temple of Ares",
+      "offerings": [
+        {
+          "item": "minecraft:iron_ingot",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:redstone",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:iron_sword",
+          "favor": 3
+        },
+        {
+          "item": "olympia:war_ember",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:strength",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:strength",
+              180,
+              0
+            ],
+            [
+              "minecraft:resistance",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:strength",
+              240,
+              1
+            ],
+            [
+              "minecraft:haste",
+              240,
+              0
+            ],
+            [
+              "minecraft:resistance",
+              240,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "demeter": {
+      "name": "Demeter",
+      "title": "Goddess of the Harvest",
+      "domain": "Grain, growth and the turning year",
+      "temple": "Temple of Demeter",
+      "offerings": [
+        {
+          "item": "minecraft:wheat",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:wheat_seeds",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:bread",
+          "favor": 2
+        },
+        {
+          "item": "olympia:golden_wheat",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:saturation",
+              10,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:regeneration",
+              120,
+              0
+            ],
+            [
+              "minecraft:saturation",
+              10,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:regeneration",
+              180,
+              1
+            ],
+            [
+              "minecraft:absorption",
+              240,
+              1
+            ],
+            [
+              "minecraft:saturation",
+              20,
+              0
+            ]
+          ]
+        }
+      ]
     }
   },
   "thunderbolt": {

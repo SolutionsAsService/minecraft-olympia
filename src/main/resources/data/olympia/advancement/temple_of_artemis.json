@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:artemis_altar"
+    },
+    "title": {
+      "text": "The Huntress's House"
+    },
+    "description": {
+      "text": "Find the Temple of Artemis in a forest."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "olympia:temple_of_artemis"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:greek_ruin"
+}
