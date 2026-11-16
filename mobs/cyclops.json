@@ -9,7 +9,7 @@
     "armor": 4,
     "speed": 0.2,
     "knockback_resistance": 0.5,
-    "scale": 1.4
+    "scale": 1.2
   },
   "flags": {},
   "behaviours": [
@@ -55,7 +55,7 @@
     }
   ],
   "skin": {
-    "custom": true
+    "model": true
   },
   "egg": [
     "#be966e",
@@ -64,5 +64,1368 @@
   "tests": {
     "reach_distance": 12,
     "reach_max_seconds": 25
+  },
+  "model": {
+    "shadow": 0.8,
+    "paints": {
+      "skin": {
+        "type": "skin",
+        "base": "#b08c68",
+        "shade": 6
+      },
+      "face": {
+        "type": "skin",
+        "base": "#b8946e",
+        "shade": 5
+      },
+      "hide": {
+        "type": "cloth",
+        "base": "#6a4a2a",
+        "trim": "#3a2814"
+      },
+      "hair": {
+        "type": "fur",
+        "base": "#3a2a1c",
+        "dark": "#1c120a",
+        "light": "#5a4028"
+      },
+      "wood": {
+        "type": "ridged",
+        "base": "#7a5230",
+        "dark": "#3a2814",
+        "light": "#a07848"
+      },
+      "spike": {
+        "type": "plain",
+        "base": "#9a9aa4"
+      },
+      "bone": {
+        "type": "plain",
+        "base": "#e8e0c8"
+      },
+      "toe": {
+        "type": "skin",
+        "base": "#a07c5a",
+        "shade": 4
+      }
+    },
+    "parts": [
+      {
+        "name": "pelvis",
+        "parent": "root",
+        "pivot": [
+          0,
+          -14,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -4.5,
+              -1,
+              -3.0
+            ],
+            "size": [
+              9,
+              3,
+              6
+            ],
+            "grow": 0,
+            "paint": "hide"
+          }
+        ]
+      },
+      {
+        "name": "body",
+        "parent": "root",
+        "pivot": [
+          0,
+          -14,
+          0
+        ],
+        "rot": [
+          10,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -4.0,
+              -6,
+              -2.5
+            ],
+            "size": [
+              8,
+              6,
+              5
+            ],
+            "grow": 0,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "chest",
+        "parent": "body",
+        "pivot": [
+          0,
+          -6,
+          0
+        ],
+        "rot": [
+          -5.0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -5.5,
+              -8,
+              -3.0
+            ],
+            "size": [
+              11,
+              8,
+              6
+            ],
+            "grow": 0,
+            "paint": "skin"
+          },
+          {
+            "from": [
+              -5.5,
+              -3,
+              -3
+            ],
+            "size": [
+              11,
+              3,
+              6
+            ],
+            "grow": 0.3,
+            "paint": "hair"
+          }
+        ]
+      },
+      {
+        "name": "neck",
+        "parent": "chest",
+        "pivot": [
+          0,
+          -8,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              -1,
+              -1.5
+            ],
+            "size": [
+              3,
+              2,
+              3
+            ],
+            "grow": 0,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "head",
+        "parent": "neck",
+        "pivot": [
+          0,
+          -1,
+          0
+        ],
+        "rot": [
+          -10,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -4.0,
+              -6,
+              -4.0
+            ],
+            "size": [
+              8,
+              6,
+              8
+            ],
+            "grow": 0,
+            "paint": "face",
+            "decals": [
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 1,
+                "w": 6,
+                "h": 1,
+                "color": "#463222"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 2,
+                "w": 6,
+                "h": 4,
+                "color": "#f4f0e6"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 2,
+                "y": 3,
+                "w": 4,
+                "h": 3,
+                "color": "#3c82b4"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 3,
+                "y": 4,
+                "w": 2,
+                "h": 2,
+                "color": "#14141a"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 2,
+                "y": 7,
+                "w": 4,
+                "h": 1,
+                "color": "#3c1e18"
+              }
+            ]
+          },
+          {
+            "from": [
+              -3.0,
+              0,
+              -3.0
+            ],
+            "size": [
+              6,
+              2,
+              6
+            ],
+            "grow": 0,
+            "paint": "face"
+          }
+        ]
+      },
+      {
+        "name": "arm_l",
+        "parent": "chest",
+        "pivot": [
+          7.0,
+          -6,
+          0
+        ],
+        "rot": [
+          -8,
+          0,
+          4
+        ],
+        "boxes": [
+          {
+            "from": [
+              -3.0,
+              -2.5,
+              -3.0
+            ],
+            "size": [
+              6,
+              3,
+              6
+            ],
+            "grow": 0.1,
+            "paint": "hide"
+          },
+          {
+            "from": [
+              -2.0,
+              -0.5,
+              -2.0
+            ],
+            "size": [
+              4,
+              6,
+              4
+            ],
+            "grow": 0,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "forearm_l",
+        "parent": "arm_l",
+        "pivot": [
+          0,
+          5.5,
+          0
+        ],
+        "rot": [
+          -12,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              0,
+              -2.0
+            ],
+            "size": [
+              4,
+              6,
+              4
+            ],
+            "grow": 0,
+            "paint": "skin"
+          },
+          {
+            "from": [
+              -2.0,
+              1,
+              -2.0
+            ],
+            "size": [
+              4,
+              2,
+              4
+            ],
+            "grow": 0.35,
+            "paint": "hide"
+          }
+        ]
+      },
+      {
+        "name": "hand_l",
+        "parent": "forearm_l",
+        "pivot": [
+          0,
+          6,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              0,
+              -2.0
+            ],
+            "size": [
+              4,
+              2,
+              4
+            ],
+            "grow": 0.1,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "leg_l",
+        "parent": "root",
+        "pivot": [
+          3.8,
+          -14,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.5,
+              0,
+              -2.5
+            ],
+            "size": [
+              5,
+              7,
+              5
+            ],
+            "grow": 0,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "shin_l",
+        "parent": "leg_l",
+        "pivot": [
+          0,
+          7,
+          0
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              0,
+              -2.0
+            ],
+            "size": [
+              4,
+              5,
+              4
+            ],
+            "grow": 0,
+            "paint": "skin"
+          },
+          {
+            "from": [
+              -2.0,
+              0.5,
+              -2.5
+            ],
+            "size": [
+              4,
+              2,
+              1
+            ],
+            "grow": 0,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "foot_l",
+        "parent": "shin_l",
+        "pivot": [
+          0,
+          5,
+          0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.5,
+              0,
+              -4.5
+            ],
+            "size": [
+              5,
+              2,
+              6.5
+            ],
+            "grow": 0,
+            "paint": "toe"
+          }
+        ]
+      },
+      {
+        "name": "arm_r",
+        "parent": "chest",
+        "pivot": [
+          -7.0,
+          -6,
+          0
+        ],
+        "rot": [
+          -8,
+          0,
+          -4
+        ],
+        "boxes": [
+          {
+            "from": [
+              -3.0,
+              -2.5,
+              -3.0
+            ],
+            "size": [
+              6,
+              3,
+              6
+            ],
+            "grow": 0.1,
+            "paint": "hide"
+          },
+          {
+            "from": [
+              -2.0,
+              -0.5,
+              -2.0
+            ],
+            "size": [
+              4,
+              6,
+              4
+            ],
+            "grow": 0,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "forearm_r",
+        "parent": "arm_r",
+        "pivot": [
+          0,
+          5.5,
+          0
+        ],
+        "rot": [
+          -12,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              0,
+              -2.0
+            ],
+            "size": [
+              4,
+              6,
+              4
+            ],
+            "grow": 0,
+            "paint": "skin"
+          },
+          {
+            "from": [
+              -2.0,
+              1,
+              -2.0
+            ],
+            "size": [
+              4,
+              2,
+              4
+            ],
+            "grow": 0.35,
+            "paint": "hide"
+          }
+        ]
+      },
+      {
+        "name": "hand_r",
+        "parent": "forearm_r",
+        "pivot": [
+          0,
+          6,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              0,
+              -2.0
+            ],
+            "size": [
+              4,
+              2,
+              4
+            ],
+            "grow": 0.1,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "leg_r",
+        "parent": "root",
+        "pivot": [
+          -3.8,
+          -14,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.5,
+              0,
+              -2.5
+            ],
+            "size": [
+              5,
+              7,
+              5
+            ],
+            "grow": 0,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "shin_r",
+        "parent": "leg_r",
+        "pivot": [
+          0,
+          7,
+          0
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              0,
+              -2.0
+            ],
+            "size": [
+              4,
+              5,
+              4
+            ],
+            "grow": 0,
+            "paint": "skin"
+          },
+          {
+            "from": [
+              -2.0,
+              0.5,
+              -2.5
+            ],
+            "size": [
+              4,
+              2,
+              1
+            ],
+            "grow": 0,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "foot_r",
+        "parent": "shin_r",
+        "pivot": [
+          0,
+          5,
+          0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.5,
+              0,
+              -4.5
+            ],
+            "size": [
+              5,
+              2,
+              6.5
+            ],
+            "grow": 0,
+            "paint": "toe"
+          }
+        ]
+      },
+      {
+        "name": "hair",
+        "parent": "head",
+        "pivot": [
+          0,
+          -6,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -4.8,
+              -2,
+              -4.8
+            ],
+            "size": [
+              9.6,
+              3,
+              9.6
+            ],
+            "grow": 0,
+            "paint": "hair"
+          },
+          {
+            "from": [
+              -4.8,
+              -1,
+              3.2
+            ],
+            "size": [
+              9.6,
+              8,
+              1.6
+            ],
+            "grow": 0,
+            "paint": "hair"
+          },
+          {
+            "from": [
+              -4.8,
+              -1,
+              -4.8
+            ],
+            "size": [
+              1.4,
+              5,
+              4
+            ],
+            "grow": 0,
+            "paint": "hair"
+          },
+          {
+            "from": [
+              3.4,
+              -1,
+              -4.8
+            ],
+            "size": [
+              1.4,
+              5,
+              4
+            ],
+            "grow": 0,
+            "paint": "hair"
+          }
+        ]
+      },
+      {
+        "name": "brow",
+        "parent": "head",
+        "pivot": [
+          0,
+          -3,
+          -4.2
+        ],
+        "rot": [
+          -8,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -4,
+              -1,
+              -1
+            ],
+            "size": [
+              8,
+              2,
+              1.5
+            ],
+            "grow": 0.2,
+            "paint": "face"
+          }
+        ]
+      },
+      {
+        "name": "tusk_l",
+        "parent": "head",
+        "pivot": [
+          2.4,
+          1.6,
+          -4.2
+        ],
+        "rot": [
+          0,
+          0,
+          8
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.7,
+              -3,
+              -0.7
+            ],
+            "size": [
+              1.4,
+              3,
+              1.4
+            ],
+            "grow": -0.05,
+            "paint": "bone"
+          }
+        ]
+      },
+      {
+        "name": "tusk_r",
+        "parent": "head",
+        "pivot": [
+          -2.4,
+          1.6,
+          -4.2
+        ],
+        "rot": [
+          0,
+          0,
+          -8
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.7,
+              -3,
+              -0.7
+            ],
+            "size": [
+              1.4,
+              3,
+              1.4
+            ],
+            "grow": -0.05,
+            "paint": "bone"
+          }
+        ]
+      },
+      {
+        "name": "jaw",
+        "parent": "head",
+        "pivot": [
+          0,
+          1.8,
+          -3
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -3,
+              0,
+              -2
+            ],
+            "size": [
+              6,
+              2.5,
+              4
+            ],
+            "grow": 0,
+            "paint": "face"
+          }
+        ]
+      },
+      {
+        "name": "loin",
+        "parent": "pelvis",
+        "pivot": [
+          0,
+          0.5,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -5,
+              0,
+              -3.5
+            ],
+            "size": [
+              10,
+              6,
+              7
+            ],
+            "grow": 0,
+            "paint": "hide"
+          },
+          {
+            "from": [
+              -5.2,
+              -0.5,
+              -3.7
+            ],
+            "size": [
+              10.4,
+              1.5,
+              7.4
+            ],
+            "grow": 0,
+            "paint": "hair"
+          }
+        ]
+      },
+      {
+        "name": "tatter0",
+        "parent": "loin",
+        "pivot": [
+          -3.4,
+          6,
+          -3.4
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.6,
+              0,
+              -0.3
+            ],
+            "size": [
+              1.2,
+              3,
+              0.6
+            ],
+            "grow": 0,
+            "paint": "hide"
+          }
+        ]
+      },
+      {
+        "name": "tatter1",
+        "parent": "loin",
+        "pivot": [
+          -2.0,
+          6,
+          -3.4
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.6,
+              0,
+              -0.3
+            ],
+            "size": [
+              1.2,
+              3,
+              0.6
+            ],
+            "grow": 0,
+            "paint": "hide"
+          }
+        ]
+      },
+      {
+        "name": "tatter2",
+        "parent": "loin",
+        "pivot": [
+          -0.6000000000000001,
+          6,
+          -3.4
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.6,
+              0,
+              -0.3
+            ],
+            "size": [
+              1.2,
+              3,
+              0.6
+            ],
+            "grow": 0,
+            "paint": "hide"
+          }
+        ]
+      },
+      {
+        "name": "tatter3",
+        "parent": "loin",
+        "pivot": [
+          0.7999999999999994,
+          6,
+          -3.4
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.6,
+              0,
+              -0.3
+            ],
+            "size": [
+              1.2,
+              3,
+              0.6
+            ],
+            "grow": 0,
+            "paint": "hide"
+          }
+        ]
+      },
+      {
+        "name": "tatter4",
+        "parent": "loin",
+        "pivot": [
+          2.1999999999999997,
+          6,
+          -3.4
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.6,
+              0,
+              -0.3
+            ],
+            "size": [
+              1.2,
+              3,
+              0.6
+            ],
+            "grow": 0,
+            "paint": "hide"
+          }
+        ]
+      },
+      {
+        "name": "tatter5",
+        "parent": "loin",
+        "pivot": [
+          3.6,
+          6,
+          -3.4
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.6,
+              0,
+              -0.3
+            ],
+            "size": [
+              1.2,
+              3,
+              0.6
+            ],
+            "grow": 0,
+            "paint": "hide"
+          }
+        ]
+      },
+      {
+        "name": "club",
+        "parent": "hand_r",
+        "pivot": [
+          0,
+          2,
+          -2
+        ],
+        "rot": [
+          -30,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              -6,
+              -1.5
+            ],
+            "size": [
+              3,
+              14,
+              3
+            ],
+            "grow": 0,
+            "paint": "wood"
+          },
+          {
+            "from": [
+              -3,
+              -18,
+              -3
+            ],
+            "size": [
+              6,
+              13,
+              6
+            ],
+            "grow": 0.2,
+            "paint": "wood"
+          },
+          {
+            "from": [
+              -4.1,
+              -17,
+              -0.5
+            ],
+            "size": [
+              1,
+              2.5,
+              1
+            ],
+            "grow": 0,
+            "paint": "spike"
+          },
+          {
+            "from": [
+              3.1,
+              -14,
+              -0.5
+            ],
+            "size": [
+              1,
+              2.5,
+              1
+            ],
+            "grow": 0,
+            "paint": "spike"
+          },
+          {
+            "from": [
+              -0.5,
+              -11,
+              -4.1
+            ],
+            "size": [
+              1,
+              2.5,
+              1
+            ],
+            "grow": 0,
+            "paint": "spike"
+          },
+          {
+            "from": [
+              -0.5,
+              -16,
+              3.1
+            ],
+            "size": [
+              1,
+              2.5,
+              1
+            ],
+            "grow": 0,
+            "paint": "spike"
+          },
+          {
+            "from": [
+              -4.1,
+              -9,
+              -0.5
+            ],
+            "size": [
+              1,
+              2.5,
+              1
+            ],
+            "grow": 0,
+            "paint": "spike"
+          },
+          {
+            "from": [
+              3.1,
+              -8,
+              -0.5
+            ],
+            "size": [
+              1,
+              2.5,
+              1
+            ],
+            "grow": 0,
+            "paint": "spike"
+          }
+        ]
+      }
+    ],
+    "anim": [
+      {
+        "part": "head",
+        "type": "look"
+      },
+      {
+        "part": "arm_l",
+        "type": "walk",
+        "axis": "x",
+        "amp": 0.9,
+        "phase": 0
+      },
+      {
+        "part": "arm_l",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.03,
+        "freq": 0.09,
+        "phase": 0
+      },
+      {
+        "part": "leg_l",
+        "type": "walk",
+        "axis": "x",
+        "amp": 1.1,
+        "phase": 3.141592653589793
+      },
+      {
+        "part": "arm_r",
+        "type": "swing",
+        "axis": "x",
+        "amp": 1.3
+      },
+      {
+        "part": "arm_r",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.03,
+        "freq": 0.09,
+        "phase": 3.141592653589793
+      },
+      {
+        "part": "leg_r",
+        "type": "walk",
+        "axis": "x",
+        "amp": 1.1,
+        "phase": 0
+      },
+      {
+        "part": "tatter0",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.05,
+        "freq": 0.13,
+        "phase": 0,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "tatter1",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.05,
+        "freq": 0.13,
+        "phase": 1,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "tatter2",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.05,
+        "freq": 0.13,
+        "phase": 2,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "tatter3",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.05,
+        "freq": 0.13,
+        "phase": 3,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "tatter4",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.05,
+        "freq": 0.13,
+        "phase": 4,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "tatter5",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.05,
+        "freq": 0.13,
+        "phase": 5,
+        "walk_amp": 0.15
+      }
+    ]
   }
 }

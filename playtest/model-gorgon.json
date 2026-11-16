@@ -1,45 +1,36 @@
 {
   "out": "playtest/models",
   "settle": 8,
-  "setup": [
-    "forceload add -20 -40 20 0",
-    "kill @e[type=slime]",
-    "kill @e[type=item]",
-    "gamerule doMobSpawning false",
-    "kill @e[type=olympia:satyr]",
-    "kill @e[type=olympia:gorgon]",
-    "summon olympia:gorgon 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
-  ],
   "steps": [
     {
       "tp": [
         0,
-        "G+0.2",
-        -15.2,
+        "G+-0.52",
+        -15.0,
         180,
-        2
+        6
       ],
       "capture": "gorgon-front",
       "wait": 6
     },
     {
       "tp": [
-        3.0,
-        "G+0.2",
-        -17.0,
-        140,
-        2
+        3.5,
+        "G+-0.52",
+        -16.5,
+        145,
+        6
       ],
       "capture": "gorgon-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        4.4,
-        "G+0.2",
+        5.0,
+        "G+-0.52",
         -20,
         90,
-        2
+        6
       ],
       "capture": "gorgon-side",
       "wait": 6
@@ -47,10 +38,10 @@
     {
       "tp": [
         0,
-        "G+0.2",
-        -24.5,
+        "G+-0.52",
+        -25.0,
         0,
-        2
+        6
       ],
       "capture": "gorgon-back",
       "wait": 6
@@ -58,8 +49,8 @@
     {
       "tp": [
         0,
-        "G+0.35",
-        -17.6,
+        "G+0.38",
+        -17.8,
         180,
         0
       ],
@@ -68,14 +59,31 @@
     },
     {
       "tp": [
-        1.5,
-        "G+0.35",
-        -18.2,
+        1.7600000000000002,
+        "G+0.38",
+        -18.46,
         153,
         0
       ],
       "capture": "gorgon-face-side",
       "wait": 6
     }
+  ],
+  "setup": [
+    "forceload add -20 -40 20 0",
+    "kill @e[type=slime]",
+    "kill @e[type=item]",
+    "gamerule doMobSpawning false",
+    "kill @e[type=olympia:satyr]",
+    "kill @e[type=olympia:gorgon]",
+    "kill @e[type=olympia:hoplite]",
+    "kill @e[type=olympia:cyclops]",
+    "kill @e[type=olympia:minotaur]",
+    "kill @e[type=olympia:mummy]",
+    "kill @e[type=olympia:royal_mummy]",
+    "kill @e[type=olympia:scarab]",
+    "kill @e[type=olympia:tomb_guardian]",
+    "kill @e[type=olympia:forgotten_pharaoh]",
+    "summon olympia:gorgon 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
   ]
 }

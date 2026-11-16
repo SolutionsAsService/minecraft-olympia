@@ -62,7 +62,7 @@ public class Minotaur extends Zombie {
 				.add(Attributes.MOVEMENT_SPEED, 0.24)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 0.8)
 				.add(Attributes.FOLLOW_RANGE, 128.0)
-				.add(Attributes.SCALE, 1.5)
+				.add(Attributes.SCALE, 1.25)
 				.add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0.0);
 	}
 

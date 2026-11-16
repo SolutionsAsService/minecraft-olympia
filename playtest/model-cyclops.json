@@ -1,0 +1,89 @@
+{
+  "out": "playtest/models",
+  "settle": 8,
+  "steps": [
+    {
+      "tp": [
+        0,
+        "G+-0.17",
+        -13.6,
+        180,
+        6
+      ],
+      "capture": "cyclops-front",
+      "wait": 6
+    },
+    {
+      "tp": [
+        4.4799999999999995,
+        "G+-0.17",
+        -15.52,
+        145,
+        6
+      ],
+      "capture": "cyclops-three-quarter",
+      "wait": 6
+    },
+    {
+      "tp": [
+        6.4,
+        "G+-0.17",
+        -20,
+        90,
+        6
+      ],
+      "capture": "cyclops-side",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+-0.17",
+        -26.4,
+        0,
+        6
+      ],
+      "capture": "cyclops-back",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+0.88",
+        -17.0,
+        180,
+        0
+      ],
+      "capture": "cyclops-face",
+      "wait": 6
+    },
+    {
+      "tp": [
+        2.4000000000000004,
+        "G+0.88",
+        -17.9,
+        153,
+        0
+      ],
+      "capture": "cyclops-face-side",
+      "wait": 6
+    }
+  ],
+  "setup": [
+    "forceload add -20 -40 20 0",
+    "kill @e[type=slime]",
+    "kill @e[type=item]",
+    "gamerule doMobSpawning false",
+    "kill @e[type=olympia:satyr]",
+    "kill @e[type=olympia:gorgon]",
+    "kill @e[type=olympia:hoplite]",
+    "kill @e[type=olympia:cyclops]",
+    "kill @e[type=olympia:minotaur]",
+    "kill @e[type=olympia:mummy]",
+    "kill @e[type=olympia:royal_mummy]",
+    "kill @e[type=olympia:scarab]",
+    "kill @e[type=olympia:tomb_guardian]",
+    "kill @e[type=olympia:forgotten_pharaoh]",
+    "summon olympia:cyclops 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ]
+}

@@ -54,6 +54,7 @@ public class Hoplite extends Zombie {
 				.add(Attributes.ATTACK_DAMAGE, 4.0)
 				.add(Attributes.ARMOR, 6.0)
 				.add(Attributes.MOVEMENT_SPEED, 0.22)
+				.add(Attributes.SCALE, 1.0)
 				.add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0.0);
 	}
 
@@ -70,14 +71,6 @@ public class Hoplite extends Zombie {
 	@Override
 	public boolean isBaby() {
 		return false;
-	}
-
-	@Override
-	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
-		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(BuiltInRegistries.ITEM.getOptional(ResourceLocation.parse("minecraft:iron_sword")).orElse(Items.AIR)));
-		setDropChance(EquipmentSlot.MAINHAND, 0.05F);
-		setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(BuiltInRegistries.ITEM.getOptional(ResourceLocation.parse("minecraft:shield")).orElse(Items.AIR)));
-		setDropChance(EquipmentSlot.OFFHAND, 0.05F);
 	}
 
 }

@@ -119,15 +119,19 @@
         "type": "skin",
         "base": "#b87c58",
         "shade": 4
+      },
+      "ear_in": {
+        "type": "plain",
+        "base": "#7a3a2a"
       }
     },
     "parts": [
       {
-        "name": "head",
+        "name": "pelvis",
         "parent": "root",
         "pivot": [
           0,
-          -28,
+          -15.25,
           0
         ],
         "rot": [
@@ -138,615 +142,17 @@
         "boxes": [
           {
             "from": [
-              -4,
-              -8,
-              -4
-            ],
-            "size": [
-              8,
-              8,
-              8
-            ],
-            "grow": 0,
-            "paint": "face",
-            "decals": [
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 1,
-                "y": 3,
-                "w": 2,
-                "h": 2,
-                "color": "#e8a820"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 1,
-                "y": 4,
-                "w": 2,
-                "h": 1,
-                "color": "#120a04"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 5,
-                "y": 3,
-                "w": 2,
-                "h": 2,
-                "color": "#e8a820"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 5,
-                "y": 4,
-                "w": 2,
-                "h": 1,
-                "color": "#120a04"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 0,
-                "y": 2,
-                "w": 3,
-                "h": 1,
-                "color": "#3a2414"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 5,
-                "y": 2,
-                "w": 3,
-                "h": 1,
-                "color": "#3a2414"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 2,
-                "y": 6,
-                "w": 4,
-                "h": 1,
-                "color": "#7a3a2a"
-              }
-            ]
-          },
-          {
-            "from": [
-              -2.5,
-              -4,
-              -8.5
-            ],
-            "size": [
-              5,
-              4,
-              4
-            ],
-            "grow": 0,
-            "paint": "face",
-            "decals": [
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 0,
-                "y": 1,
-                "w": 1,
-                "h": 1,
-                "color": "#2a1810"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 4,
-                "y": 1,
-                "w": 1,
-                "h": 1,
-                "color": "#2a1810"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 1,
-                "y": 3,
-                "w": 3,
-                "h": 1,
-                "color": "#6a3424"
-              }
-            ]
-          },
-          {
-            "from": [
-              -1.5,
-              -0.5,
-              -6.5
-            ],
-            "size": [
-              3,
-              7,
-              3
-            ],
-            "grow": 0,
-            "paint": "fur_dark"
-          },
-          {
-            "from": [
-              -4.5,
-              -9,
-              -4.5
-            ],
-            "size": [
-              9,
-              3,
-              9
-            ],
-            "grow": 0,
-            "paint": "hair"
-          },
-          {
-            "from": [
-              -4.5,
-              -6,
-              -1
-            ],
-            "size": [
-              1,
-              5,
-              5
-            ],
-            "grow": 0,
-            "paint": "hair"
-          },
-          {
-            "from": [
-              3.5,
-              -6,
-              -1
-            ],
-            "size": [
-              1,
-              5,
-              5
-            ],
-            "grow": 0,
-            "paint": "hair"
-          },
-          {
-            "from": [
-              -4.5,
-              -9,
-              3.5
-            ],
-            "size": [
-              9,
-              8,
-              1
-            ],
-            "grow": 0,
-            "paint": "hair"
-          }
-        ]
-      },
-      {
-        "name": "ear_l",
-        "parent": "head",
-        "pivot": [
-          4,
-          -6,
-          0.5
-        ],
-        "rot": [
-          0,
-          20,
-          -28
-        ],
-        "boxes": [
-          {
-            "from": [
-              0,
-              -2,
-              -0.5
-            ],
-            "size": [
-              7,
-              4,
-              1
-            ],
-            "grow": 0,
-            "paint": "ear"
-          }
-        ]
-      },
-      {
-        "name": "horn_l1",
-        "parent": "head",
-        "pivot": [
-          2.8,
-          -8.5,
-          -1.5
-        ],
-        "rot": [
-          -24,
-          0,
-          20
-        ],
-        "boxes": [
-          {
-            "from": [
-              -2,
-              -4,
-              -2
-            ],
-            "size": [
-              4,
-              4,
-              4
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_l2",
-        "parent": "horn_l1",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -34,
-          0,
-          10
-        ],
-        "boxes": [
-          {
-            "from": [
-              -2,
-              -4,
-              -2
-            ],
-            "size": [
-              4,
-              4,
-              4
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_l3",
-        "parent": "horn_l2",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -42,
-          0,
-          8
-        ],
-        "boxes": [
-          {
-            "from": [
-              -1.5,
-              -4,
-              -1.5
-            ],
-            "size": [
-              3,
-              4,
-              3
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_l4",
-        "parent": "horn_l3",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -48,
-          0,
-          10
-        ],
-        "boxes": [
-          {
-            "from": [
-              -1.5,
-              -4,
-              -1.5
-            ],
-            "size": [
-              3,
-              4,
-              3
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_l5",
-        "parent": "horn_l4",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -46,
-          0,
-          8
-        ],
-        "boxes": [
-          {
-            "from": [
+              -3.5,
               -1,
-              -4,
-              -1
-            ],
-            "size": [
-              2,
-              4,
-              2
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_l6",
-        "parent": "horn_l5",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -40,
-          0,
-          6
-        ],
-        "boxes": [
-          {
-            "from": [
-              -0.5,
-              -3,
-              -0.5
-            ],
-            "size": [
-              1,
-              3,
-              1
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "ear_r",
-        "parent": "head",
-        "pivot": [
-          -4,
-          -6,
-          0.5
-        ],
-        "rot": [
-          0,
-          -20,
-          28
-        ],
-        "boxes": [
-          {
-            "from": [
-              -7,
-              -2,
-              -0.5
+              -2.0
             ],
             "size": [
               7,
-              4,
-              1
-            ],
-            "grow": 0,
-            "paint": "ear"
-          }
-        ]
-      },
-      {
-        "name": "horn_r1",
-        "parent": "head",
-        "pivot": [
-          -2.8,
-          -8.5,
-          -1.5
-        ],
-        "rot": [
-          -24,
-          0,
-          -20
-        ],
-        "boxes": [
-          {
-            "from": [
-              -2,
-              -4,
-              -2
-            ],
-            "size": [
-              4,
-              4,
+              3,
               4
             ],
             "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_r2",
-        "parent": "horn_r1",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -34,
-          0,
-          -10
-        ],
-        "boxes": [
-          {
-            "from": [
-              -2,
-              -4,
-              -2
-            ],
-            "size": [
-              4,
-              4,
-              4
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_r3",
-        "parent": "horn_r2",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -42,
-          0,
-          -8
-        ],
-        "boxes": [
-          {
-            "from": [
-              -1.5,
-              -4,
-              -1.5
-            ],
-            "size": [
-              3,
-              4,
-              3
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_r4",
-        "parent": "horn_r3",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -48,
-          0,
-          -10
-        ],
-        "boxes": [
-          {
-            "from": [
-              -1.5,
-              -4,
-              -1.5
-            ],
-            "size": [
-              3,
-              4,
-              3
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_r5",
-        "parent": "horn_r4",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -46,
-          0,
-          -8
-        ],
-        "boxes": [
-          {
-            "from": [
-              -1,
-              -4,
-              -1
-            ],
-            "size": [
-              2,
-              4,
-              2
-            ],
-            "grow": 0,
-            "paint": "horn"
-          }
-        ]
-      },
-      {
-        "name": "horn_r6",
-        "parent": "horn_r5",
-        "pivot": [
-          0,
-          -4,
-          0
-        ],
-        "rot": [
-          -40,
-          0,
-          -6
-        ],
-        "boxes": [
-          {
-            "from": [
-              -0.5,
-              -3,
-              -0.5
-            ],
-            "size": [
-              1,
-              3,
-              1
-            ],
-            "grow": 0,
-            "paint": "horn"
+            "paint": "fur"
           }
         ]
       },
@@ -755,24 +161,74 @@
         "parent": "root",
         "pivot": [
           0,
-          -28,
+          -15.25,
           0
         ],
         "rot": [
-          0,
+          0.0,
           0,
           0
         ],
         "boxes": [
           {
             "from": [
-              -4,
-              0,
-              -2
+              -3.0,
+              -5,
+              -1.5
+            ],
+            "size": [
+              6,
+              5,
+              3
+            ],
+            "grow": 0,
+            "paint": "skin",
+            "decals": [
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 2,
+                "y": 1,
+                "w": 2,
+                "h": 1,
+                "color": "#a8774f"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 2,
+                "y": 3,
+                "w": 2,
+                "h": 1,
+                "color": "#a8774f"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "chest",
+        "parent": "body",
+        "pivot": [
+          0,
+          -5,
+          0
+        ],
+        "rot": [
+          -0.0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -4.0,
+              -7,
+              -2.0
             ],
             "size": [
               8,
-              12,
+              7,
               4
             ],
             "grow": 0,
@@ -800,7 +256,7 @@
                 "face": "front",
                 "type": "rect",
                 "x": 1,
-                "y": 8,
+                "y": 5,
                 "w": 2,
                 "h": 1,
                 "color": "#a8774f"
@@ -809,16 +265,7 @@
                 "face": "front",
                 "type": "rect",
                 "x": 5,
-                "y": 8,
-                "w": 2,
-                "h": 1,
-                "color": "#a8774f"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 3,
-                "y": 6,
+                "y": 5,
                 "w": 2,
                 "h": 1,
                 "color": "#a8774f"
@@ -828,11 +275,11 @@
         ]
       },
       {
-        "name": "loin",
-        "parent": "root",
+        "name": "neck",
+        "parent": "chest",
         "pivot": [
           0,
-          -17,
+          -7,
           0
         ],
         "rot": [
@@ -843,100 +290,244 @@
         "boxes": [
           {
             "from": [
-              -4.5,
-              0,
-              -2.5
+              -1.5,
+              -1,
+              -1.5
             ],
             "size": [
-              9,
-              5,
-              5
+              3,
+              2,
+              3
             ],
             "grow": 0,
-            "paint": "fur"
+            "paint": "skin"
           }
         ]
       },
       {
-        "name": "tail",
-        "parent": "root",
+        "name": "head",
+        "parent": "neck",
         "pivot": [
           0,
-          -17,
-          2.2
+          -1,
+          0
         ],
         "rot": [
-          38,
+          -0.0,
           0,
           0
         ],
         "boxes": [
           {
             "from": [
-              -1,
-              0,
-              -1
+              -4.0,
+              -6,
+              -4.0
             ],
             "size": [
-              2,
-              4,
-              2
+              8,
+              6,
+              8
             ],
             "grow": 0,
-            "paint": "fur"
+            "paint": "face",
+            "decals": [
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 2,
+                "w": 2,
+                "h": 2,
+                "color": "#e8a820"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 3,
+                "w": 2,
+                "h": 1,
+                "color": "#120a04"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 2,
+                "w": 2,
+                "h": 2,
+                "color": "#e8a820"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 3,
+                "w": 2,
+                "h": 1,
+                "color": "#120a04"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 0,
+                "y": 1,
+                "w": 3,
+                "h": 1,
+                "color": "#3a2414"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 1,
+                "w": 3,
+                "h": 1,
+                "color": "#3a2414"
+              }
+            ]
+          },
+          {
+            "from": [
+              -3.0,
+              0,
+              -3.0
+            ],
+            "size": [
+              6,
+              2,
+              6
+            ],
+            "grow": 0,
+            "paint": "face"
           }
         ]
       },
       {
         "name": "arm_l",
-        "parent": "root",
+        "parent": "chest",
         "pivot": [
-          6,
-          -26,
+          5.5,
+          -5,
           0
         ],
         "rot": [
+          0.0,
           0,
+          4
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.5,
+              -2.5,
+              -2.5
+            ],
+            "size": [
+              5,
+              3,
+              5
+            ],
+            "grow": 0.1,
+            "paint": "fur"
+          },
+          {
+            "from": [
+              -1.5,
+              -0.5,
+              -1.5
+            ],
+            "size": [
+              3,
+              5,
+              3
+            ],
+            "grow": 0,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "forearm_l",
+        "parent": "arm_l",
+        "pivot": [
+          0,
+          4.5,
+          0
+        ],
+        "rot": [
+          -12,
           0,
           0
         ],
         "boxes": [
           {
             "from": [
-              -2,
-              -2,
-              -2
+              -1.5,
+              0,
+              -1.5
             ],
             "size": [
-              4,
-              12,
-              4
+              3,
+              5,
+              3
             ],
             "grow": 0,
             "paint": "skin"
           },
           {
             "from": [
-              -2,
-              6,
-              -2
+              -1.5,
+              1,
+              -1.5
             ],
             "size": [
-              4,
               3,
-              4
+              2,
+              3
             ],
-            "grow": 0.4,
+            "grow": 0.35,
             "paint": "fur"
           }
         ]
       },
       {
-        "name": "arm_r",
-        "parent": "root",
+        "name": "hand_l",
+        "parent": "forearm_l",
         "pivot": [
-          -6,
-          -26,
+          0,
+          5,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              0,
+              -1.5
+            ],
+            "size": [
+              3,
+              2,
+              3
+            ],
+            "grow": 0.1,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "arm_r",
+        "parent": "chest",
+        "pivot": [
+          -5.5,
+          -5,
           0
         ],
         "rot": [
@@ -947,14 +538,28 @@
         "boxes": [
           {
             "from": [
-              -2,
-              -2,
-              -2
+              -2.5,
+              -2.5,
+              -2.5
             ],
             "size": [
-              4,
-              7,
-              4
+              5,
+              3,
+              5
+            ],
+            "grow": 0.1,
+            "paint": "fur"
+          },
+          {
+            "from": [
+              -1.5,
+              -0.5,
+              -1.5
+            ],
+            "size": [
+              3,
+              5,
+              3
             ],
             "grow": 0,
             "paint": "skin"
@@ -966,47 +571,47 @@
         "parent": "arm_r",
         "pivot": [
           0,
-          5,
+          4.5,
           0
         ],
         "rot": [
-          -90,
+          -92,
           0,
           0
         ],
         "boxes": [
           {
             "from": [
-              -2,
+              -1.5,
               0,
-              -2
+              -1.5
             ],
             "size": [
-              4,
+              3,
               5,
-              4
+              3
             ],
             "grow": 0,
             "paint": "skin"
           },
           {
             "from": [
-              -2,
-              3,
-              -2
+              -1.5,
+              1,
+              -1.5
             ],
             "size": [
-              4,
               3,
-              4
+              2,
+              3
             ],
-            "grow": 0.4,
+            "grow": 0.35,
             "paint": "fur"
           }
         ]
       },
       {
-        "name": "flute",
+        "name": "hand_r",
         "parent": "forearm_r",
         "pivot": [
           0,
@@ -1014,71 +619,164 @@
           0
         ],
         "rot": [
-          140,
+          0,
           0,
           0
         ],
         "boxes": [
           {
             "from": [
-              -5.5,
+              -1.5,
               0,
               -1.5
             ],
             "size": [
-              11,
-              1,
+              3,
+              2,
+              3
+            ],
+            "grow": 0.1,
+            "paint": "skin"
+          }
+        ]
+      },
+      {
+        "name": "muzzle",
+        "parent": "head",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          6,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.5,
+              -3,
+              -8.5
+            ],
+            "size": [
+              5,
+              3.5,
+              4.5
+            ],
+            "grow": 0,
+            "paint": "face",
+            "decals": [
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 0,
+                "y": 0,
+                "w": 1,
+                "h": 1,
+                "color": "#2a1810"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 4,
+                "y": 0,
+                "w": 1,
+                "h": 1,
+                "color": "#2a1810"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 2,
+                "w": 3,
+                "h": 1,
+                "color": "#6a3424"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "nose",
+        "parent": "muzzle",
+        "pivot": [
+          0,
+          -1,
+          -8.5
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              -1,
+              -0.7
+            ],
+            "size": [
+              3,
+              2,
+              1.2
+            ],
+            "grow": 0.1,
+            "paint": "ear_in"
+          }
+        ]
+      },
+      {
+        "name": "beard",
+        "parent": "head",
+        "pivot": [
+          0,
+          1.5,
+          -5
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              0,
+              -1.5
+            ],
+            "size": [
+              3,
+              4,
               3
             ],
             "grow": 0,
-            "paint": "bind"
-          },
-          {
-            "from": [
-              -5,
-              1,
-              -1
-            ],
-            "size": [
-              2,
-              7,
-              2
-            ],
-            "grow": 0,
-            "paint": "bamboo"
-          },
-          {
-            "from": [
-              -3,
-              1,
-              -1
-            ],
-            "size": [
-              2,
-              6,
-              2
-            ],
-            "grow": 0,
-            "paint": "bamboo"
-          },
+            "paint": "fur_dark"
+          }
+        ]
+      },
+      {
+        "name": "beard2",
+        "parent": "beard",
+        "pivot": [
+          0,
+          4,
+          0
+        ],
+        "rot": [
+          6,
+          0,
+          0
+        ],
+        "boxes": [
           {
             "from": [
               -1,
-              1,
-              -1
-            ],
-            "size": [
-              2,
-              5,
-              2
-            ],
-            "grow": 0,
-            "paint": "bamboo"
-          },
-          {
-            "from": [
-              1,
-              1,
+              0,
               -1
             ],
             "size": [
@@ -1087,26 +785,756 @@
               2
             ],
             "grow": 0,
-            "paint": "bamboo"
+            "paint": "fur_dark"
+          }
+        ]
+      },
+      {
+        "name": "beard3",
+        "parent": "beard2",
+        "pivot": [
+          0,
+          4,
+          0
+        ],
+        "rot": [
+          8,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.5,
+              0,
+              -0.5
+            ],
+            "size": [
+              1,
+              3,
+              1
+            ],
+            "grow": 0,
+            "paint": "fur_dark"
+          }
+        ]
+      },
+      {
+        "name": "hair",
+        "parent": "head",
+        "pivot": [
+          0,
+          -6,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -4.5,
+              -2.5,
+              -4.5
+            ],
+            "size": [
+              9,
+              3,
+              9
+            ],
+            "grow": 0,
+            "paint": "hair"
           },
           {
             "from": [
-              3,
+              -4.5,
+              -0.5,
+              3.5
+            ],
+            "size": [
+              9,
+              7,
+              1.5
+            ],
+            "grow": 0,
+            "paint": "hair"
+          },
+          {
+            "from": [
+              -4.5,
+              -0.5,
+              -4.5
+            ],
+            "size": [
               1,
-              -1
+              5,
+              3
+            ],
+            "grow": 0,
+            "paint": "hair"
+          },
+          {
+            "from": [
+              3.5,
+              -0.5,
+              -4.5
+            ],
+            "size": [
+              1,
+              5,
+              3
+            ],
+            "grow": 0,
+            "paint": "hair"
+          },
+          {
+            "from": [
+              -3,
+              -3.5,
+              -3
+            ],
+            "size": [
+              6,
+              1,
+              6
+            ],
+            "grow": 0,
+            "paint": "hair"
+          }
+        ]
+      },
+      {
+        "name": "ear_l",
+        "parent": "head",
+        "pivot": [
+          4,
+          -3.5,
+          0.5
+        ],
+        "rot": [
+          0,
+          22,
+          -30
+        ],
+        "boxes": [
+          {
+            "from": [
+              0,
+              -2,
+              -0.5
+            ],
+            "size": [
+              7,
+              4,
+              1
+            ],
+            "grow": 0,
+            "paint": "ear"
+          },
+          {
+            "from": [
+              0.5,
+              -1,
+              -0.6
+            ],
+            "size": [
+              5,
+              2,
+              1.2
+            ],
+            "grow": 0,
+            "paint": "ear_in"
+          }
+        ]
+      },
+      {
+        "name": "horn_l0",
+        "parent": "head",
+        "pivot": [
+          2.8,
+          -6.5,
+          -1.5
+        ],
+        "rot": [
+          -20,
+          0,
+          16
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              -3,
+              -2.0
+            ],
+            "size": [
+              4,
+              3,
+              4
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_l1",
+        "parent": "horn_l0",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -26,
+          0,
+          8
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              -3,
+              -2.0
+            ],
+            "size": [
+              4,
+              3,
+              4
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_l2",
+        "parent": "horn_l1",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -30,
+          0,
+          6
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              -3,
+              -2.0
+            ],
+            "size": [
+              4,
+              3,
+              4
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_l3",
+        "parent": "horn_l2",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -32,
+          0,
+          6
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              -3,
+              -1.5
+            ],
+            "size": [
+              3,
+              3,
+              3
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_l4",
+        "parent": "horn_l3",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -34,
+          0,
+          6
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              -3,
+              -1.5
+            ],
+            "size": [
+              3,
+              3,
+              3
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_l5",
+        "parent": "horn_l4",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -34,
+          0,
+          6
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              -3,
+              -1.5
+            ],
+            "size": [
+              3,
+              3,
+              3
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_l6",
+        "parent": "horn_l5",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -32,
+          0,
+          5
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.0,
+              -3,
+              -1.0
             ],
             "size": [
               2,
               3,
               2
             ],
-            "grow": 0,
-            "paint": "bamboo"
+            "grow": 0.0,
+            "paint": "horn"
           }
         ]
       },
       {
-        "name": "leg_l",
+        "name": "horn_l7",
+        "parent": "horn_l6",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -30,
+          0,
+          4
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.0,
+              -3,
+              -1.0
+            ],
+            "size": [
+              2,
+              3,
+              2
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_l8",
+        "parent": "horn_l7",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -26,
+          0,
+          3
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.5,
+              -3,
+              -0.5
+            ],
+            "size": [
+              1,
+              3,
+              1
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "ear_r",
+        "parent": "head",
+        "pivot": [
+          -4,
+          -3.5,
+          0.5
+        ],
+        "rot": [
+          0,
+          -22,
+          30
+        ],
+        "boxes": [
+          {
+            "from": [
+              -7,
+              -2,
+              -0.5
+            ],
+            "size": [
+              7,
+              4,
+              1
+            ],
+            "grow": 0,
+            "paint": "ear"
+          },
+          {
+            "from": [
+              -5.5,
+              -1,
+              -0.6
+            ],
+            "size": [
+              5,
+              2,
+              1.2
+            ],
+            "grow": 0,
+            "paint": "ear_in"
+          }
+        ]
+      },
+      {
+        "name": "horn_r0",
+        "parent": "head",
+        "pivot": [
+          -2.8,
+          -6.5,
+          -1.5
+        ],
+        "rot": [
+          -20,
+          0,
+          -16
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              -3,
+              -2.0
+            ],
+            "size": [
+              4,
+              3,
+              4
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_r1",
+        "parent": "horn_r0",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -26,
+          0,
+          -8
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              -3,
+              -2.0
+            ],
+            "size": [
+              4,
+              3,
+              4
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_r2",
+        "parent": "horn_r1",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -30,
+          0,
+          -6
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.0,
+              -3,
+              -2.0
+            ],
+            "size": [
+              4,
+              3,
+              4
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_r3",
+        "parent": "horn_r2",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -32,
+          0,
+          -6
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              -3,
+              -1.5
+            ],
+            "size": [
+              3,
+              3,
+              3
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_r4",
+        "parent": "horn_r3",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -34,
+          0,
+          -6
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              -3,
+              -1.5
+            ],
+            "size": [
+              3,
+              3,
+              3
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_r5",
+        "parent": "horn_r4",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -34,
+          0,
+          -6
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              -3,
+              -1.5
+            ],
+            "size": [
+              3,
+              3,
+              3
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_r6",
+        "parent": "horn_r5",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -32,
+          0,
+          -5
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.0,
+              -3,
+              -1.0
+            ],
+            "size": [
+              2,
+              3,
+              2
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_r7",
+        "parent": "horn_r6",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -30,
+          0,
+          -4
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.0,
+              -3,
+              -1.0
+            ],
+            "size": [
+              2,
+              3,
+              2
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "horn_r8",
+        "parent": "horn_r7",
+        "pivot": [
+          0,
+          -3,
+          0
+        ],
+        "rot": [
+          -26,
+          0,
+          -3
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.5,
+              -3,
+              -0.5
+            ],
+            "size": [
+              1,
+              3,
+              1
+            ],
+            "grow": 0.0,
+            "paint": "horn"
+          }
+        ]
+      },
+      {
+        "name": "gleg_l",
         "parent": "root",
         "pivot": [
           2.6,
@@ -1122,7 +1550,7 @@
       },
       {
         "name": "thigh_l",
-        "parent": "leg_l",
+        "parent": "gleg_l",
         "pivot": [
           0,
           0,
@@ -1146,6 +1574,20 @@
               4
             ],
             "grow": 0,
+            "paint": "fur"
+          },
+          {
+            "from": [
+              -2.5,
+              1,
+              -2.5
+            ],
+            "size": [
+              5,
+              3,
+              5
+            ],
+            "grow": -0.3,
             "paint": "fur"
           }
         ]
@@ -1181,7 +1623,7 @@
           {
             "from": [
               -1.5,
-              3,
+              2,
               -1.5
             ],
             "size": [
@@ -1191,6 +1633,20 @@
             ],
             "grow": 0.2,
             "paint": "fur"
+          },
+          {
+            "from": [
+              -1,
+              5,
+              -1.5
+            ],
+            "size": [
+              2,
+              2,
+              1
+            ],
+            "grow": 0.2,
+            "paint": "fur_dark"
           }
         ]
       },
@@ -1245,17 +1701,31 @@
               -2.5
             ],
             "size": [
-              3,
+              1.5,
               2,
               4
             ],
-            "grow": 0,
+            "grow": -0.1,
+            "paint": "hoof"
+          },
+          {
+            "from": [
+              0,
+              0,
+              -2.5
+            ],
+            "size": [
+              1.5,
+              2,
+              4
+            ],
+            "grow": -0.1,
             "paint": "hoof"
           }
         ]
       },
       {
-        "name": "leg_r",
+        "name": "gleg_r",
         "parent": "root",
         "pivot": [
           -2.6,
@@ -1271,7 +1741,7 @@
       },
       {
         "name": "thigh_r",
-        "parent": "leg_r",
+        "parent": "gleg_r",
         "pivot": [
           0,
           0,
@@ -1295,6 +1765,20 @@
               4
             ],
             "grow": 0,
+            "paint": "fur"
+          },
+          {
+            "from": [
+              -2.5,
+              1,
+              -2.5
+            ],
+            "size": [
+              5,
+              3,
+              5
+            ],
+            "grow": -0.3,
             "paint": "fur"
           }
         ]
@@ -1330,7 +1814,7 @@
           {
             "from": [
               -1.5,
-              3,
+              2,
               -1.5
             ],
             "size": [
@@ -1340,6 +1824,20 @@
             ],
             "grow": 0.2,
             "paint": "fur"
+          },
+          {
+            "from": [
+              -1,
+              5,
+              -1.5
+            ],
+            "size": [
+              2,
+              2,
+              1
+            ],
+            "grow": 0.2,
+            "paint": "fur_dark"
           }
         ]
       },
@@ -1394,12 +1892,156 @@
               -2.5
             ],
             "size": [
-              3,
+              1.5,
               2,
               4
             ],
-            "grow": 0,
+            "grow": -0.1,
             "paint": "hoof"
+          },
+          {
+            "from": [
+              0,
+              0,
+              -2.5
+            ],
+            "size": [
+              1.5,
+              2,
+              4
+            ],
+            "grow": -0.1,
+            "paint": "hoof"
+          }
+        ]
+      },
+      {
+        "name": "tail",
+        "parent": "body",
+        "pivot": [
+          0,
+          0,
+          1.6
+        ],
+        "rot": [
+          38,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1,
+              0,
+              -1
+            ],
+            "size": [
+              2,
+              4,
+              2
+            ],
+            "grow": 0,
+            "paint": "fur"
+          }
+        ]
+      },
+      {
+        "name": "flute",
+        "parent": "hand_r",
+        "pivot": [
+          0,
+          1,
+          0
+        ],
+        "rot": [
+          142,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -5.5,
+              0,
+              -1.5
+            ],
+            "size": [
+              11,
+              1,
+              3
+            ],
+            "grow": 0,
+            "paint": "bind"
+          },
+          {
+            "from": [
+              -5,
+              1,
+              -1
+            ],
+            "size": [
+              2,
+              7,
+              2
+            ],
+            "grow": -0.1,
+            "paint": "bamboo"
+          },
+          {
+            "from": [
+              -3,
+              1,
+              -1
+            ],
+            "size": [
+              2,
+              6,
+              2
+            ],
+            "grow": -0.1,
+            "paint": "bamboo"
+          },
+          {
+            "from": [
+              -1,
+              1,
+              -1
+            ],
+            "size": [
+              2,
+              5,
+              2
+            ],
+            "grow": -0.1,
+            "paint": "bamboo"
+          },
+          {
+            "from": [
+              1,
+              1,
+              -1
+            ],
+            "size": [
+              2,
+              4,
+              2
+            ],
+            "grow": -0.1,
+            "paint": "bamboo"
+          },
+          {
+            "from": [
+              3,
+              1,
+              -1
+            ],
+            "size": [
+              2,
+              3,
+              2
+            ],
+            "grow": -0.1,
+            "paint": "bamboo"
           }
         ]
       }
@@ -1413,38 +2055,39 @@
         "part": "arm_l",
         "type": "walk",
         "axis": "x",
-        "amp": 1.0,
+        "amp": 0.9,
         "phase": 0
       },
       {
         "part": "arm_l",
         "type": "sway",
         "axis": "z",
-        "amp": 0.04,
+        "amp": 0.03,
         "freq": 0.09,
         "phase": 0
       },
       {
         "part": "arm_r",
         "type": "sway",
-        "axis": "x",
-        "amp": 0.05,
-        "freq": 0.11,
-        "phase": 1.0
-      },
-      {
-        "part": "leg_l",
-        "type": "walk",
-        "axis": "x",
-        "amp": 1.0,
+        "axis": "z",
+        "amp": 0.03,
+        "freq": 0.09,
         "phase": 3.141592653589793
       },
       {
-        "part": "leg_r",
-        "type": "walk",
+        "part": "beard",
+        "type": "sway",
         "axis": "x",
-        "amp": 1.0,
-        "phase": 0
+        "amp": 0.08,
+        "freq": 0.12
+      },
+      {
+        "part": "beard2",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.1,
+        "freq": 0.15,
+        "phase": 1
       },
       {
         "part": "ear_l",
@@ -1463,12 +2106,25 @@
         "phase": 1.6
       },
       {
+        "part": "gleg_l",
+        "type": "walk",
+        "axis": "x",
+        "amp": 1.0,
+        "phase": 3.141592653589793
+      },
+      {
+        "part": "gleg_r",
+        "type": "walk",
+        "axis": "x",
+        "amp": 1.0,
+        "phase": 0
+      },
+      {
         "part": "tail",
         "type": "sway",
         "axis": "x",
         "amp": 0.18,
         "freq": 0.21,
-        "phase": 0,
         "walk_amp": 0.3
       }
     ]

@@ -32,11 +32,14 @@ public final class GeneratedMobsClient {
 
 	/** Registers the renderers. Call from the client entrypoint. */
 	public static void initClient() {
-		EntityRendererRegistry.register(GeneratedMobs.CYCLOPS, ctx -> new SkinnedZombieRenderer(ctx, texture("cyclops")));
+		EntityModelLayerRegistry.registerModelLayer(CyclopsModel.LAYER, CyclopsModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.CYCLOPS, CyclopsRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(GorgonModel.LAYER, GorgonModel::createBodyLayer);
 		EntityRendererRegistry.register(GeneratedMobs.GORGON, GorgonRenderer::new);
-		EntityRendererRegistry.register(GeneratedMobs.HOPLITE, ctx -> new SkinnedZombieRenderer(ctx, texture("hoplite")));
-		EntityRendererRegistry.register(GeneratedMobs.MINOTAUR, ctx -> new SkinnedZombieRenderer(ctx, texture("minotaur")));
+		EntityModelLayerRegistry.registerModelLayer(HopliteModel.LAYER, HopliteModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.HOPLITE, HopliteRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(MinotaurModel.LAYER, MinotaurModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.MINOTAUR, MinotaurRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(SatyrModel.LAYER, SatyrModel::createBodyLayer);
 		EntityRendererRegistry.register(GeneratedMobs.SATYR, SatyrRenderer::new);
 	}

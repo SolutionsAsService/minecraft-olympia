@@ -1,0 +1,27 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "forceload add -30 -40 40 0",
+    "kill @e[type=!minecraft:player]",
+    "gamerule doMobSpawning false",
+    "summon olympia:hoplite -6.5 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon olympia:satyr -3.4 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon olympia:gorgon 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon olympia:cyclops 3.8 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon olympia:minotaur 8.2 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ],
+  "steps": [
+    {
+      "tp": [
+        0.8,
+        "G+0.5",
+        -11.5,
+        180,
+        5
+      ],
+      "capture": "creatures",
+      "wait": 9
+    }
+  ]
+}

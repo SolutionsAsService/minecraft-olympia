@@ -55,7 +55,7 @@ public class Cyclops extends Zombie {
 				.add(Attributes.ARMOR, 4.0)
 				.add(Attributes.MOVEMENT_SPEED, 0.2)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 0.5)
-				.add(Attributes.SCALE, 1.4)
+				.add(Attributes.SCALE, 1.2)
 				.add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0.0);
 	}
 
