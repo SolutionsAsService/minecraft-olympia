@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Labyrinth: a maze, a thread and a Minotaur that hunts</title>
+<meta name="description" content="The Olympia labyrinth: a seeded maze under a marble pavilion, the Thread of Ariadne, and a Minotaur that tracks players through the corridors.">
+<meta property="og:title" content="Labyrinth: a maze, a thread and a Minotaur that hunts">
+<meta property="og:description" content="The Olympia labyrinth: a seeded maze under a marble pavilion, the Thread of Ariadne, and a Minotaur that tracks players through the corridors.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://minecraft-olympia.shadw.app/labyrinth.html">
+<meta property="og:image" content="https://minecraft-olympia.shadw.app/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#13101A">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body style="--hue:var(--labyrinth)">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="/index.html">OLYMPIA</a>
+  <nav aria-label="Primary"><a href="/index.html">Home</a><a href="/blocks.html">Blocks</a><a href="/gods.html">Gods</a><a href="/structures.html">Places</a><a href="/labyrinth.html" aria-current="page">Labyrinth</a><a href="/creatures.html">Creatures</a><a href="/relics.html">Relics</a><a href="/install.html">Install</a></nav>
+</header>
+<div class="frieze" aria-hidden="true"></div>
+<main id="main" tabindex="-1">
+
+<section class="page">
+  <p class="eyebrow">Labyrinth</p><h1>The way down</h1><div class="rule"></div>
+  <p class="lede">A stoa of marble columns stands over a ladder. Thirteen blocks down is a maze of three-wide corridors, built fresh from a seed, with a hall at its centre and a Minotaur in the hall. It does not wait there.</p>
+  <div class="shots two"><figure class="shot"><img src="/img/shots/labyrinth-pavilion.png" alt="A marble pavilion with columns on grass" width="854" height="480" loading="lazy"><figcaption>The pavilion over the ladder: Doric columns, a black marble altar, braziers, and a chest with Ariadne’s thread.</figcaption></figure><figure class="shot"><img src="/img/shots/labyrinth-hall.png" alt="A marble hall underground with a large bull-headed creature" width="854" height="480" loading="lazy"><figcaption>The hall at the centre, with the Minotaur standing (its AI is off for the photograph).</figcaption></figure></div>
+  <div class="shots two"><figure class="shot"><img src="/img/shots/labyrinth-corridor.png" alt="A dim three-wide marble corridor" width="854" height="480" loading="lazy"><figcaption>A corridor, lit by a lamp set into the ceiling.</figcaption></figure></div>
+  <h2>What it is</h2>
+  <table class="data"><caption class="sr">The labyrinth: facts</caption><tbody>
+  <tr><th scope="row">Size</th><td>61 by 61 blocks, 21 high; 15 by 15 cells; corridors 3 wide and 3 high</td></tr>
+  <tr><th scope="row">Variants</th><td>3, each a different maze</td></tr>
+  <tr><th scope="row">Placement</th><td>The top ground layer is the pavilion’s floor; the maze is 13 blocks below. Set to generate in plains, meadows, savannas and forests, one in every 40 by 40 chunks.</td></tr>
+  <tr><th scope="row">Variant 0</th><td>2751 floor tiles; the walk from the ladder to the Minotaur’s hall is 43 blocks; 6 chests</td></tr><tr><th scope="row">Variant 1</th><td>2748 floor tiles; the walk from the ladder to the Minotaur’s hall is 43 blocks; 6 chests</td></tr><tr><th scope="row">Variant 2</th><td>2742 floor tiles; the walk from the ladder to the Minotaur’s hall is 163 blocks; 6 chests</td></tr>
+  <tr><th scope="row">Treasure</th><td>Chests at the farthest dead ends and one in the hall: Ambrosia, Obol, Diamond, Gold Ingot, Cyclops Bloodstone, Golden Apple, White Marble, Enchanted Golden Apple</td></tr>
+  <tr><th scope="row">The thread</th><td>A chest in the pavilion holds a Thread of Ariadne. Use it where you tie it, use it anywhere to be told the way back.</td></tr></tbody></table>
+  <h2>The Minotaur</h2>
+  <p>140 health, 8 damage, 6 armour, scale 1.5. It hunts: it picks the nearest player within 128 blocks, <em>without needing to see them</em>, and walks the maze toward them. In the open it charges (Speed III for 3 seconds); close in, it slams the ground for 6 damage and a shove; below half health it enrages: faster and harder. It never despawns and has a boss bar.</p>
+  <p>It took three fixes to make it find a player in the maze: its target goal still wanted line of sight; floor lanterns blocked the corridors; and one-wide corridors stopped a creature its size at every corner. It now reaches a player standing 163 blocks of corridor away in about a minute.</p>
+  <section class="status"><h2>Status</h2><p><b>Seen in a running Minecraft 1.21.4 game:</b></p><ul><li>The labyrinth was placed in a world with room underground and the maze explored from a client; the connectivity of every variant was checked from the structure files.</li><li>The Minotaur, placed by the structure, charged (Speed III seen), slammed (it took a player from full health to zero in about six seconds with Regeneration running), enraged below half health (speed up, damage up), and hunted a player through the maze to reach them.</li><li>Its boss bar shows on screen (it is in the photographs, from a long way off: a boss bar shows to every player the game tracks the creature for).</li></ul><p><b>Not yet tested:</b></p><ul><li>A fight with real armour and weapons, and whether the damage is fair.</li><li>Natural generation of the whole maze in a normal world (in a flat world with no depth, only its entrance exists).</li><li>Multiple floors, traps, rotating walls and puzzles: not in this slice.</li></ul></section>
+</section>
+</main>
+<div class="frieze" aria-hidden="true"></div>
+<footer class="foot">
+  <p>A Minecraft mod for Fabric 1.21.4, the Greek sibling of <a href="https://github.com/SolutionsAsService/minecraft-asgard">Asgard</a> and <a href="https://github.com/SolutionsAsService/minecraft-khemet">Khemet</a>. Source: <a href="https://github.com/SolutionsAsService/minecraft-olympia">minecraft-olympia</a>. Built with <a href="https://github.com/SolutionsAsService/shadw-modding">shadw-modding</a>. Credit: SolutionsAsService. Dark theme only. English only.</p>
+</footer>
+</body>
+</html>

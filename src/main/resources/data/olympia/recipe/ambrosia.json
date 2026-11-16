@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    "olympia:sacred_olive",
+    "minecraft:honey_bottle",
+    "minecraft:gold_nugget"
+  ],
+  "result": {
+    "id": "olympia:ambrosia",
+    "count": 1
+  }
+}

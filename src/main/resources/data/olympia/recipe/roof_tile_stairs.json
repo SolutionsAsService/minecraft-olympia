@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": "olympia:roof_tile"
+  },
+  "result": {
+    "id": "olympia:roof_tile_stairs",
+    "count": 4
+  }
+}

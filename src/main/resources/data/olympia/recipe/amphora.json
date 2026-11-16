@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "T T",
+    "T T",
+    "TTT"
+  ],
+  "key": {
+    "T": "minecraft:terracotta"
+  },
+  "result": {
+    "id": "olympia:amphora",
+    "count": 2
+  }
+}

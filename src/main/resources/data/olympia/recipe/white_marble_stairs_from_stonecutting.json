@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "olympia:white_marble",
+  "result": {
+    "id": "olympia:white_marble_stairs",
+    "count": 1
+  }
+}

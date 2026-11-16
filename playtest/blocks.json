@@ -1,0 +1,82 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "forceload add -10 -400 60 -360",
+    "setblock 0 $G -380 olympia:white_marble",
+    "setblock 2 $G -380 olympia:polished_marble",
+    "setblock 4 $G -380 olympia:weathered_marble",
+    "setblock 6 $G -380 olympia:cracked_marble",
+    "setblock 8 $G -380 olympia:black_marble",
+    "setblock 10 $G -380 olympia:pink_marble",
+    "setblock 12 $G -380 olympia:veined_marble",
+    "setblock 14 $G -380 olympia:golden_marble",
+    "setblock 16 $G -380 olympia:marble_bricks",
+    "setblock 18 $G -380 olympia:marble_tiles",
+    "setblock 20 $G -380 olympia:greek_mosaic",
+    "setblock 22 $G -380 olympia:roof_tile",
+    "setblock 0 $G -383 olympia:white_marble_stairs[facing=south]",
+    "setblock 2 $G -383 olympia:white_marble_slab[type=bottom]",
+    "setblock 4 $G -383 olympia:polished_marble_stairs[facing=south]",
+    "setblock 6 $G -383 olympia:polished_marble_slab[type=bottom]",
+    "setblock 8 $G -383 olympia:marble_bricks_stairs[facing=south]",
+    "setblock 10 $G -383 olympia:marble_bricks_slab[type=bottom]",
+    "setblock 12 $G -383 olympia:roof_tile_stairs[facing=south]",
+    "setblock 14 $G -383 olympia:roof_tile_slab[type=bottom]",
+    "setblock 0 $G -386 olympia:doric_column",
+    "setblock 0 -19 -386 olympia:doric_column",
+    "setblock 0 -18 -386 olympia:doric_column",
+    "setblock 2 $G -386 olympia:ionic_column",
+    "setblock 2 -19 -386 olympia:ionic_column",
+    "setblock 2 -18 -386 olympia:ionic_column",
+    "setblock 4 $G -386 olympia:corinthian_column",
+    "setblock 4 -19 -386 olympia:corinthian_column",
+    "setblock 4 -18 -386 olympia:corinthian_column",
+    "setblock 8 $G -386 olympia:amphora",
+    "setblock 10 $G -386 olympia:greek_brazier",
+    "setblock 12 $G -386 olympia:laurel",
+    "setblock 14 $G -386 olympia:olive_log",
+    "setblock 14 -19 -386 olympia:olive_log",
+    "setblock 14 -18 -386 olympia:olive_leaves",
+    "setblock 16 -18 -386 olympia:olive_leaves",
+    "setblock 20 $G -386 olympia:zeus_altar",
+    "setblock 22 $G -386 olympia:athena_altar",
+    "setblock 24 $G -386 olympia:poseidon_altar",
+    "setblock 26 $G -386 olympia:hermes_altar"
+  ],
+  "steps": [
+    {
+      "tp": [
+        11,
+        "G+4",
+        -372,
+        180,
+        24
+      ],
+      "capture": "blocks",
+      "wait": 10
+    },
+    {
+      "tp": [
+        14,
+        "G+3.2",
+        -377,
+        180,
+        40
+      ],
+      "capture": "altars",
+      "wait": 8
+    },
+    {
+      "tp": [
+        12,
+        "G+3.2",
+        -374,
+        180,
+        36
+      ],
+      "capture": "stairs",
+      "wait": 8
+    }
+  ]
+}

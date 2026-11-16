@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creatures: hoplite, cyclops and Minotaur</title>
+<meta name="description" content="The hoplite, the cyclops and the Minotaur of the Olympia mod: stats, spawns, drops and what they do.">
+<meta property="og:title" content="Creatures: hoplite, cyclops and Minotaur">
+<meta property="og:description" content="The hoplite, the cyclops and the Minotaur of the Olympia mod: stats, spawns, drops and what they do.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://minecraft-olympia.shadw.app/creatures.html">
+<meta property="og:image" content="https://minecraft-olympia.shadw.app/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#13101A">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body style="--hue:var(--creatures)">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="/index.html">OLYMPIA</a>
+  <nav aria-label="Primary"><a href="/index.html">Home</a><a href="/blocks.html">Blocks</a><a href="/gods.html">Gods</a><a href="/structures.html">Places</a><a href="/labyrinth.html">Labyrinth</a><a href="/creatures.html" aria-current="page">Creatures</a><a href="/relics.html">Relics</a><a href="/install.html">Install</a></nav>
+</header>
+<div class="frieze" aria-hidden="true"></div>
+<main id="main" tabindex="-1">
+
+<section class="page">
+  <p class="eyebrow">Creatures</p><h1>Bronze, one eye, and a bull</h1><div class="rule"></div>
+  <p class="lede">Three creatures from the design’s Phase 3. They use the zombie model with skins painted for the mod; the Minotaur’s horns are painted on the head, not modelled.</p>
+  <section class="sec" id="hoplite"><h2>Hoplite</h2><p>A citizen-soldier in a bronze Corinthian helmet and breastplate with a sword and shield. As written in the code (not yet seen in a fight): it does not burn in sunlight and calls no reinforcements.</p><figure class="shot"><img src="/img/shots/creatures.png" alt="Hoplite standing on grass" width="854" height="480" loading="lazy"><figcaption>Hoplite, with the AI off for the photograph.</figcaption></figure>
+  <table class="data"><caption class="sr">Hoplite: facts</caption><tbody>
+  <tr><th scope="row">Stats</th><td>24 health (12 hearts), 4 attack damage, 6 armour</td></tr>
+  <tr><th scope="row">Spawns</th><td>Plains: groups of 1 to 3, weight 8; set to patrol the Greek ruin and to guard the temples of Zeus and Athena.</td></tr>
+  <tr><th scope="row">Drops</th><td>Obol, Iron Nugget, Emerald</td></tr>
+  <tr><th scope="row">Spawn egg</th><td>In the Spawn Eggs tab, and <code>/summon olympia:hoplite</code></td></tr></tbody></table></section><section class="sec" id="cyclops"><h2>Cyclops</h2><p>A one-eyed brute, 1.4 times your size. As written: hard to push, and its blows throw you into the air.</p><figure class="shot"><img src="/img/shots/cyclops.png" alt="Cyclops standing on grass" width="854" height="480" loading="lazy"><figcaption>Cyclops, with the AI off for the photograph.</figcaption></figure>
+  <table class="data"><caption class="sr">Cyclops: facts</caption><tbody>
+  <tr><th scope="row">Stats</th><td>70 health (35 hearts), 8 attack damage, 4 armour</td></tr>
+  <tr><th scope="row">Spawns</th><td>Hills and peaks: one at a time, weight 3.</td></tr>
+  <tr><th scope="row">Drops</th><td>Bone, Cyclops Bloodstone, Iron Ingot, Obol</td></tr>
+  <tr><th scope="row">Spawn egg</th><td>In the Spawn Eggs tab, and <code>/summon olympia:cyclops</code></td></tr></tbody></table></section><section class="sec" id="minotaur"><h2>Minotaur</h2><p>The bull-headed thing of the labyrinth. See <a href="/labyrinth.html">its page</a>. It has no natural spawn: the labyrinth places it.</p><figure class="shot"><img src="/img/shots/minotaur.png" alt="Minotaur standing on grass" width="854" height="480" loading="lazy"><figcaption>Minotaur, with the AI off for the photograph.</figcaption></figure>
+  <table class="data"><caption class="sr">Minotaur: facts</caption><tbody>
+  <tr><th scope="row">Stats</th><td>140 health (70 hearts), 8 attack damage, 6 armour</td></tr>
+  <tr><th scope="row">Spawns</th><td>None; the labyrinth places one.</td></tr>
+  <tr><th scope="row">Drops</th><td>Minotaur Horn, Ambrosia, Diamond, Obol</td></tr>
+  <tr><th scope="row">Spawn egg</th><td>In the Spawn Eggs tab, and <code>/summon olympia:minotaur</code></td></tr></tbody></table></section>
+  <section class="status"><h2>Status</h2><p><b>Seen in a running Minecraft 1.21.4 game:</b></p><ul><li>All three load, render with their skins and are summoned and photographed.</li><li>The Minotaur’s behaviour was watched in play (see the labyrinth page). The stats are the ones in the data file, read at build time.</li></ul><p><b>Not yet tested:</b></p><ul><li>Hoplites and cyclopes spawning on their own, and a fight with either.</li><li>Their drops (the tables are written, not yet watched).</li><li>Custom models and animations: they reuse the zombie’s.</li></ul></section>
+</section>
+</main>
+<div class="frieze" aria-hidden="true"></div>
+<footer class="foot">
+  <p>A Minecraft mod for Fabric 1.21.4, the Greek sibling of <a href="https://github.com/SolutionsAsService/minecraft-asgard">Asgard</a> and <a href="https://github.com/SolutionsAsService/minecraft-khemet">Khemet</a>. Source: <a href="https://github.com/SolutionsAsService/minecraft-olympia">minecraft-olympia</a>. Built with <a href="https://github.com/SolutionsAsService/shadw-modding">shadw-modding</a>. Credit: SolutionsAsService. Dark theme only. English only.</p>
+</footer>
+</body>
+</html>

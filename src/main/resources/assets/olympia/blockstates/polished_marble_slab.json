@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "olympia:block/polished_marble_slab"
+    },
+    "type=top": {
+      "model": "olympia:block/polished_marble_slab_top"
+    },
+    "type=double": {
+      "model": "olympia:block/polished_marble"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schema": "pantheon.potions/1",
+  "realms": [
+    {
+      "id": "olympia",
+      "name": "Olympia",
+      "hue": "#E6B83C",
+      "family": "gold",
+      "blurb": "Marble, sea and thunder: the Twelve on Olympus and the heroes below."
+    }
+  ],
+  "potions": [
+    {
+      "id": "ambrosia",
+      "name": "Ambrosia",
+      "god": "Olympus",
+      "epithet": "Food of the Gods",
+      "domain": "Immortality",
+      "hue": "#E6B83C",
+      "realm": "olympia",
+      "ingredient": "sacred_olive",
+      "lore": "A sacred olive, pressed once. The gods' own mending.",
+      "effects": [
+        {
+          "effect": "minecraft:regeneration",
+          "seconds": 120,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:absorption",
+          "seconds": 120,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "zeus_fury",
+      "name": "Zeus's Fury",
+      "god": "Zeus",
+      "epithet": "King of the Gods",
+      "domain": "Sky and thunder",
+      "hue": "#F4D35E",
+      "realm": "olympia",
+      "ingredient": "thunder_shard",
+      "lore": "A shard of cooled lightning. Strength, and a heart that does not flinch.",
+      "effects": [
+        {
+          "effect": "minecraft:strength",
+          "seconds": 180,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:resistance",
+          "seconds": 180,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "poseidon_breath",
+      "name": "Poseidon's Breath",
+      "god": "Poseidon",
+      "epithet": "Earth-Shaker",
+      "domain": "The sea",
+      "hue": "#2A9DB5",
+      "realm": "olympia",
+      "ingredient": "sea_pearl",
+      "lore": "A pearl from the deep. Breathe water, swim like a dolphin.",
+      "effects": [
+        {
+          "effect": "minecraft:water_breathing",
+          "seconds": 300,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:dolphins_grace",
+          "seconds": 300,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "athena_wisdom",
+      "name": "Athena's Wisdom",
+      "god": "Athena",
+      "epithet": "Grey-Eyed",
+      "domain": "Wisdom and war",
+      "hue": "#8FA6B8",
+      "realm": "olympia",
+      "ingredient": "owl_feather",
+      "lore": "A feather of the grey owl. Luck for the prepared mind.",
+      "effects": [
+        {
+          "effect": "minecraft:luck",
+          "seconds": 300,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:night_vision",
+          "seconds": 300,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "hermes_swiftness",
+      "name": "Hermes's Swiftness",
+      "god": "Hermes",
+      "epithet": "Messenger of the Gods",
+      "domain": "Roads and travel",
+      "hue": "#C9CCD1",
+      "realm": "olympia",
+      "ingredient": "winged_feather",
+      "lore": "A feather from a winged sandal. Speed, and a soft landing.",
+      "effects": [
+        {
+          "effect": "minecraft:speed",
+          "seconds": 180,
+          "amplifier": 2
+        },
+        {
+          "effect": "minecraft:slow_falling",
+          "seconds": 180,
+          "amplifier": 0
+        }
+      ]
+    }
+  ]
+}

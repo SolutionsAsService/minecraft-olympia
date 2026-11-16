@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:cyclops_bloodstone"
+    },
+    "title": {
+      "text": "One Eye, Many Bruises"
+    },
+    "description": {
+      "text": "Defeat a cyclops."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "olympia:cyclops"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:temple_of_zeus"
+}

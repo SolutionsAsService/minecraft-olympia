@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": "olympia:white_marble"
+  },
+  "result": {
+    "id": "olympia:white_marble_slab",
+    "count": 6
+  }
+}

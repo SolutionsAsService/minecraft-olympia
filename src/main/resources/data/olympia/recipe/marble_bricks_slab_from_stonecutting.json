@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "olympia:marble_bricks",
+  "result": {
+    "id": "olympia:marble_bricks_slab",
+    "count": 2
+  }
+}

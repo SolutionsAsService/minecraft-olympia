@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "olympia:block/athena_altar_top",
+    "bottom": "olympia:block/athena_altar_side",
+    "side": "olympia:block/athena_altar_side"
+  }
+}

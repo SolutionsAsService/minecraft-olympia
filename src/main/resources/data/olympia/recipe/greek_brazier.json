@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "C C",
+    "BCB",
+    "BBB"
+  ],
+  "key": {
+    "C": "minecraft:copper_ingot",
+    "B": "olympia:marble_bricks"
+  },
+  "result": {
+    "id": "olympia:greek_brazier",
+    "count": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "olympia:block/doric_column_top",
+    "side": "olympia:block/doric_column"
+  }
+}

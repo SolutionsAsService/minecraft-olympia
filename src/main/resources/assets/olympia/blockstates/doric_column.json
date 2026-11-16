@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "olympia:block/doric_column"
+    },
+    "axis=x": {
+      "model": "olympia:block/doric_column_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=z": {
+      "model": "olympia:block/doric_column_horizontal",
+      "x": 90
+    }
+  }
+}

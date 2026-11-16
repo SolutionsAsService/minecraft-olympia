@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:ambrosia"
+    },
+    "title": {
+      "text": "Food of the Gods"
+    },
+    "description": {
+      "text": "Hold ambrosia."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "olympia:ambrosia"
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:olive_grove"
+}

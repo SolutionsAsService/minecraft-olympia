@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " X ",
+    "PPP",
+    "PPP"
+  ],
+  "key": {
+    "X": "minecraft:book",
+    "P": "olympia:polished_marble"
+  },
+  "result": {
+    "id": "olympia:athena_altar",
+    "count": 1
+  }
+}

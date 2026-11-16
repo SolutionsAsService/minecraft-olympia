@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:thread_of_ariadne"
+    },
+    "title": {
+      "text": "The Way Down"
+    },
+    "description": {
+      "text": "Enter the Labyrinth."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "olympia:labyrinth"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:root"
+}

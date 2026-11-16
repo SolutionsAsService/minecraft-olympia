@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "olympia:item/cyclops_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12490350
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 15790320
+      }
+    ]
+  }
+}

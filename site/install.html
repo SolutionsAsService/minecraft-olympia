@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Olympia</title>
+<meta name="description" content="How to build and install the Olympia Minecraft mod.">
+<meta property="og:title" content="Install Olympia">
+<meta property="og:description" content="How to build and install the Olympia Minecraft mod.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://minecraft-olympia.shadw.app/install.html">
+<meta property="og:image" content="https://minecraft-olympia.shadw.app/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#13101A">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="/index.html">OLYMPIA</a>
+  <nav aria-label="Primary"><a href="/index.html">Home</a><a href="/blocks.html">Blocks</a><a href="/gods.html">Gods</a><a href="/structures.html">Places</a><a href="/labyrinth.html">Labyrinth</a><a href="/creatures.html">Creatures</a><a href="/relics.html">Relics</a><a href="/install.html" aria-current="page">Install</a></nav>
+</header>
+<div class="frieze" aria-hidden="true"></div>
+<main id="main" tabindex="-1">
+
+<section class="page">
+  <p class="eyebrow">Install</p><h1>Install Olympia</h1><div class="rule"></div>
+  <p class="lede">Olympia is a Fabric mod for Minecraft 1.21.4. No release jar is published yet, so you build it. It is also in the <b>Greek Pantheon</b> mod pack in <a href="https://github.com/SolutionsAsService/shadw-modding">shadw-modding</a>.</p>
+  <p class="meta">Words used here: a <b>mod</b> is an add-on for the game; a <b>jar</b> is the mod’s file; <b>Fabric</b> is the program that loads mods; an <b>operator</b> is a player allowed to use admin commands.</p>
+  <h2>You need</h2><ul><li>Minecraft Java Edition 1.21.4 (not Bedrock)</li><li><a href="https://fabricmc.net">Fabric</a> Loader 0.16 or later, and Fabric API</li><li>Java 21 and Gradle 8 (the repository has no Gradle wrapper)</li></ul>
+  <h2>Build</h2>
+  <pre><code>git clone https://github.com/SolutionsAsService/minecraft-olympia
+cd minecraft-olympia
+gradle build
+# the jar is in build/libs/olympia-0.1.0.jar</code></pre>
+  <p>Copy the jar into your <code>mods</code> folder and start the game. The server log line <code>Olympia loaded: 5 potions, 5 brewing recipes, 0 unknown effects skipped; 32 blocks, 4 gods, 3 creatures</code> confirms the registration.</p>
+  <h2>Commands</h2>
+  <table class="data"><caption class="sr">Commands</caption><tbody><tr><th scope="row"><code>/olympia favor</code></th><td>Your favor and stage with each god.</td></tr>
+  <tr><th scope="row"><code>/olympia offer &lt;god&gt;</code></th><td>Operators: offer the item in your hand to a god (the same code the altar runs).</td></tr>
+  <tr><th scope="row"><code>/olympia setfavor &lt;god&gt; &lt;n&gt;</code></th><td>Operators: set your favor with a god, for testing.</td></tr>
+  <tr><th scope="row"><code>/olympia use</code></th><td>Operators: use the held item exactly as a right-click does.</td></tr>
+  <tr><th scope="row"><code>/olympia thread</code></th><td>Operators: print what the held Thread of Ariadne says.</td></tr></tbody></table>
+  <section class="status"><h2>Status</h2><p><b>Seen in a running Minecraft 1.21.4 game:</b></p><ul><li>Builds on Fabric Loom 1.11.8 and Gradle 8, and loads on a Fabric 1.21.4 dedicated server; a client joined and rendered every photograph here.</li></ul><p><b>Not yet tested:</b></p><ul><li>Other platforms and mods: it is built and tried only on Fabric 1.21.4 with Fabric API.</li><li>A published release jar.</li></ul></section>
+</section>
+</main>
+<div class="frieze" aria-hidden="true"></div>
+<footer class="foot">
+  <p>A Minecraft mod for Fabric 1.21.4, the Greek sibling of <a href="https://github.com/SolutionsAsService/minecraft-asgard">Asgard</a> and <a href="https://github.com/SolutionsAsService/minecraft-khemet">Khemet</a>. Source: <a href="https://github.com/SolutionsAsService/minecraft-olympia">minecraft-olympia</a>. Built with <a href="https://github.com/SolutionsAsService/shadw-modding">shadw-modding</a>. Credit: SolutionsAsService. Dark theme only. English only.</p>
+</footer>
+</body>
+</html>

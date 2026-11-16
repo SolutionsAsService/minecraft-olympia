@@ -1,0 +1,48 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "forceload add -10 -440 30 -400",
+    "kill @e[type=olympia:hoplite]",
+    "kill @e[type=olympia:cyclops]",
+    "kill @e[type=olympia:minotaur]",
+    "summon olympia:hoplite 0 $G -420 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon olympia:cyclops 5 $G -420 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon olympia:minotaur 11 $G -420 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ],
+  "steps": [
+    {
+      "tp": [
+        5.5,
+        "G+2.6",
+        -413.5,
+        180,
+        8
+      ],
+      "capture": "creatures",
+      "wait": 9
+    },
+    {
+      "tp": [
+        11,
+        "G+3.0",
+        -416,
+        180,
+        6
+      ],
+      "capture": "minotaur",
+      "wait": 8
+    },
+    {
+      "tp": [
+        5,
+        "G+2.4",
+        -416.5,
+        180,
+        6
+      ],
+      "capture": "cyclops",
+      "wait": 8
+    }
+  ]
+}

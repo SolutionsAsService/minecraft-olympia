@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "olympia:doric_column",
+    "minecraft:lapis_lazuli"
+  ],
+  "result": {
+    "id": "olympia:ionic_column",
+    "count": 1
+  }
+}

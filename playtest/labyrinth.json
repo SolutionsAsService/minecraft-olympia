@@ -1,0 +1,43 @@
+{
+  "out": "site/img/shots",
+  "settle": 10,
+  "setup": [
+    "kill @e[type=olympia:minotaur]",
+    "summon olympia:minotaur 330 -33 -170 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ],
+  "steps": [
+    {
+      "tp": [
+        330.5,
+        "G+3.5",
+        -158,
+        0,
+        8
+      ],
+      "capture": "labyrinth-pavilion",
+      "wait": 10
+    },
+    {
+      "tp": [
+        330.5,
+        -31.8,
+        -165.2,
+        180,
+        4
+      ],
+      "capture": "labyrinth-hall",
+      "wait": 10
+    },
+    {
+      "tp": [
+        318.5,
+        -31.7,
+        -166.5,
+        0,
+        6
+      ],
+      "capture": "labyrinth-corridor",
+      "wait": 9
+    }
+  ]
+}

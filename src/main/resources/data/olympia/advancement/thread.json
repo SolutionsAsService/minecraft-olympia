@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:thread_of_ariadne"
+    },
+    "title": {
+      "text": "A Way Back"
+    },
+    "description": {
+      "text": "Hold the Thread of Ariadne."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "olympia:thread_of_ariadne"
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:labyrinth"
+}

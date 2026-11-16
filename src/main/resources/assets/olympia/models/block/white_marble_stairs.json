@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "olympia:block/white_marble",
+    "top": "olympia:block/white_marble",
+    "side": "olympia:block/white_marble"
+  }
+}

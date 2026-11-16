@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "olympia:white_marble",
+  "result": {
+    "id": "olympia:cracked_marble",
+    "count": 1
+  }
+}

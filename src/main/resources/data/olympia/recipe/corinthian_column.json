@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "olympia:doric_column",
+    "minecraft:gold_nugget",
+    "olympia:olive_leaves"
+  ],
+  "result": {
+    "id": "olympia:corinthian_column",
+    "count": 1
+  }
+}

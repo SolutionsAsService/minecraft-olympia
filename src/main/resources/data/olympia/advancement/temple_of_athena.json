@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:athena_altar"
+    },
+    "title": {
+      "text": "The Grey-Eyed's House"
+    },
+    "description": {
+      "text": "Find the Temple of Athena."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "olympia:temple_of_athena"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:greek_ruin"
+}

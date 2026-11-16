@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "olympia:block/roof_tile",
+    "top": "olympia:block/roof_tile",
+    "side": "olympia:block/roof_tile"
+  }
+}

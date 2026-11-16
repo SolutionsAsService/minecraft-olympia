@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:hermes_altar"
+    },
+    "title": {
+      "text": "A God by the Road"
+    },
+    "description": {
+      "text": "Find a shrine of Hermes."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "olympia:hermes_shrine"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:olive_grove"
+}

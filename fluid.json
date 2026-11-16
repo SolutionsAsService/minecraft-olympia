@@ -1,0 +1,7 @@
+{
+  "project": "minecraft-olympia",
+  "static_dir": "site",
+  "routes": [
+    { "pattern": "/", "target": "static" }
+  ]
+}

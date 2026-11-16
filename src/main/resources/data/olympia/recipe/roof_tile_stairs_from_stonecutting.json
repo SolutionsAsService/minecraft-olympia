@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "olympia:roof_tile",
+  "result": {
+    "id": "olympia:roof_tile_stairs",
+    "count": 1
+  }
+}

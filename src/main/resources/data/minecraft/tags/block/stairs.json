@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "olympia:white_marble_stairs",
+    "olympia:polished_marble_stairs",
+    "olympia:marble_bricks_stairs",
+    "olympia:roof_tile_stairs"
+  ]
+}

@@ -1,0 +1,9 @@
+/_src/
+/src/
+/tools/
+/playtest/
+/run/
+/build/
+/.gradle/
+/gradle/
+/design/

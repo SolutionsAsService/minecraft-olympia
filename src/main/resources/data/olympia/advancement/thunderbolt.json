@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:thunderbolt"
+    },
+    "title": {
+      "text": "The Sky's Weapon"
+    },
+    "description": {
+      "text": "Hold the Thunderbolt of Zeus."
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "olympia:thunderbolt"
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:temple_of_zeus"
+}

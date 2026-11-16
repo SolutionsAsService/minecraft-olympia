@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "olympia",
+  "version": "${version}",
+  "name": "Olympia",
+  "description": "Age of the Gods: Greek mythology for Minecraft. Marble building blocks with stairs and slabs, three column orders, olive groves, four Olympian gods with offerings and five stages of divine favor, the Thunderbolt, the Thread of Ariadne, ambrosia and divine potions, hoplites, cyclopes, temples, and a labyrinth with a Minotaur that hunts you.",
+  "authors": [
+    "SolutionsAsService"
+  ],
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.shadw.olympia.Mod"
+    ],
+    "client": [
+      "dev.shadw.olympia.OlympiaClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "out": "site/img/shots",
+  "settle": 10,
+  "setup": [
+    "forceload add -30 -400 300 -260"
+  ],
+  "steps": [
+    {
+      "tp": [
+        -12,
+        "G+7",
+        -322,
+        -28,
+        12
+      ],
+      "capture": "temple-of-zeus",
+      "wait": 10
+    },
+    {
+      "tp": [
+        30,
+        "G+7",
+        -322,
+        -28,
+        12
+      ],
+      "capture": "temple-of-zeus-ruined",
+      "wait": 10
+    },
+    {
+      "tp": [
+        68,
+        "G+7",
+        -322,
+        -28,
+        12
+      ],
+      "capture": "temple-of-athena",
+      "wait": 10
+    },
+    {
+      "tp": [
+        108,
+        "G+7",
+        -322,
+        -28,
+        12
+      ],
+      "capture": "temple-of-poseidon",
+      "wait": 10
+    },
+    {
+      "tp": [
+        152,
+        "G+4.5",
+        -310,
+        -30,
+        12
+      ],
+      "capture": "hermes-shrine",
+      "wait": 10
+    },
+    {
+      "tp": [
+        180,
+        "G+6",
+        -320,
+        -35,
+        14
+      ],
+      "capture": "olive-grove",
+      "wait": 10
+    },
+    {
+      "tp": [
+        232,
+        "G+5",
+        -312,
+        -29,
+        14
+      ],
+      "capture": "greek-ruin",
+      "wait": 10
+    }
+  ]
+}

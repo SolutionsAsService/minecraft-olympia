@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "olympia:block/greek_mosaic"
+    }
+  }
+}

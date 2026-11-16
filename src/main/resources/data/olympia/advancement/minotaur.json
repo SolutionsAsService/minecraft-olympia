@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:minotaur_horn"
+    },
+    "title": {
+      "text": "The Bull of Minos"
+    },
+    "description": {
+      "text": "Defeat the Minotaur."
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "olympia:minotaur"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:labyrinth"
+}

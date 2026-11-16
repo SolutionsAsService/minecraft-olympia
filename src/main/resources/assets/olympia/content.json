@@ -1,0 +1,353 @@
+{
+  "favor": {
+    "stages": [
+      {
+        "name": "Unknown Mortal",
+        "at": 0
+      },
+      {
+        "name": "Recognized",
+        "at": 3
+      },
+      {
+        "name": "Favored",
+        "at": 8
+      },
+      {
+        "name": "Blessed",
+        "at": 18
+      },
+      {
+        "name": "Champion of Olympus",
+        "at": 36
+      }
+    ]
+  },
+  "gods": {
+    "zeus": {
+      "name": "Zeus",
+      "title": "King of the Gods",
+      "domain": "Sky, thunder, kingship",
+      "temple": "Temple of Zeus",
+      "offerings": [
+        {
+          "item": "minecraft:gold_ingot",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:emerald",
+          "favor": 2
+        },
+        {
+          "item": "minecraft:lightning_rod",
+          "favor": 3
+        },
+        {
+          "item": "olympia:thunder_shard",
+          "favor": 5
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:strength",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:resistance",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:strength",
+              240,
+              1
+            ],
+            [
+              "minecraft:resistance",
+              240,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "athena": {
+      "name": "Athena",
+      "title": "Grey-Eyed Goddess",
+      "domain": "Wisdom, craft and just war",
+      "temple": "Temple of Athena",
+      "offerings": [
+        {
+          "item": "minecraft:book",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:iron_ingot",
+          "favor": 1
+        },
+        {
+          "item": "olympia:owl_feather",
+          "favor": 3
+        },
+        {
+          "item": "minecraft:enchanted_book",
+          "favor": 6
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:luck",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:resistance",
+              180,
+              0
+            ],
+            [
+              "minecraft:night_vision",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:luck",
+              300,
+              1
+            ],
+            [
+              "minecraft:haste",
+              300,
+              0
+            ],
+            [
+              "minecraft:resistance",
+              240,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "poseidon": {
+      "name": "Poseidon",
+      "title": "Earth-Shaker",
+      "domain": "The sea, horses and earthquakes",
+      "temple": "Temple of Poseidon",
+      "offerings": [
+        {
+          "item": "minecraft:cod",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:prismarine_shard",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:nautilus_shell",
+          "favor": 4
+        },
+        {
+          "item": "olympia:sea_pearl",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:water_breathing",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:dolphins_grace",
+              300,
+              0
+            ],
+            [
+              "minecraft:water_breathing",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:conduit_power",
+              300,
+              0
+            ],
+            [
+              "minecraft:dolphins_grace",
+              300,
+              0
+            ],
+            [
+              "minecraft:water_breathing",
+              300,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "hermes": {
+      "name": "Hermes",
+      "title": "Messenger of the Gods",
+      "domain": "Roads, travel and trade",
+      "temple": "Shrine of Hermes",
+      "offerings": [
+        {
+          "item": "minecraft:feather",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:emerald",
+          "favor": 2
+        },
+        {
+          "item": "minecraft:leather_boots",
+          "favor": 2
+        },
+        {
+          "item": "olympia:winged_feather",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:speed",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:speed",
+              180,
+              0
+            ],
+            [
+              "minecraft:jump_boost",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:speed",
+              240,
+              1
+            ],
+            [
+              "minecraft:jump_boost",
+              240,
+              1
+            ],
+            [
+              "minecraft:slow_falling",
+              240,
+              0
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "thunderbolt": {
+    "durability": 64,
+    "damage": 10.0,
+    "range": 48,
+    "cooldown_ticks": 120,
+    "required_stage": 2,
+    "god": "zeus"
+  },
+  "thread": {
+    "max_use_distance": 512
+  },
+  "ambrosia": {
+    "nutrition": 6,
+    "regen_seconds": 20,
+    "regen_amplifier": 1
+  },
+  "creatures": {
+    "hoplite": {
+      "health": 24,
+      "damage": 4,
+      "armor": 6,
+      "speed": 0.22,
+      "spawn_weight": 8,
+      "drops": "obol"
+    },
+    "cyclops": {
+      "health": 70,
+      "damage": 8,
+      "armor": 4,
+      "speed": 0.2,
+      "scale": 1.4,
+      "knockback_resistance": 0.5,
+      "spawn_weight": 3
+    },
+    "minotaur": {
+      "health": 140,
+      "damage": 8,
+      "armor": 6,
+      "speed": 0.24,
+      "scale": 1.5,
+      "knockback_resistance": 0.8,
+      "follow_range": 128,
+      "charge_min": 5,
+      "charge_max": 14,
+      "charge_cooldown_ticks": 160,
+      "charge_seconds": 3,
+      "slam_cooldown_ticks": 200,
+      "slam_radius": 4.5,
+      "slam_damage": 6
+    }
+  }
+}

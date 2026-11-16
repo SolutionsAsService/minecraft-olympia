@@ -1,0 +1,32 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "kill @e[type=minecraft:item_display]",
+    "forceload add -10 -480 40 -440",
+    "summon minecraft:item_display 2 -18.8 -460 {item:{id:\"olympia:thunderbolt\",count:1},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 5 -18.8 -460 {item:{id:\"olympia:thread_of_ariadne\",count:1},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 8 -18.8 -460 {item:{id:\"olympia:ambrosia\",count:1},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 11 -18.8 -460 {item:{id:\"olympia:obol\",count:1},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 14 -18.8 -460 {item:{id:\"olympia:cyclops_bloodstone\",count:1},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 17 -18.8 -460 {item:{id:\"olympia:minotaur_horn\",count:1},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 2 -16.4 -460 {item:{id:\"minecraft:potion\",count:1,components:{\"minecraft:potion_contents\":{potion:\"olympia:ambrosia\"}}},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 5 -16.4 -460 {item:{id:\"minecraft:potion\",count:1,components:{\"minecraft:potion_contents\":{potion:\"olympia:zeus_fury\"}}},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 8 -16.4 -460 {item:{id:\"minecraft:potion\",count:1,components:{\"minecraft:potion_contents\":{potion:\"olympia:poseidon_breath\"}}},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 11 -16.4 -460 {item:{id:\"minecraft:potion\",count:1,components:{\"minecraft:potion_contents\":{potion:\"olympia:athena_wisdom\"}}},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 14 -16.4 -460 {item:{id:\"minecraft:potion\",count:1,components:{\"minecraft:potion_contents\":{potion:\"olympia:hermes_swiftness\"}}},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.6f,2.6f,2.6f],translation:[0f,0f,0f]}}"
+  ],
+  "steps": [
+    {
+      "tp": [
+        9.5,
+        "G+3.2",
+        -452,
+        180,
+        6
+      ],
+      "capture": "relics",
+      "wait": 8
+    }
+  ]
+}

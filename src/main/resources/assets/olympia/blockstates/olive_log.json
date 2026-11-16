@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "olympia:block/olive_log"
+    },
+    "axis=x": {
+      "model": "olympia:block/olive_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=z": {
+      "model": "olympia:block/olive_log_horizontal",
+      "x": 90
+    }
+  }
+}
