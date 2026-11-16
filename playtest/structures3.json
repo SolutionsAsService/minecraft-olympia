@@ -1,0 +1,54 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "forceload add -30 -440 200 -360",
+    "kill @e[type=!minecraft:player]"
+  ],
+  "steps": [
+    {
+      "tp": [
+        -12,
+        "G+7",
+        -402,
+        -28,
+        12
+      ],
+      "capture": "temple-of-hera",
+      "wait": 9
+    },
+    {
+      "tp": [
+        28,
+        "G+7",
+        -402,
+        -28,
+        12
+      ],
+      "capture": "temple-of-aphrodite",
+      "wait": 9
+    },
+    {
+      "tp": [
+        68,
+        "G+7",
+        -402,
+        -28,
+        12
+      ],
+      "capture": "temple-of-hephaestus",
+      "wait": 9
+    },
+    {
+      "tp": [
+        108,
+        "G+7",
+        -402,
+        -28,
+        12
+      ],
+      "capture": "temple-of-dionysus",
+      "wait": 9
+    }
+  ]
+}

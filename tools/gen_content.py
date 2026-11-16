@@ -35,7 +35,7 @@ STONES = ["white_marble", "polished_marble", "weathered_marble", "cracked_marble
           "golden_marble", "marble_bricks", "marble_tiles", "greek_mosaic", "roof_tile"]
 FAMILIES = ["white_marble", "polished_marble", "marble_bricks", "roof_tile"]
 COLUMNS = ["doric_column", "ionic_column", "corinthian_column"]
-GODS = ["zeus", "athena", "poseidon", "hermes", "apollo", "artemis", "ares", "demeter"]
+GODS = ["zeus", "athena", "poseidon", "hermes", "apollo", "artemis", "ares", "demeter", "hera", "aphrodite", "hephaestus", "dionysus"]
 
 
 def wj(path, obj):
@@ -289,6 +289,14 @@ def altar_top(god, accent):
         elif god == "demeter":   # an ear of wheat
             sym = {(7, y) for y in range(7, 14)} | {(8, y) for y in range(7, 14)} | {(7, 3), (8, 3)}
             sym |= {(6, 4), (9, 4), (6, 5), (9, 5), (5, 6), (10, 6), (6, 6), (9, 6), (5, 8), (10, 8), (6, 9), (9, 9), (4, 7), (11, 7)}
+        elif god == "hera":      # a crown
+            sym = {(x, 11) for x in range(3, 13)} | {(x, 10) for x in range(3, 13)} | {(3, 6), (3, 7), (3, 8), (3, 9), (7, 4), (8, 4), (7, 5), (7, 6), (8, 5), (8, 6), (7, 7), (8, 7), (7, 8), (8, 8), (7, 9), (8, 9), (12, 6), (12, 7), (12, 8), (12, 9), (4, 5), (11, 5), (5, 8), (10, 8), (6, 7), (9, 7)}
+        elif god == "aphrodite": # a heart
+            sym = {(x, y) for x in range(16) for y in range(16) if ((x - 5.2) ** 2 + (y - 6) ** 2 <= 7.5) or ((x - 10.2) ** 2 + (y - 6) ** 2 <= 7.5) or (y >= 6 and abs(x - 7.7) <= (13 - y) * 0.95)}
+        elif god == "hephaestus": # an anvil and a hammer
+            sym = {(x, 9) for x in range(3, 13)} | {(x, 8) for x in range(2, 12)} | {(x, 10) for x in range(5, 11)} | {(x, 11) for x in range(6, 10)} | {(x, 12) for x in range(4, 12)} | {(12, 8), (13, 8), (13, 7), (2, 7), (12, 6)}
+        elif god == "dionysus":  # a cluster of grapes on a vine
+            sym = {(7, 2), (8, 2), (9, 3), (6, 3)} | {(x, y) for cx, cy in ((5, 6), (8, 6), (11, 6), (6, 9), (9, 9), (7, 12)) for x in range(cx - 1, cx + 1) for y in range(cy - 1, cy + 1)}
         if (x, y) in sym:
             c = accent
         return c
@@ -296,7 +304,7 @@ def altar_top(god, accent):
 
 
 ACCENT = {"zeus": GOLD, "athena": (88, 104, 128), "poseidon": TURQ, "hermes": (190, 196, 206), "apollo": (240, 150, 40), "artemis": (170, 190, 224),
-          "ares": (176, 48, 40), "demeter": (160, 170, 60)}
+          "ares": (176, 48, 40), "demeter": (160, 170, 60), "hera": (60, 110, 200), "aphrodite": (232, 140, 176), "hephaestus": (216, 96, 28), "dionysus": (122, 58, 154)}
 
 
 def laurel():
@@ -430,6 +438,10 @@ LANG = {
     "block.olympia.greek_brazier": "Greek Fire Brazier", "block.olympia.laurel": "Laurel",
     "block.olympia.olive_log": "Olive Log", "block.olympia.olive_leaves": "Olive Leaves",
     "block.olympia.zeus_altar": "Altar of Zeus",
+    "block.olympia.hera_altar": "Altar of Hera",
+    "block.olympia.aphrodite_altar": "Altar of Aphrodite",
+    "block.olympia.hephaestus_altar": "Altar of Hephaestus",
+    "block.olympia.dionysus_altar": "Altar of Dionysus",
     "block.olympia.apollo_altar": "Altar of Apollo",
     "block.olympia.artemis_altar": "Altar of Artemis",
     "block.olympia.ares_altar": "Altar of Ares",

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " X ",
+    "PPP",
+    "PPP"
+  ],
+  "key": {
+    "X": "minecraft:sweet_berries",
+    "P": "olympia:polished_marble"
+  },
+  "result": {
+    "id": "olympia:dionysus_altar",
+    "count": 1
+  }
+}

@@ -433,7 +433,9 @@ STONE_NOTES = {
 GODS = [("zeus", "temple_of_zeus", "temple-of-zeus"), ("athena", "temple_of_athena", "temple-of-athena"),
         ("poseidon", "temple_of_poseidon", "temple-of-poseidon"), ("hermes", "hermes_shrine", "hermes-shrine"),
         ("apollo", "temple_of_apollo", "temple-of-apollo"), ("artemis", "temple_of_artemis", "temple-of-artemis"),
-        ("ares", "temple_of_ares", "temple-of-ares"), ("demeter", "temple_of_demeter", "temple-of-demeter")]
+        ("ares", "temple_of_ares", "temple-of-ares"), ("demeter", "temple_of_demeter", "temple-of-demeter"),
+        ("hera", "temple_of_hera", "temple-of-hera"), ("aphrodite", "temple_of_aphrodite", "temple-of-aphrodite"),
+        ("hephaestus", "temple_of_hephaestus", "temple-of-hephaestus"), ("dionysus", "temple_of_dionysus", "temple-of-dionysus")]
 PLACES = [
     ("temple_of_zeus", "Temple of Zeus", "A peristyle temple of Doric columns on three steps, a pitched roof of terracotta tiles, gold in the pediment, and inside the altar of Zeus between two braziers, with a chest. One variant is whole, one ruined.", ("temple-of-zeus", "temple-of-zeus-ruined")),
     ("temple_of_athena", "Temple of Athena", "The same plan in Ionic columns, with bookshelves along the cella wall and an owl perch of grey and white over the door.", ("temple-of-athena",)),
@@ -442,11 +444,15 @@ PLACES = [
     ("temple_of_artemis", "Temple of Artemis", "Corinthian columns in a forest, a white crescent over the door, lanterns at the steps.", ("temple-of-artemis",)),
     ("temple_of_ares", "Temple of Ares", "Doric columns with red terracotta in the pediment, anvils and iron-bar weapon racks along the cella wall, red banners at the door. Hoplites are set to guard it.", ("temple-of-ares",)),
     ("temple_of_demeter", "Temple of Demeter", "Ionic columns with a hay-block pediment, sheaves of hay beside the altar and across the front steps.", ("temple-of-demeter",)),
+    ("temple_of_hera", "Temple of Hera", "Ionic columns with a peacock-feather fan of lapis and gold over the door and a white marble throne by the altar.", ("temple-of-hera",)),
+    ("temple_of_aphrodite", "Temple of Aphrodite", "Corinthian columns among flowers: rose bushes along the steps, a pink-and-gold heart over the door, a pair of small pools by the altar. Set for flower forests, cherry groves and meadows.", ("temple-of-aphrodite",)),
+    ("temple_of_hephaestus", "Temple of Hephaestus", "A forge of Doric columns with blackstone in the pediment, anvils beside the altar, pits of lava set into the floor, a blackstone-brick chimney and magma at the door. Set for hills, peaks and badlands. Hoplites are set to guard it.", ("temple-of-hephaestus",)),
+    ("temple_of_dionysus", "Temple of Dionysus", "Ionic columns hung with vines, moss along the pediment, and mixing bowls (cauldrons) beside the altar.", ("temple-of-dionysus",)),
     ("hermes_shrine", "Shrine of Hermes", "A small roadside herm: a squared pillar with a marble head and a gold staff on a tiled pad, two road markers, the altar of Hermes and a chest.", ("hermes-shrine",)),
     ("olive_grove", "Olive grove", "Seven to nine olive trees with silver-green leaves, laurel underfoot, and a tiled wayside shrine with a chest of olives.", ("olive-grove",)),
     ("greek_ruin", "Greek ruin", "A broken court: columns of three orders at different heights, fallen drums, a mosaic floor in patches, a low wall, a chest. Hoplites are set to patrol it.", ("greek-ruin",)),
 ]
-CHEST_LABEL = {"temple_of_zeus": "the Temple of Zeus", "temple_of_athena": "the Temple of Athena", "temple_of_poseidon": "the Temple of Poseidon", "temple_of_apollo": "the Temple of Apollo", "temple_of_artemis": "the Temple of Artemis", "temple_of_ares": "the Temple of Ares", "temple_of_demeter": "the Temple of Demeter",
+CHEST_LABEL = {"temple_of_zeus": "the Temple of Zeus", "temple_of_athena": "the Temple of Athena", "temple_of_poseidon": "the Temple of Poseidon", "temple_of_hera": "the Temple of Hera", "temple_of_aphrodite": "the Temple of Aphrodite", "temple_of_hephaestus": "the Temple of Hephaestus", "temple_of_dionysus": "the Temple of Dionysus", "temple_of_apollo": "the Temple of Apollo", "temple_of_artemis": "the Temple of Artemis", "temple_of_ares": "the Temple of Ares", "temple_of_demeter": "the Temple of Demeter",
                "hermes_shrine": "a shrine of Hermes", "olive_grove": "an olive grove", "greek_ruin": "a Greek ruin", "labyrinth_vault": "a labyrinth vault",
                "labyrinth_entrance": "the labyrinth pavilion"}
 SPAWNS = {"hoplite": "plains, meadow and sunflower plains", "cyclops": "windswept hills, stony peaks and savanna plateau"}  # as in OlympiaEntities.java
@@ -515,7 +521,7 @@ def home_wall():
         ("labyrinth", "Labyrinth", "61 by 61 blocks", "A maze under a pavilion, and a bull in it.", "labyrinth.html", "panels/labyrinth-hall", "black_marble"),
         ("blocks", "Blocks", f"{len(block_ids())} blocks", "Marble, columns, stairs and slabs.", "blocks.html", "panels/blocks", "greek_mosaic"),
         ("creatures", "Creatures", "5 creatures", "Hoplite, cyclops, satyr, gorgon, Minotaur.", "creatures.html", "panels/creatures", "hoplite-face"),
-        ("relics", "Relics", "2 relics · 9 potions", "A thunderbolt, a thread, and ambrosia.", "relics.html", "panels/relics", "thunderbolt"),
+        ("relics", "Relics", "2 relics · 13 potions", "A thunderbolt, a thread, and ambrosia.", "relics.html", "panels/relics", "thunderbolt"),
     ]
     items = ""
     for hue, name, figure, claim, href, img, icon in panels:
@@ -524,7 +530,7 @@ def home_wall():
                   f'<span class="fig">{esc(figure)}</span><span class="claim">{esc(claim)}</span></span></a></li>')
     return f"""
 <section class="wall" aria-labelledby="h1">
-  <div class="cartouche"><h1 id="h1">Olympia</h1><p class="sub">Age of the gods. A Minecraft mod<span class="more">: marble temples, eight Olympians, and a Minotaur that hunts you</span><span class="dot">.</span></p><a class="btn" href="/install.html">Build &amp; install</a></div>
+  <div class="cartouche"><h1 id="h1">Olympia</h1><p class="sub">Age of the gods. A Minecraft mod<span class="more">: marble temples, all twelve Olympians, and a Minotaur that hunts you</span><span class="dot">.</span></p><a class="btn" href="/install.html">Build &amp; install</a></div>
   <ul class="panels">{items}</ul>
   <p class="meta wallnote">Real in-game photos from a flat test world; the grass and sky are vanilla.</p>
 </section>"""
@@ -549,7 +555,7 @@ def build_index():
   {status(["The mod loads on a Fabric 1.21.4 server with no data errors.", "Six of the seven structures generate on their own in a flat plains world and the game's /locate finds them (the Temple of Poseidon needs a beach and was placed by command).", "Offering, favor stages, blessings, the Thunderbolt's favor gate and the Thread of Ariadne work through the same code the items and altars use.", "A Minotaur placed by its labyrinth hunted a player through the maze and reached them."],
           ["Using an altar by hand (the same code path was tested through a command).", "Eating ambrosia, brewing the potions, and the Thunderbolt by a real right-click.", "Fighting a cyclops or a hoplite, and either spawning on their own.", "A fight with the Minotaur in real gear.", "Anything in multiplayer, or a server restart."])}
 </section>"""
-    return page("Olympia: Greek gods, temples and a Minotaur for Minecraft", "A Minecraft mod: marble blocks, eight Olympian gods with offerings and divine favor, the Thunderbolt and the Thread of Ariadne, temples, and a labyrinth with a Minotaur that hunts you.", body, "home", "index.html", None)
+    return page("Olympia: Greek gods, temples and a Minotaur for Minecraft", "A Minecraft mod: marble blocks, twelve Olympian gods with offerings and divine favor, the Thunderbolt and the Thread of Ariadne, temples, and a labyrinth with a Minotaur that hunts you.", body, "home", "index.html", None)
 
 
 def build_blocks():
@@ -596,18 +602,18 @@ def build_gods():
     tb = CONTENT["thunderbolt"]
     body = f"""
 <section class="page">
-  <p class="eyebrow">Gods</p><h1>Eight of the Twelve</h1><div class="rule"></div>
+  <p class="eyebrow">Gods</p><h1>The Twelve</h1><div class="rule"></div>
   <p class="meta">The gods here are game material: a simplified retelling for a Minecraft mod, made with respect for the ancient Greek world it draws on, and not a statement about religion.</p>
   <p class="lede">Each god has a temple or shrine and an altar. Hold an offering, use the altar, and the god takes one item, adds to your favor and gives you the blessings your stage has earned (tested through the matching command; the click itself is not yet tried). Favor is saved with the player.</p>
-  <div class="shots two">{fig("altars-all", "The eight altars in a row (zeus, athena, poseidon, hermes, apollo, artemis, ares, demeter), each with its own sign on top: a bolt, an owl, a trident, a winged staff, a sun, a crescent, crossed spears, an ear of wheat.", "Eight white marble altars in a row on grass, each with a different coloured band")}</div>
+  <div class="shots two">{fig("altars-all", "The twelve altars in a row (zeus, hera, poseidon, athena, apollo, artemis, aphrodite, ares, hephaestus, demeter, hermes, dionysus), each with its own sign on top: a bolt, a crown, a trident, an owl, a sun, a crescent, a heart, crossed spears, an anvil, an ear of wheat, a winged staff, a bunch of grapes.", "Twelve white marble altars in a row on grass, each with a different coloured band")}</div>
   <h2>Favor</h2>{favor_ladder()}
   <p>Use an altar with an empty hand to see your favor and what the god wants. <code>/olympia favor</code> lists your standing with every god. Zeus's Thunderbolt works only once Zeus has named you {esc(STAGES[tb['required_stage']]['name'])}.</p>
   {secs}
-  <p class="meta">Four more gods are in the design (Hera, Aphrodite, Hephaestus, Dionysus); this slice has eight.</p>
-  {status(["Offering, refusal of the wrong item and favor kept per god, through the command that runs the same code as the altar: Zeus 1 and 2 favor for gold ingots, Poseidon refused gold, Athena accepted a book.", "At 37 favor (Champion of Olympus) Zeus's blessings were active: Resistance and Strength II. Apollo, Artemis and Demeter accepted their offerings and Ares refused wheat (the right behaviour); Apollo's Champion blessings (Regeneration II, Night Vision, Speed) were active at 41 favor.", "The temples and the shrine are photographed from a client; seven of the nine temples and shrines generate on their own in a plains world; the Artemis and Poseidon temples need a forest and a beach."],
+  <p class="meta">All twelve Olympians of the design are here.</p>
+  {status(["Offering, refusal of the wrong item and favor kept per god, through the command that runs the same code as the altar: Zeus 1 and 2 favor for gold ingots, Poseidon refused gold, Athena accepted a book.", "At 37 favor (Champion of Olympus) Zeus's blessings were active: Resistance and Strength II. Apollo, Artemis, Demeter, Hephaestus and Dionysus accepted their offerings and Ares and Hera refused the wrong items (the right behaviour); Apollo's Champion blessings (Regeneration II, Night Vision, Speed) were active at 41 favor.", "The temples and the shrine are photographed from a client; nine of the thirteen temples and shrines generate on their own in a plains world; the Artemis and Poseidon temples need a forest and a beach."],
           ["Using an altar block with a held item (the click path).", "Favor kept across death or a server restart (it is set to be kept; not yet checked in Olympia).", "The blessings of Athena, Poseidon and Hermes at each stage were not individually inspected."])}
 </section>"""
-    return page("Gods: Eight of the Twelve Olympians", "Eight Olympians in the Olympia mod (Zeus, Athena, Poseidon, Hermes, Apollo, Artemis, Ares, Demeter): their temples, altars, offerings, five stages of divine favor and the blessings each stage gives.", body, "gods", "gods.html", "gods")
+    return page("Gods: the Twelve Olympians", "The twelve Olympians in the Olympia mod (Zeus, Hera, Poseidon, Athena, Ares, Apollo, Artemis, Aphrodite, Hephaestus, Hermes, Demeter, Dionysus): their temples, altars, offerings, five stages of divine favor and the blessings each stage gives.", body, "gods", "gods.html", "gods")
 
 
 def build_structures():
@@ -629,10 +635,10 @@ def build_structures():
   <tr><th scope="row">Chest</th><td>{esc(", ".join(chest_items(slug)))}</td></tr></tbody></table></section>"""
     body = f"""
 <section class="page">
-  <p class="eyebrow">Places</p><h1>Ten things in the grass</h1><div class="rule"></div>
-  <p class="lede">Seven temples, a roadside shrine, an olive grove and a ruin. Each is a template with variants, generated by the game where the biome allows, with a chest of themed loot. The labyrinth has <a href="/labyrinth.html">its own page</a>.</p>
+  <p class="eyebrow">Places</p><h1>Fourteen things in the grass</h1><div class="rule"></div>
+  <p class="lede">Eleven temples, a roadside shrine, an olive grove and a ruin. Each is a template with variants, generated by the game where the biome allows, with a chest of themed loot. The labyrinth has <a href="/labyrinth.html">its own page</a>.</p>
   {secs}
-  {status(["Zeus, Athena, the shrine, the grove and the ruin generate on their own in a flat plains world: the game's /locate found each, from 97 to 273 blocks away. The temples of Apollo, Ares and Demeter were also found by /locate (249 to 416 blocks away); Artemis's needs a forest and Poseidon's a beach, so those two were placed by command.", "All of them were also placed with the template command and photographed from a client."],
+  {status(["Zeus, Athena, the shrine, the grove and the ruin generate on their own in a flat plains world: the game's /locate found each, from 97 to 273 blocks away. The temples of Apollo, Ares, Demeter, Hera and Dionysus were also found by /locate (249 to 480 blocks away); Artemis's needs a forest, Poseidon's a beach, Aphrodite's flowers and Hephaestus's hills, so those four were placed by command.", "All of them were also placed with the template command and photographed from a client."],
           ["The Temple of Poseidon generating on a beach on its own.", "How these sit among vanilla villages and terrain (a flat test world has none).", "Cities, Delphi, harbours and Mount Olympus are not in this slice."])}
 </section>"""
     return page("Places: temples, a shrine, olive groves and ruins", "The six overworld structures of the Olympia mod: the temples of Zeus, Athena and Poseidon, the shrine of Hermes, olive groves and Greek ruins.", body, "structures", "structures.html", "structures")
@@ -734,9 +740,9 @@ def build_relics():
   <ul class="cards"><li class="card">{sprite("obol", 64, "Obol")}<div><h3>Obol</h3><p>A bronze coin dropped by hoplites and found in chests. It has no use yet: it is for the Underworld's ferryman, which is not in this slice.</p></div></li>
   <li class="card">{sprite("cyclops_bloodstone", 64, "Cyclops Bloodstone")}<div><h3>Cyclops Bloodstone</h3><p>A red stone dropped by cyclopes and found in labyrinth vaults. No use yet.</p></div></li>
   <li class="card">{sprite("minotaur_horn", 64, "Minotaur Horn")}<div><h3>Minotaur Horn</h3><p>Always dropped by the Minotaur. No use yet.</p></div></li></ul>
-  <h2>The nine potions</h2><ul class="cards">{rows}</ul>
+  <h2>The thirteen potions</h2><ul class="cards">{rows}</ul>
   <p class="meta">The potions use the same data format as Asgard's and Khemet's: one entry in <code>potions.json</code> adds an ingredient, a potion and a brewing recipe.</p>
-  {status(["The Thunderbolt refused at Unknown Mortal, struck at Favored (a lightning bolt appeared; the item took one point of damage).", "The Thread of Ariadne tied at one point and then said \\u201cnorth-west, 50 blocks\\u201d and \\u201csouth-east, 25 blocks\\u201d from two other points, both correct.", "The nine potions and their ingredients load, and the recipes register."],
+  {status(["The Thunderbolt refused at Unknown Mortal, struck at Favored (a lightning bolt appeared; the item took one point of damage).", "The Thread of Ariadne tied at one point and then said \\u201cnorth-west, 50 blocks\\u201d and \\u201csouth-east, 25 blocks\\u201d from two other points, both correct.", "The thirteen potions and their ingredients load, and the recipes register."],
           ["A right-click with the Thunderbolt or the thread by hand.", "Eating ambrosia.", "Brewing, drinking or splashing the potions.", "Any use for the obol, the bloodstone and the horn."])}
 </section>"""
     return page("Relics & potions: the Thunderbolt, the Thread of Ariadne and ambrosia", "The Thunderbolt of Zeus, the Thread of Ariadne, ambrosia and the five divine potions of the Olympia mod.", body, "relics", "relics.html", "relics")
@@ -755,7 +761,7 @@ def build_install():
 cd minecraft-olympia
 gradle build
 # the jar is in build/libs/olympia-{esc(mf['version'])}.jar</code></pre>
-  <p>Copy the jar into your <code>mods</code> folder and start the game. The server log line <code>Olympia loaded: {len(POTIONS)} potions, {len(POTIONS)} brewing recipes, 0 unknown effects skipped; {len(block_ids())} blocks, 8 gods, 5 creatures</code> confirms the registration.</p>
+  <p>Copy the jar into your <code>mods</code> folder and start the game. The server log line <code>Olympia loaded: {len(POTIONS)} potions, {len(POTIONS)} brewing recipes, 0 unknown effects skipped; {len(block_ids())} blocks, 12 gods, 5 creatures</code> confirms the registration.</p>
   <h2>Commands</h2>
   <table class="data"><caption class="sr">Commands</caption><tbody><tr><th scope="row"><code>/olympia favor</code></th><td>Your favor and stage with each god.</td></tr>
   <tr><th scope="row"><code>/olympia offer &lt;god&gt;</code></th><td>Operators: offer the item in your hand to a god (the same code the altar runs).</td></tr>

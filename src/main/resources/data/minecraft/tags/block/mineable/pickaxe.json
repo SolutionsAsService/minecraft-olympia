@@ -33,6 +33,10 @@
     "olympia:apollo_altar",
     "olympia:artemis_altar",
     "olympia:ares_altar",
-    "olympia:demeter_altar"
+    "olympia:demeter_altar",
+    "olympia:hera_altar",
+    "olympia:aphrodite_altar",
+    "olympia:hephaestus_altar",
+    "olympia:dionysus_altar"
   ]
 }

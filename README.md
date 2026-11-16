@@ -13,18 +13,18 @@ A thread through every pillar the master design names, small but whole:
 - **Blocks**: twelve marble and tile stones (white, polished, weathered, cracked, black, pink, veined and golden marble, marble
   bricks and tiles, a Greek-key mosaic, roof tile), stairs and slabs for four of them, three column orders (Doric, Ionic,
   Corinthian), an amphora, the Greek fire brazier, laurel, olive logs and leaves. Stonecutter and crafting recipes for all.
-- **Eight gods**, Zeus, Athena, Poseidon, Hermes, Apollo, Artemis, Ares and Demeter, each with an **altar** (its own sign on top) and a temple or shrine. Offerings raise your **divine favor** with that god
+- **All twelve Olympians** (Zeus, Hera, Poseidon, Athena, Ares, Apollo, Artemis, Aphrodite, Hephaestus, Hermes, Demeter, Dionysus), each with an **altar** (its own sign on top) and a temple or shrine. Offerings raise your **divine favor** with that god
   through five stages (Unknown Mortal, Recognized, Favored, Blessed, Champion of Olympus); each stage from Favored adds blessings.
   `/olympia favor` shows where you stand.
 - **The Thunderbolt of Zeus** (lightning where you look, only once Zeus has named you Favored) and the **Thread of Ariadne** (tie it,
-  then it points the way back), **ambrosia**, and **nine divine potions** with their ingredients.
-- **Structures**: seven temples, a roadside shrine of Hermes, olive groves, Greek ruins, each with a chest.
+  then it points the way back), **ambrosia**, and **thirteen divine potions** with their ingredients.
+- **Structures**: eleven temples, a roadside shrine of Hermes, olive groves, Greek ruins, each with a chest.
 - **The Labyrinth**: a seeded maze of three-wide corridors under a marble pavilion, three variants, treasure at the dead ends,
   and the **Minotaur** in the hall at its centre. It hunts through the maze, charges, slams, enrages below half health, and has a boss bar.
 - **Creatures**: hoplite, cyclops, Minotaur (the zombie model with painted skins).
 
 Not in this slice (see the roadmap in the master design and `VISION.md`): custom biomes, Mount Olympus, Atlantis, the Underworld,
-sailing, prophecy, the other four gods, the other creatures and bosses, cities and NPCs.
+sailing, prophecy, , the other creatures and bosses, cities and NPCs.
 
 ## What is tested, and how
 

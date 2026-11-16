@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:hera_altar"
+    },
+    "title": {
+      "text": "The Queen's House"
+    },
+    "description": {
+      "text": "Find the Temple of Hera."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "olympia:temple_of_hera"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:greek_ruin"
+}

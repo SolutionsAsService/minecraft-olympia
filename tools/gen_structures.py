@@ -226,6 +226,47 @@ def demeter_extra(s, rnd, W, L, cx):
         s.put(x, 3, 1, M("hay_block", axis="y"))
 
 
+def hera_extra(s, rnd, W, L, cx):
+    # a peacock-feather fan of blue and gold over the door, and a throne of white marble by the altar
+    import math
+    for k in range(-3, 4):
+        for yy in range(0, 5):
+            if abs(k) + yy <= 5:
+                s.put(cx + k, 8 + yy, 2, M("lapis_block") if (k + yy) % 2 == 0 else M("gold_block"))
+    s.put(cx - 4, 3, L - 8, O("marble_bricks")); s.put(cx - 4, 4, L - 8, O("white_marble")); s.put(cx - 5, 4, L - 8, O("white_marble"))
+
+
+def aphrodite_extra(s, rnd, W, L, cx):
+    # rose bushes along the steps, a pink-and-gold heart over the door, a small pool by the altar
+    for x in (2, 4, W - 5, W - 3):
+        s.put(x, 3, 1, M("rose_bush", half="lower")); s.put(x, 4, 1, M("rose_bush", half="upper"))
+    for yy, xs in ((0, (-1, 1)), (1, (-2, -1, 0, 1, 2)), (2, (-2, -1, 0, 1, 2)), (3, (-1, 0, 1)), (4, (0,))):
+        for dx in xs:
+            s.put(cx + dx, 12 - yy, 2, M("pink_concrete") if (dx + yy) % 2 == 0 else M("gold_block"))
+    s.put(cx - 3, 2, L - 9, M("water")); s.put(cx + 3, 2, L - 9, M("water"))      # set into the floor, so the water cannot spread
+
+
+def hephaestus_extra(s, rnd, W, L, cx):
+    # forge: anvils, lava in blackstone channels, a chimney of blackstone bricks, magma at the door
+    for x in (cx - 3, cx + 3):
+        s.put(x, 3, L - 9, M("blackstone")); s.put(x, 4, L - 9, M("anvil", facing="east"))
+        s.put(x, 2, L - 11, M("lava"))                                                  # a pit in the floor, so the lava cannot spread
+    for y in range(3, 12):
+        s.put(W - 6, y, L - 6, M("blackstone_wall", up="true", east="none", north="none", south="none", west="none", waterlogged="false") if False else M("polished_blackstone_bricks"))
+    for x in (cx - 1, cx, cx + 1):
+        s.put(x, 3, 2, M("magma_block"))
+
+
+def dionysus_extra(s, rnd, W, L, cx):
+    # vines over the front columns and the pediment, grape-clusters (sweet berry bushes) and a mixing bowl (cauldron) by the altar
+    for x in (3, W - 4):
+        for y in (6, 7, 8, 9):
+            s.put(x, y, 2, M("vine", north="true", east="false", south="false", west="false", up="false"))
+    for x in range(4, W - 4, 2):
+        s.put(x, 10, 2, M("moss_carpet"))
+    s.put(cx - 3, 3, L - 8, M("cauldron")); s.put(cx + 3, 3, L - 8, M("cauldron"))
+
+
 # ---------- the shrine of Hermes: a roadside herm ----------
 
 def hermes_shrine(seed):
@@ -508,6 +549,10 @@ STRUCTURES = {
     "temple_of_artemis": (lambda i: temple("artemis", "corinthian", i == 1, i, M("white_concrete"), "olympia:chests/temple_of_artemis", artemis_extra), 2),
     "temple_of_ares": (lambda i: temple("ares", "doric", i == 1, i, M("red_terracotta"), "olympia:chests/temple_of_ares", ares_extra), 2),
     "temple_of_demeter": (lambda i: temple("demeter", "ionic", i == 1, i, M("hay_block", axis="y"), "olympia:chests/temple_of_demeter", demeter_extra), 2),
+    "temple_of_hera": (lambda i: temple("hera", "ionic", i == 1, i, M("lapis_block"), "olympia:chests/temple_of_hera", hera_extra), 2),
+    "temple_of_aphrodite": (lambda i: temple("aphrodite", "corinthian", i == 1, i, M("pink_concrete"), "olympia:chests/temple_of_aphrodite", aphrodite_extra), 2),
+    "temple_of_hephaestus": (lambda i: temple("hephaestus", "doric", i == 1, i, M("blackstone"), "olympia:chests/temple_of_hephaestus", hephaestus_extra), 2),
+    "temple_of_dionysus": (lambda i: temple("dionysus", "ionic", i == 1, i, M("moss_block"), "olympia:chests/temple_of_dionysus", dionysus_extra), 2),
     "hermes_shrine": (hermes_shrine, 2),
     "olive_grove": (olive_grove, 2),
     "greek_ruin": (greek_ruin, 3),

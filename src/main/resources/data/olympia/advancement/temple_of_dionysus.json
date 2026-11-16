@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "olympia:dionysus_altar"
+    },
+    "title": {
+      "text": "The Revel-God's House"
+    },
+    "description": {
+      "text": "Find the Temple of Dionysus."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "olympia:temple_of_dionysus"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "olympia:olive_grove"
+}

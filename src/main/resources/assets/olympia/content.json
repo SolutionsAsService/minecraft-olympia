@@ -581,6 +581,300 @@
           ]
         }
       ]
+    },
+    "hera": {
+      "name": "Hera",
+      "title": "Queen of the Gods",
+      "domain": "Marriage, royalty and protection",
+      "temple": "Temple of Hera",
+      "offerings": [
+        {
+          "item": "minecraft:allium",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:gold_ingot",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:golden_carrot",
+          "favor": 2
+        },
+        {
+          "item": "olympia:peacock_feather",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:resistance",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:resistance",
+              180,
+              0
+            ],
+            [
+              "minecraft:luck",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:resistance",
+              240,
+              1
+            ],
+            [
+              "minecraft:luck",
+              300,
+              1
+            ],
+            [
+              "minecraft:absorption",
+              240,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "aphrodite": {
+      "name": "Aphrodite",
+      "title": "Goddess of Love and Beauty",
+      "domain": "Love, beauty and the sea-foam",
+      "temple": "Temple of Aphrodite",
+      "offerings": [
+        {
+          "item": "minecraft:pink_petals",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:honey_bottle",
+          "favor": 2
+        },
+        {
+          "item": "minecraft:poppy",
+          "favor": 1
+        },
+        {
+          "item": "olympia:rose_gold_dust",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:luck",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:regeneration",
+              120,
+              0
+            ],
+            [
+              "minecraft:luck",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:regeneration",
+              180,
+              1
+            ],
+            [
+              "minecraft:luck",
+              300,
+              1
+            ],
+            [
+              "minecraft:speed",
+              180,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "hephaestus": {
+      "name": "Hephaestus",
+      "title": "God of the Forge",
+      "domain": "Fire, the forge and craft",
+      "temple": "Temple of Hephaestus",
+      "offerings": [
+        {
+          "item": "minecraft:iron_ingot",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:gold_ingot",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:blaze_powder",
+          "favor": 2
+        },
+        {
+          "item": "olympia:anvil_shard",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:fire_resistance",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:fire_resistance",
+              300,
+              0
+            ],
+            [
+              "minecraft:haste",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:fire_resistance",
+              300,
+              0
+            ],
+            [
+              "minecraft:haste",
+              240,
+              1
+            ],
+            [
+              "minecraft:resistance",
+              240,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "dionysus": {
+      "name": "Dionysus",
+      "title": "God of Wine and Festivity",
+      "domain": "Wine, revelry and madness",
+      "temple": "Temple of Dionysus",
+      "offerings": [
+        {
+          "item": "minecraft:sweet_berries",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:glow_berries",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:dandelion",
+          "favor": 1
+        },
+        {
+          "item": "olympia:grape_cluster",
+          "favor": 4
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:luck",
+              300,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:luck",
+              300,
+              0
+            ],
+            [
+              "minecraft:jump_boost",
+              180,
+              0
+            ],
+            [
+              "minecraft:speed",
+              120,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 4,
+          "effects": [
+            [
+              "minecraft:luck",
+              300,
+              1
+            ],
+            [
+              "minecraft:jump_boost",
+              240,
+              1
+            ],
+            [
+              "minecraft:speed",
+              180,
+              1
+            ],
+            [
+              "minecraft:regeneration",
+              60,
+              0
+            ]
+          ]
+        }
+      ]
     }
   },
   "thunderbolt": {

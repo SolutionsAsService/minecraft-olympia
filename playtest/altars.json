@@ -2,25 +2,29 @@
   "out": "site/img/shots",
   "settle": 8,
   "setup": [
-    "forceload add -10 -430 40 -390",
-    "kill @e[type=slime]",
-    "setblock 0 $G -400 olympia:zeus_altar",
-    "setblock 3 $G -400 olympia:athena_altar",
-    "setblock 6 $G -400 olympia:poseidon_altar",
-    "setblock 9 $G -400 olympia:hermes_altar",
-    "setblock 12 $G -400 olympia:apollo_altar",
-    "setblock 15 $G -400 olympia:artemis_altar",
-    "setblock 18 $G -400 olympia:ares_altar",
-    "setblock 21 $G -400 olympia:demeter_altar"
+    "forceload add -10 -470 40 -430",
+    "kill @e[type=!minecraft:player]",
+    "setblock 0 $G -440 olympia:zeus_altar",
+    "setblock 2 $G -440 olympia:hera_altar",
+    "setblock 4 $G -440 olympia:poseidon_altar",
+    "setblock 6 $G -440 olympia:athena_altar",
+    "setblock 8 $G -440 olympia:apollo_altar",
+    "setblock 10 $G -440 olympia:artemis_altar",
+    "setblock 12 $G -440 olympia:aphrodite_altar",
+    "setblock 14 $G -440 olympia:ares_altar",
+    "setblock 16 $G -440 olympia:hephaestus_altar",
+    "setblock 18 $G -440 olympia:demeter_altar",
+    "setblock 20 $G -440 olympia:hermes_altar",
+    "setblock 22 $G -440 olympia:dionysus_altar"
   ],
   "steps": [
     {
       "tp": [
-        10.5,
-        "G+4.4",
-        -390,
+        11.5,
+        "G+3.4",
+        -433,
         180,
-        30
+        40
       ],
       "capture": "altars-all",
       "wait": 9

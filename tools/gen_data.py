@@ -15,7 +15,7 @@ STONES = ["white_marble", "polished_marble", "weathered_marble", "cracked_marble
           "golden_marble", "marble_bricks", "marble_tiles", "greek_mosaic", "roof_tile"]
 FAMILIES = ["white_marble", "polished_marble", "marble_bricks", "roof_tile"]
 COLUMNS = ["doric_column", "ionic_column", "corinthian_column"]
-GODS = ["zeus", "athena", "poseidon", "hermes", "apollo", "artemis", "ares", "demeter"]
+GODS = ["zeus", "athena", "poseidon", "hermes", "apollo", "artemis", "ares", "demeter", "hera", "aphrodite", "hephaestus", "dionysus"]
 STAIRS = [f"{f}_stairs" for f in FAMILIES]
 SLABS = [f"{f}_slab" for f in FAMILIES]
 BLOCKS = STONES + STAIRS + SLABS + COLUMNS + ["amphora", "greek_brazier", "laurel", "olive_log", "olive_leaves"] + [f"{g}_altar" for g in GODS]
@@ -90,12 +90,16 @@ STRUCTS = {
     "temple_of_artemis": (36, 10, 9123412, ["minecraft:forest", "minecraft:birch_forest", "minecraft:dark_forest", "minecraft:taiga"], -1, {}, "beard_thin"),
     "temple_of_ares": (38, 10, 9123413, ["minecraft:savanna", "minecraft:badlands", "minecraft:plains"], -1, HOP(2, 3), "beard_thin"),
     "temple_of_demeter": (34, 10, 9123414, ["minecraft:plains", "minecraft:sunflower_plains", "minecraft:meadow"], -1, {}, "beard_thin"),
+    "temple_of_hera": (38, 10, 9123421, ["minecraft:plains", "minecraft:meadow", "minecraft:sunflower_plains"], -1, {}, "beard_thin"),
+    "temple_of_aphrodite": (36, 10, 9123422, ["minecraft:flower_forest", "minecraft:cherry_grove", "minecraft:meadow"], -1, {}, "beard_thin"),
+    "temple_of_hephaestus": (40, 10, 9123423, ["minecraft:windswept_hills", "minecraft:stony_peaks", "minecraft:badlands", "minecraft:savanna_plateau"], -1, HOP(1, 2), "beard_thin"),
+    "temple_of_dionysus": (36, 10, 9123424, ["minecraft:savanna", "minecraft:plains", "minecraft:forest"], -1, {}, "beard_thin"),
     "hermes_shrine": (18, 6, 9123404, FOREST_LAND, -1, {}, "beard_thin"),
     "olive_grove": (20, 8, 9123405, ["minecraft:plains", "minecraft:savanna", "minecraft:meadow", "minecraft:forest"], -1, {}, "none"),
     "greek_ruin": (22, 8, 9123406, FOREST_LAND, -1, HOP(2, 3), "beard_thin"),
     "labyrinth": (40, 14, 9123407, ["minecraft:plains", "minecraft:meadow", "minecraft:savanna", "minecraft:forest", "minecraft:sunflower_plains"], -14, {}, "none"),
 }
-VARIANTS = {"temple_of_apollo": 2, "temple_of_artemis": 2, "temple_of_ares": 2, "temple_of_demeter": 2, "temple_of_zeus": 2, "temple_of_athena": 2, "temple_of_poseidon": 2, "hermes_shrine": 2, "olive_grove": 2, "greek_ruin": 3, "labyrinth": 3}
+VARIANTS = {"temple_of_hera": 2, "temple_of_aphrodite": 2, "temple_of_hephaestus": 2, "temple_of_dionysus": 2, "temple_of_apollo": 2, "temple_of_artemis": 2, "temple_of_ares": 2, "temple_of_demeter": 2, "temple_of_zeus": 2, "temple_of_athena": 2, "temple_of_poseidon": 2, "hermes_shrine": 2, "olive_grove": 2, "greek_ruin": 3, "labyrinth": 3}
 
 
 def main():
@@ -127,6 +131,14 @@ def main():
                                  item("minecraft:shield", 2), item("olympia:ambrosia", 2), item("olympia:obol", 4, 2, 6), potion_item("olympia:ares_rage", 2)], 4, 6)],
         "temple_of_demeter": [pool([item("minecraft:wheat", 7, 3, 9), item("minecraft:bread", 5, 2, 5), item("minecraft:wheat_seeds", 5, 4, 10), item("olympia:golden_wheat", 4, 1, 3),
                                     item("minecraft:hay_block", 3, 1, 3), item("olympia:ambrosia", 2), item("olympia:obol", 4, 2, 6), potion_item("olympia:demeter_harvest", 2)], 4, 6)],
+        "temple_of_hera": [pool([item("minecraft:gold_ingot", 6, 2, 6), item("minecraft:allium", 5, 2, 5), item("minecraft:golden_carrot", 4, 2, 6), item("olympia:peacock_feather", 4, 1, 3),
+                                 item("olympia:polished_marble", 4, 4, 10), item("olympia:ambrosia", 2), item("olympia:obol", 4, 2, 6), potion_item("olympia:hera_grace", 2)], 4, 6)],
+        "temple_of_aphrodite": [pool([item("minecraft:pink_petals", 6, 2, 6), item("minecraft:honey_bottle", 4, 1, 3), item("minecraft:poppy", 5, 2, 5), item("olympia:rose_gold_dust", 4, 1, 3),
+                                      item("olympia:pink_marble", 4, 4, 10), item("olympia:ambrosia", 2), item("olympia:obol", 4, 2, 6), potion_item("olympia:aphrodite_grace", 2)], 4, 6)],
+        "temple_of_hephaestus": [pool([item("minecraft:iron_ingot", 6, 2, 6), item("minecraft:blaze_powder", 5, 1, 4), item("minecraft:copper_ingot", 5, 2, 8), item("olympia:anvil_shard", 4, 1, 3),
+                                       item("minecraft:obsidian", 3, 1, 3), item("olympia:ambrosia", 2), item("olympia:obol", 4, 2, 6), potion_item("olympia:hephaestus_blood", 2)], 4, 6)],
+        "temple_of_dionysus": [pool([item("minecraft:sweet_berries", 6, 3, 9), item("minecraft:glow_berries", 5, 2, 6), item("minecraft:dandelion", 4, 2, 5), item("olympia:grape_cluster", 4, 1, 3),
+                                     item("minecraft:honey_bottle", 3, 1, 2), item("olympia:ambrosia", 2), item("olympia:obol", 4, 2, 6), potion_item("olympia:dionysian_elixir", 2)], 4, 6)],
         "hermes_shrine": [pool([item("minecraft:feather", 6, 2, 6), item("minecraft:emerald", 4, 1, 3), item("minecraft:leather_boots", 2),
                                 item("olympia:winged_feather", 3, 1, 2), item("olympia:obol", 5, 2, 6), item("minecraft:map", 2),
                                 potion_item("olympia:hermes_swiftness", 2)], 3, 5)],
@@ -170,6 +182,7 @@ def main():
     write(rec / "amphora.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["T T", "T T", "TTT"],
           "key": {"T": "minecraft:terracotta"}, "result": {"id": "olympia:amphora", "count": 2}})
     for god, ing in (("zeus", "minecraft:lightning_rod"), ("athena", "minecraft:book"), ("poseidon", "minecraft:prismarine_shard"), ("hermes", "minecraft:feather"),
+                     ("hera", "minecraft:allium"), ("aphrodite", "minecraft:pink_petals"), ("hephaestus", "minecraft:anvil"), ("dionysus", "minecraft:sweet_berries"),
                      ("apollo", "minecraft:sunflower"), ("artemis", "minecraft:arrow"), ("ares", "minecraft:iron_sword"), ("demeter", "minecraft:wheat")):
         write(rec / f"{god}_altar.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": [" X ", "PPP", "PPP"],
               "key": {"X": ing, "P": "olympia:polished_marble"}, "result": {"id": f"olympia:{god}_altar", "count": 1}})
@@ -222,6 +235,10 @@ def main():
     adv("temple_of_artemis", "greek_ruin", "olympia:artemis_altar", "The Huntress's House", "Find the Temple of Artemis in a forest.", "minecraft:location", loc("temple_of_artemis"))
     adv("temple_of_ares", "greek_ruin", "olympia:ares_altar", "The War-God's House", "Find the Temple of Ares.", "minecraft:location", loc("temple_of_ares"))
     adv("temple_of_demeter", "olive_grove", "olympia:demeter_altar", "The Harvest-Mother's House", "Find the Temple of Demeter.", "minecraft:location", loc("temple_of_demeter"))
+    adv("temple_of_hera", "greek_ruin", "olympia:hera_altar", "The Queen's House", "Find the Temple of Hera.", "minecraft:location", loc("temple_of_hera"))
+    adv("temple_of_aphrodite", "olive_grove", "olympia:aphrodite_altar", "The Foam-Born's House", "Find the Temple of Aphrodite among the flowers.", "minecraft:location", loc("temple_of_aphrodite"))
+    adv("temple_of_hephaestus", "greek_ruin", "olympia:hephaestus_altar", "The Smith's House", "Find the Temple of Hephaestus in the hills.", "minecraft:location", loc("temple_of_hephaestus"))
+    adv("temple_of_dionysus", "olive_grove", "olympia:dionysus_altar", "The Revel-God's House", "Find the Temple of Dionysus.", "minecraft:location", loc("temple_of_dionysus"))
     adv("hermes_shrine", "olive_grove", "olympia:hermes_altar", "A God by the Road", "Find a shrine of Hermes.", "minecraft:location", loc("hermes_shrine"))
     adv("temple_of_zeus", "greek_ruin", "olympia:zeus_altar", "The King's House", "Find the Temple of Zeus.", "minecraft:location", loc("temple_of_zeus"))
     adv("temple_of_athena", "greek_ruin", "olympia:athena_altar", "The Grey-Eyed's House", "Find the Temple of Athena.", "minecraft:location", loc("temple_of_athena"))

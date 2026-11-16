@@ -216,6 +216,103 @@
           "amplifier": 0
         }
       ]
+    },
+    {
+      "id": "hera_grace",
+      "name": "Hera's Majesty",
+      "god": "Hera",
+      "epithet": "Queen of the Gods",
+      "domain": "Royalty",
+      "hue": "#3A6EC8",
+      "realm": "olympia",
+      "ingredient": "peacock_feather",
+      "lore": "A feather with a hundred eyes. A queen's protection, and her luck.",
+      "effects": [
+        {
+          "effect": "minecraft:resistance",
+          "seconds": 240,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:luck",
+          "seconds": 300,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "aphrodite_grace",
+      "name": "Aphrodite's Grace",
+      "god": "Aphrodite",
+      "epithet": "Foam-Born",
+      "domain": "Love and beauty",
+      "hue": "#E88CB0",
+      "realm": "olympia",
+      "ingredient": "rose_gold_dust",
+      "lore": "Dust of rose-gold. Mending, and fortune.",
+      "effects": [
+        {
+          "effect": "minecraft:regeneration",
+          "seconds": 120,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:luck",
+          "seconds": 300,
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "id": "hephaestus_blood",
+      "name": "Hephaestus's Blood",
+      "god": "Hephaestus",
+      "epithet": "The Smith",
+      "domain": "The forge",
+      "hue": "#D8601C",
+      "realm": "olympia",
+      "ingredient": "anvil_shard",
+      "lore": "A shard struck from the god's anvil. Fire cannot hurt you; the work goes quickly.",
+      "effects": [
+        {
+          "effect": "minecraft:fire_resistance",
+          "seconds": 420,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:haste",
+          "seconds": 240,
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "id": "dionysian_elixir",
+      "name": "Dionysian Elixir",
+      "god": "Dionysus",
+      "epithet": "The Twice-Born",
+      "domain": "Wine and revelry",
+      "hue": "#7A3A9A",
+      "realm": "olympia",
+      "ingredient": "grape_cluster",
+      "lore": "A cluster of golden grapes. Luck, a spring in the step, and a little madness.",
+      "effects": [
+        {
+          "effect": "minecraft:luck",
+          "seconds": 300,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "seconds": 180,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:speed",
+          "seconds": 120,
+          "amplifier": 0
+        }
+      ]
     }
   ]
 }
