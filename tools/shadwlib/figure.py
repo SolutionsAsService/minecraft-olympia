@@ -112,5 +112,84 @@ class Rig:
         return n
 
 
+    # ---------- a finely shaped four-legged beast (wolf, hound, boar, big cat) ----------
+    def quadruped(self, fur, belly=None, mane=None, claw=None, nose=None, body=(8, 8, 17), head=(7, 6, 6), snout=(4, 3.4, 5.5), leg_w=3.0,
+                  front=(6.5, 6, 3), hind=(6.5, 6.5, 3), tail=None, ears=(2.2, 3.4), neck=(5.5, 6, 5), walk=0.9, eye="#ffd040", eye_glow=None,
+                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100):
+        """Builds a lean body with a deeper chest and a mane, a neck, a head with a stepped snout, jaw, ears and fangs, four legs of three
+        segments (thigh, lower leg, paw) in a diagonal walk, and an optional tail chain. The hip height is solved from the leg angles so the
+        paws meet the ground. Returns the part names."""
+        bw, bh, bl = body
+        hw, hh, hd = head
+        sw, sh, sl = snout
+        belly = belly or fur
+        mane = mane or fur
+        n = {}
+
+        def drop(seg, pose):
+            """Vertical drop of a three-segment leg given its relative x rotations (degrees)."""
+            ang, tot = 0.0, 0.0
+            for ln, rx in zip(seg, pose):
+                ang += rx
+                tot += ln * math.cos(math.radians(ang))
+            return tot
+        fd = drop(front, front_pose)
+        hd_ = drop(hind, hind_pose)
+        hip = -max(fd, hd_) - 0.6            # the body's underside sits this high; the shorter leg is lifted by its pose
+        # body: the lean barrel, a deeper chest, a mane over the shoulders, a belly stripe
+        n["body"] = self.part("body", "root", (0, hip, 0), (0, 0, 0), [
+            box((-bw / 2, -bh, -bl / 2 + 3), (bw, bh, bl - 3), fur), box((-bw / 2 + 0.6, -0.2, -bl / 2 + 3.4), (bw - 1.2, 1.4, bl - 3.8), belly, 0.0)])
+        n["chest"] = self.part("chest", "body", (0, 0, -bl / 2 + 3), (0, 0, 0), [
+            box((-bw / 2 - 0.7, -bh - 0.4, -3.2), (bw + 1.4, bh + 1.4, 6.4), fur), box((-bw / 2 + 0.3, 0.2, -2.8), (bw - 0.6, 1.4, 5.6), belly)])
+        if ruff:
+            n["mane"] = self.part("mane", "chest", (0, -bh - 0.2, -0.5), (-6, 0, 0), [
+                box((-bw / 2 - 0.4, -2.4, -2.6), (bw + 0.8, 2.6, 5.4), mane), box((-1.4, -3.4, -1.8), (2.8, 1.2, 4.2), mane, 0.0)])
+            self.anim("mane", "sway", axis="z", amp=0.02, freq=0.07)
+        # neck and head
+        nw, nl, nd = neck
+        n["neck"] = self.part("neck", "chest", (0, -bh + 1.4, -2.2), (neck_rot, 0, 0), [box((-nw / 2, -nl, -nd / 2), (nw, nl, nd), fur), box((-nw / 2 - 0.4, -nl + 0.4, -nd / 2 - 0.3), (nw + 0.8, nl * 0.55, nd + 0.6), mane, 0.0)])
+        ew_ = max(1, int(hw // 3))
+        eyes = [rect("front", 0, 2, ew_, 1, "#101010"), rect("front", int(math.ceil(hw)) - ew_, 2, ew_, 1, "#101010"), rect("front", 0, 3, ew_, 1, eye_glow or eye), rect("front", int(math.ceil(hw)) - ew_, 3, ew_, 1, eye_glow or eye)]
+        n["head"] = self.part("head", "neck", (0, -nl + 0.6, 0.3), (-neck_rot + 6, 0, 0), [
+            box((-hw / 2, -hh / 2, -hd + 1.5), (hw, hh, hd), fur, 0.0, eyes), box((-hw / 2 - 0.5, -hh / 2 + 1.5, -hd / 2 + 1.5), (hw + 1.0, hh - 2.0, 2.5), mane)])
+        self.anim("head", "look", amount=0.8)
+        n["snout"] = self.part("snout", "head", (0, 0.4, -hd + 1.5), (0, 0, 0), [
+            box((-sw / 2, -sh / 2, -sl), (sw, sh - 0.9, sl), fur), box((-sw / 2 + 0.3, sh / 2 - 1.2, -sl + 0.3), (sw - 0.6, 0.6, sl - 0.6), belly)])
+        n["nose"] = self.part("nose", "snout", (0, -sh / 2 + 0.3, -sl + 0.2), (0, 0, 0), [box((-sw / 2 + 0.7, -0.4, -1.1), (sw - 1.4, 1.5, 1.4), nose or fur)])
+        n["jaw"] = self.part("jaw", "head", (0, sh / 2 - 0.6, -hd / 2 + 1), (jaw_open, 0, 0), [
+            box((-sw / 2 + 0.3, 0, -sl - 0.5), (sw - 0.6, 1.3, sl + 0.5), belly)])
+        if fangs:
+            for sx in (-1, 1):
+                self.part(f"fang_{'l' if sx > 0 else 'r'}", "snout", (sx * (sw / 2 - 0.8), sh / 2 - 0.5, -sl + 1.2), (0, 0, 0), [box((-0.35, 0, -0.35), (0.7, 1.8, 0.7), claw or "bone")])
+                self.part(f"lfang_{'l' if sx > 0 else 'r'}", "jaw", (sx * (sw / 2 - 0.9), 0.1, -sl + 0.2), (0, 0, 0), [box((-0.3, -1.4, -0.3), (0.6, 1.4, 0.6), claw or "bone")])
+        ew, eh = ears
+        for sx in (-1, 1):
+            side = "l" if sx > 0 else "r"
+            self.part(f"ear_{side}", "head", (sx * (hw / 2 - 1.1), -hh / 2 + 0.2, -hd / 2 + 2.2), (-8, 0, sx * -10), [
+                box((-ew / 2, -eh, -0.6), (ew, eh, 1.2), fur), box((-ew / 2 + 0.5, -eh + 0.5, -0.65), (ew - 1.0, eh - 1.0, 0.4), belly, 0.0)])
+            self.anim(f"ear_{side}", "sway", axis="z", amp=0.05, freq=0.11, phase=0 if sx > 0 else 2.0)
+        # four legs: thigh, lower leg, paw (+ claws)
+        for who, seg, pose, z, w in (("f", front, front_pose, -bl / 2 + 4.2, leg_w), ("b", hind, hind_pose, bl / 2 - 1.6, leg_w + 0.4)):
+            for sx in (-1, 1):
+                side = "l" if sx > 0 else "r"
+                k = f"{who}{side}"
+                x = sx * (bw / 2 - w / 2 + (0.2 if who == "f" else 0.4))
+                self.part(f"leg_{k}", "body", (x, -1.4 if who == "b" else -0.5, z), (pose[0], 0, 0), [
+                    box((-w / 2, 0, -w / 2 - (0.4 if who == "b" else 0)), (w, seg[0], w + (0.8 if who == "b" else 0)), fur)])
+                self.part(f"shin_{k}", f"leg_{k}", (0, seg[0] - 0.4, 0), (pose[1], 0, 0), [box((-w / 2 + 0.4, 0, -w / 2 + 0.4), (w - 0.8, seg[1], w - 0.8), fur)])
+                self.part(f"paw_{k}", f"shin_{k}", (0, seg[1] - 0.3, 0), (pose[2], 0, 0), [
+                    box((-w / 2 - 0.1, 0, -w / 2 - 1.4), (w + 0.2, 1.4 if seg[2] <= 3 else seg[2] - 2, w + 1.6), claw and fur or fur),
+                    box((-w / 2 - 0.1, 0.9, -w / 2 - 1.8), (w + 0.2, 0.5, 0.6), claw or "bone")])
+                ph = 0.0 if (who == "f") == (side == "l") else math.pi
+                self.anim(f"leg_{k}", "walk", axis="x", amp=walk, phase=ph)
+                self.anim(f"shin_{k}", "walk", axis="x", amp=-walk * 0.4, phase=ph + 1.0)
+        if tail:
+            segs = tail["segs"]
+            first = self.chain("tail", "body", (0, -bh + 1.5, bl / 2 - 0.5), [(segs[0][0], segs[0][1], segs[0][2], tail_rot, 0)] + [(a, b, c, d, 0) for a, b, c, d in segs[1:]],
+                               tail.get("paint", fur), sway="z", amp=0.12, freq=0.13, walk_amp=0.15)
+            n["tail"] = first
+        return n
+
+
 def mirror(v):
     return [-v[0], v[1], v[2]]
