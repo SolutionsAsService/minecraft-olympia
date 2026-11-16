@@ -16,6 +16,42 @@ def rect(face, x, y, w, h, color):
     return {"face": face, "type": "rect", "x": x, "y": y, "w": w, "h": h, "color": color}
 
 
+def face(w, h, eye="#8ae8ff", socket="#101418", brow=None, nose=None, nostril=None, mouth=None, teeth=None, cheek=None, pupil=None, eye_row=2, eye_w=2, gap=None):
+    """Decals for the front face of a head box (w x h pixels; the box's front face is w by h). Layout, top to bottom: brow (a dark line across
+    the eyes), the eyes (a dark socket row over a glowing row, the pupil on the inner pixel), a nose bridge and nostrils on the centre line, cheek
+    hollows under the eyes, and a mouth line with teeth on the last row. Every part is optional: pass only the colours the creature has.
+    Faces read from a distance by their eyes and brow, and up close by the nose and mouth: set all of them, then look at the close-up photograph."""
+    w, h = int(math.ceil(w)), int(math.ceil(h))
+    d = []
+    ex = gap if gap is not None else max(0, round(w * 0.16))
+    lx, rx = ex, w - ex - eye_w
+    r_ = eye_row
+    if brow:
+        d.append(rect("front", max(0, lx - 1), r_ - 1, min(w, rx + eye_w + 1 - max(0, lx - 1)), 1, brow)) if r_ >= 1 else None
+    for x in (lx, rx):
+        d.append(rect("front", x, r_, eye_w, 1, socket))
+        d.append(rect("front", x, r_ + 1, eye_w, 1, eye))
+    if pupil:
+        d.append(rect("front", lx + eye_w - 1, r_ + 1, 1, 1, pupil))
+        d.append(rect("front", rx, r_ + 1, 1, 1, pupil))
+    c0 = w // 2 - 1
+    if nose and r_ + 2 < h:
+        d.append(rect("front", c0, r_ + 2, 2, 1, nose))
+    if nostril and r_ + 3 < h:
+        d.append(rect("front", c0 - 1 if w > 6 else c0, r_ + 3, 1, 1, nostril))
+        d.append(rect("front", c0 + 2 if w > 6 else c0 + 1, r_ + 3, 1, 1, nostril))
+    if cheek and r_ + 3 < h:
+        d.append(rect("front", lx, r_ + 3, 1, 1, cheek))
+        d.append(rect("front", rx + eye_w - 1, r_ + 3, 1, 1, cheek))
+    if mouth:
+        my = h - 1
+        d.append(rect("front", 2, my, w - 4, 1, mouth))
+        if teeth:
+            for x in range(2, w - 2, 2):
+                d.append(rect("front", x, my - 1, 1, 1, teeth))
+    return d
+
+
 def box(frm, size, paint, grow=0, decals=None):
     b = {"from": list(frm), "size": list(size), "grow": grow, "paint": paint}
     if decals:
@@ -77,6 +113,78 @@ class Rig:
         hb = head or {}
         w, hh, d = hb.get("size", (8, 8, 8))
         n["neck"] = self.part("neck", "chest", (0, -ch, 0), (0, 0, 0), [box((-1.5, -1, -1.5), (3, 2, 3), skin)])
+        n["head"] = self.part("head", "neck", (0, -1, 0), (-hunch, 0, 0), [
+            box((-w / 2, -hh + 2, -d / 2), (w, hh - 2, d), head_paint or skin, 0, head_decals),
+            box((-w / 2 + 1, 0, -d / 2 + 1), (w - 2, 2, d - 2), head_paint or skin)])
+        self.anim("head", "look")
+        for side, sx in (("l", 1), ("r", -1)):
+            ax = sx * (cw / 2 + 1.5)
+            ay = -ch + 2
+            # shoulder cap, upper arm, forearm, hand
+            parts = []
+            if shoulder:
+                parts.append(box((-arm_w / 2 - 1, -2.5, -arm_w / 2 - 1), (arm_w + 2, 3, arm_w + 2), cloth or skin, 0.1))
+            parts.append(box((-arm_w / 2, -0.5, -arm_w / 2), (arm_w, ua, arm_w), arm_paint or skin))
+            pose = (arm_pose or {}).get(side)
+            n[f"arm_{side}"] = self.part(f"arm_{side}", "chest", (ax, ay, 0), pose[0] if pose else (stance, 0, sx * 4), parts)
+            n[f"forearm_{side}"] = self.part(f"forearm_{side}", f"arm_{side}", (0, ua - 0.5, 0), pose[1] if pose else (-12, 0, 0), [box((-arm_w / 2, 0, -arm_w / 2), (arm_w, la, arm_w), arm_paint or skin), box((-arm_w / 2, 1, -arm_w / 2), (arm_w, 2, arm_w), cloth or skin, 0.35)])
+            if hands:
+                n[f"hand_{side}"] = self.part(f"hand_{side}", f"forearm_{side}", (0, la, 0), (0, 0, 0), [box((-arm_w / 2, 0, -arm_w / 2), (arm_w, 2, arm_w), skin, 0.1)])
+            phase = 0 if side == "l" else math.pi
+            if side != swing_arm and not pose:
+                self.anim(f"arm_{side}", "walk", axis="x", amp=0.9 * walk, phase=phase)
+            if side == swing_arm and not pose:
+                self.anim(f"arm_{side}", "swing", axis="x", amp=1.3)
+            self.anim(f"arm_{side}", "sway", axis="z", amp=0.03, freq=0.09, phase=phase)
+            if not legs:
+                continue
+            # leg: thigh, shin, foot
+            lx = sx * (ww / 2 - 0.2)
+            n[f"leg_{side}"] = self.part(f"leg_{side}", "root", (lx, hy, 0), (0, 0, 0), [box((-(leg_w + 1) / 2, 0, -(leg_w + 1) / 2), (leg_w + 1, th, leg_w + 1), thigh_paint or skin)])
+            n[f"shin_{side}"] = self.part(f"shin_{side}", f"leg_{side}", (0, th, 0), (4, 0, 0), [box((-leg_w / 2, 0, -leg_w / 2), (leg_w, sh - 2, leg_w), shin_paint or skin), box((-leg_w / 2, 0.5, -leg_w / 2 - 0.5), (leg_w, 2, 1), shin_paint or skin)])
+            if feet:
+                n[f"foot_{side}"] = self.part(f"foot_{side}", f"shin_{side}", (0, sh - 2, 0), (-4, 0, 0), [box((-(leg_w + 1) / 2, 0, -foot_len + 2), (leg_w + 1, 2, foot_len), foot_paint or shin_paint or skin)])
+            self.anim(f"leg_{side}", "walk", axis="x", amp=1.1 * walk, phase=math.pi if side == "l" else 0)
+        return n
+
+
+    # ---------- a finely shaped four-legged beast (wolf, hound, boar, big cat) ----------
+    def quadruped(self, fur, belly=None, mane=None, claw=None, nose=None, body=(8, 8, 17), head=(7, 6, 6), snout=(4, 3.4, 5.5), leg_w=3.0,
+                  front=(6.5, 6, 3), hind=(6.5, 6.5, 3), tail=None, ears=(2.2, 3.4), neck=(5.5, 6, 5), walk=0.9, eye="#ffd040", eye_glow=None,
+                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100):
+        """Builds a lean body with a deeper chest and a mane, a neck, a head with a stepped snout, jaw, ears and fangs, four legs of three
+        segments (thigh, lower leg, paw) in a diagonal walk, and an optional tail chain. The hip height is solved from the leg angles so the
+        paws meet the ground. Returns the part names."""
+        bw, bh, bl = body
+        hw, hh, hd = head
+        sw, sh, sl = snout
+        belly = belly or fur
+        mane = mane or fur
+        n = {}
+
+        def drop(seg, pose):
+            """Vertical drop of a three-segment leg given its relative x rotations (degrees)."""
+            ang, tot = 0.0, 0.0
+            for ln, rx in zip(seg, pose):
+                ang += rx
+                tot += ln * math.cos(math.radians(ang))
+            return tot
+        fd = drop(front, front_pose)
+        hd_ = drop(hind, hind_pose)
+        hip = -max(fd, hd_) - 0.6            # the body's underside sits this high; the shorter leg is lifted by its pose
+        # body: the lean barrel, a deeper chest, a mane over the shoulders, a belly stripe
+        n["body"] = self.part("body", "root", (0, hip, 0), (0, 0, 0), [
+            box((-bw / 2, -bh, -bl / 2 + 3), (bw, bh, bl - 3), fur), box((-bw / 2 + 0.6, -0.2, -bl / 2 + 3.4), (bw - 1.2, 1.4, bl - 3.8), belly, 0.0)])
+        n["chest"] = self.part("chest", "body", (0, 0, -bl / 2 + 3), (0, 0, 0), [
+            box((-bw / 2 - 0.7, -bh - 0.4, -3.2), (bw + 1.4, bh + 1.4, 6.4), fur), box((-bw / 2 + 0.3, 0.2, -2.8), (bw - 0.6, 1.4, 5.6), belly)])
+        if ruff:
+            n["mane"] = self.part("mane", "chest", (0, -bh - 0.2, -0.5), (-6, 0, 0), [
+                box((-bw / 2 - 0.4, -2.4, -2.6), (bw + 0.8, 2.6, 5.4), mane), box((-1.4, -3.4, -1.8), (2.8, 1.2, 4.2), mane, 0.0)])
+            self.anim("mane", "sway", axis="z", amp=0.02, freq=0.07)
+        # neck and head
+        nw, nl, nd = neck
+        n["neck"] = self.part("neck", "chest", (0, -bh + 1.4, -2.2), (neck_rot, 0, 0), [box((-nw / 2, -nl, -nd / 2), (nw, nl, nd), fur), box((-nw / 2 - 0.4, -nl + 0.4, -nd / 2 - 0.3), (nw + 0.8, nl * 0.55, nd + 0.6), mane, 0.0)])
+        eyes = face(hw, hh, eye=eye_glow or eye, socket="#0c0c0e", brow="#1a1a1e", nostril=None, eye_row=2, eye_w=max(1, int(hw // 3)), gap=0)
         n["head"] = self.part("head", "neck", (0, -1, 0), (-hunch, 0, 0), [
             box((-w / 2, -hh + 2, -d / 2), (w, hh - 2, d), head_paint or skin, 0, head_decals),
             box((-w / 2 + 1, 0, -d / 2 + 1), (w - 2, 2, d - 2), head_paint or skin)])
