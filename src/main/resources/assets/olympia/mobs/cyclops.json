@@ -1,0 +1,68 @@
+{
+  "id": "cyclops",
+  "name": "Cyclops",
+  "base": "zombie",
+  "hostile": true,
+  "attributes": {
+    "health": 70,
+    "damage": 8,
+    "armor": 4,
+    "speed": 0.2,
+    "knockback_resistance": 0.5,
+    "scale": 1.4
+  },
+  "flags": {},
+  "behaviours": [
+    {
+      "type": "knockback",
+      "strength": 1.2,
+      "lift": 0.45
+    }
+  ],
+  "spawn": {
+    "biomes": [
+      "minecraft:windswept_hills",
+      "minecraft:stony_peaks",
+      "minecraft:savanna_plateau"
+    ],
+    "weight": 3,
+    "min": 1,
+    "max": 1
+  },
+  "drops": [
+    {
+      "item": "minecraft:bone",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "olympia:cyclops_bloodstone",
+      "min": 1,
+      "max": 1,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "min": 1,
+      "max": 3,
+      "chance": 0.6
+    },
+    {
+      "item": "olympia:obol",
+      "min": 1,
+      "max": 4,
+      "chance": 0.5
+    }
+  ],
+  "skin": {
+    "custom": true
+  },
+  "egg": [
+    "#be966e",
+    "#f0f0f0"
+  ],
+  "tests": {
+    "reach_distance": 12,
+    "reach_max_seconds": 25
+  }
+}

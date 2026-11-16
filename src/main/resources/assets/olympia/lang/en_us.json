@@ -75,5 +75,9 @@
   "block.olympia.marble_bricks_stairs": "Marble Bricks Stairs",
   "block.olympia.marble_bricks_slab": "Marble Bricks Slab",
   "block.olympia.roof_tile_stairs": "Roof Tile Stairs",
-  "block.olympia.roof_tile_slab": "Roof Tile Slab"
+  "block.olympia.roof_tile_slab": "Roof Tile Slab",
+  "entity.olympia.gorgon": "Gorgon",
+  "item.olympia.gorgon_spawn_egg": "Gorgon Spawn Egg",
+  "entity.olympia.satyr": "Satyr",
+  "item.olympia.satyr_spawn_egg": "Satyr Spawn Egg"
 }

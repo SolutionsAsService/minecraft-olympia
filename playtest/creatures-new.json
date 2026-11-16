@@ -1,0 +1,46 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "forceload add -20 -40 40 20",
+    "kill @e[type=olympia:satyr]",
+    "kill @e[type=olympia:gorgon]",
+    "summon olympia:gorgon 0 $G -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon olympia:satyr 6 $G -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ],
+  "steps": [
+    {
+      "tp": [
+        3,
+        "G+2.0",
+        -8,
+        180,
+        12
+      ],
+      "capture": "creatures-new",
+      "wait": 9
+    },
+    {
+      "tp": [
+        0,
+        "G+2.0",
+        -10,
+        180,
+        14
+      ],
+      "capture": "gorgon",
+      "wait": 8
+    },
+    {
+      "tp": [
+        6,
+        "G+2.0",
+        -10,
+        180,
+        14
+      ],
+      "capture": "satyr",
+      "wait": 8
+    }
+  ]
+}

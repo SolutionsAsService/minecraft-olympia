@@ -1,0 +1,18 @@
+{
+  "mob": "olympia:hoplite",
+  "world_ground": -58,
+  "health": 24.0,
+  "speed_attribute": 0.22,
+  "scale": 1.0,
+  "follow_range": 35.0,
+  "hostile": true,
+  "reach_distance": 12,
+  "reach_seconds": 5.0,
+  "approach_blocks_per_second": 2.08,
+  "mob_effects_seen": [],
+  "player_health_before": 200.0,
+  "first_hit_damage": 3.0,
+  "player_health_after_8s": 179.33334,
+  "effects_on_player": [],
+  "drops": []
+}

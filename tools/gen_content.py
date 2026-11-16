@@ -429,8 +429,7 @@ for f in FAMILIES:
     LANG[f"block.olympia.{f}_stairs"] = f"{title} Stairs"
     LANG[f"block.olympia.{f}_slab"] = f"{title} Slab"
 
-EGGS = {"hoplite": ((176, 116, 60), (176, 40, 40)), "cyclops": ((190, 150, 110), (240, 240, 240)),
-        "minotaur": ((86, 56, 40), (216, 204, 170))}
+EGGS = {}   # spawn eggs belong to `shadw-mod mob gen` (mobs/*.json)
 
 
 # ---------- creature skins (zombie model) ----------

@@ -1,0 +1,93 @@
+{
+  "id": "satyr",
+  "name": "Satyr",
+  "base": "zombie",
+  "hostile": false,
+  "attributes": {
+    "health": 22,
+    "damage": 3,
+    "armor": 0,
+    "speed": 0.27
+  },
+  "flags": {},
+  "behaviours": [
+    {
+      "type": "on_hit_effect",
+      "effect": "minecraft:nausea",
+      "seconds": 6,
+      "amplifier": 0
+    },
+    {
+      "type": "knockback",
+      "strength": 0.8,
+      "lift": 0.35
+    }
+  ],
+  "spawn": {
+    "biomes": [
+      "minecraft:forest",
+      "minecraft:meadow",
+      "minecraft:plains"
+    ],
+    "weight": 6,
+    "min": 1,
+    "max": 3
+  },
+  "drops": [
+    {
+      "item": "minecraft:leather",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "item": "minecraft:sweet_berries",
+      "min": 0,
+      "max": 3
+    },
+    {
+      "item": "olympia:laurel",
+      "min": 0,
+      "max": 1,
+      "chance": 0.3
+    }
+  ],
+  "skin": {
+    "parts": {
+      "head": "#d6a878",
+      "body": "#b88860",
+      "arms": "#d6a878",
+      "legs": "#6a4a30"
+    },
+    "noise": 5,
+    "features": [
+      {
+        "type": "eyes",
+        "color": "#2a1a10",
+        "y": 3
+      },
+      {
+        "type": "horns",
+        "color": "#e8dcc0"
+      },
+      {
+        "type": "mouth",
+        "color": "#8a4a3a"
+      },
+      {
+        "type": "band",
+        "part": "legs",
+        "y": 6,
+        "h": 4,
+        "color": "#4a3220"
+      }
+    ]
+  },
+  "egg": [
+    "#b88860",
+    "#e8dcc0"
+  ],
+  "tests": {
+    "reach_distance": 12,
+    "reach_max_seconds": 20
+  }
+}

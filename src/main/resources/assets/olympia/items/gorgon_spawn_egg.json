@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "olympia:item/gorgon_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 5929544
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 15786032
+      }
+    ]
+  }
+}

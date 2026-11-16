@@ -150,7 +150,7 @@ def dur(s):
 
 
 def roman(n):
-    return ["", "I", "II", "III", "IV", "V"][n]
+    return ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"][n]
 
 
 def shot(name):
@@ -389,6 +389,16 @@ def recipe_text(name):
 LANG = jread(ASSETS / "lang/en_us.json")
 CONTENT = jread(ASSETS / "content.json")
 POTIONS = jread(ASSETS / "potions.json")["potions"]
+MOBS = {p.stem: jread(p) for p in sorted((ASSETS / "mobs").glob("*.json"))}   # the creature specs, copied by `shadw-mod mob gen`
+
+
+def mob_attrs(i):
+    a = MOBS[i]["attributes"]
+    return {"health": a.get("health", 20), "damage": a.get("damage", 3), "armor": a.get("armor", 0), "scale": a.get("scale", 1.0), "follow_range": a.get("follow_range", 35)}
+
+
+def biome_words(spec):
+    return ", ".join(b.replace("minecraft:", "").replace("_", " ") for b in spec.get("spawn", {}).get("biomes", []))
 EFFECT = {"minecraft:strength": "Strength", "minecraft:fire_resistance": "Fire Resistance", "minecraft:regeneration": "Regeneration",
           "minecraft:speed": "Speed", "minecraft:slow_falling": "Slow Falling", "minecraft:luck": "Luck", "minecraft:resistance": "Resistance",
           "minecraft:night_vision": "Night Vision", "minecraft:absorption": "Absorption", "minecraft:water_breathing": "Water Breathing",
@@ -498,7 +508,7 @@ def home_wall():
         ("structures", "Places", f"{n_structs() - 1} places", "Temples, shrines, groves and ruins.", "structures.html", "panels/greek-ruin", "marble_bricks"),
         ("labyrinth", "Labyrinth", "61 by 61 blocks", "A maze under a pavilion, and a bull in it.", "labyrinth.html", "panels/labyrinth-hall", "black_marble"),
         ("blocks", "Blocks", f"{len(block_ids())} blocks", "Marble, columns, stairs and slabs.", "blocks.html", "panels/blocks", "greek_mosaic"),
-        ("creatures", "Creatures", "3 creatures", "A hoplite, a cyclops, the Minotaur.", "creatures.html", "panels/creatures", "hoplite-face"),
+        ("creatures", "Creatures", "5 creatures", "Hoplite, cyclops, satyr, gorgon, Minotaur.", "creatures.html", "panels/creatures", "hoplite-face"),
         ("relics", "Relics", "2 relics · 5 potions", "A thunderbolt, a thread, and ambrosia.", "relics.html", "panels/relics", "thunderbolt"),
     ]
     items = ""
@@ -624,7 +634,10 @@ def build_structures():
 def build_labyrinth():
     routes = maze_routes()
     rows = "".join(f'<tr><th scope="row">Variant {i}</th><td>{r["tiles"]} floor tiles; the walk from the ladder to the Minotaur\'s hall is {r["walk"]} blocks; {r["chests"]} chests</td></tr>' for i, r in enumerate(routes))
-    m = CONTENT["creatures"]["minotaur"]
+    mspec = MOBS["minotaur"]
+    m = mob_attrs("minotaur")
+    beh = {b["type"]: b for b in mspec["behaviours"]}
+    m.update(charge_seconds=beh["charge"]["seconds"], slam_damage=beh["slam"]["damage"])
     loot = ", ".join(chest_items("labyrinth_vault"))
     body = f"""
 <section class="page">
@@ -651,28 +664,41 @@ def build_labyrinth():
 
 def build_creatures():
     cards = ""
-    c = CONTENT["creatures"]
-    info = (("hoplite", "Hoplite", "creatures", "A citizen-soldier in a bronze Corinthian helmet and breastplate with a sword and shield. As written in the code (not yet seen in a fight): it does not burn in sunlight and calls no reinforcements.", "Plains: groups of 1 to 3, weight 8; set to patrol the Greek ruin and to guard the temples of Zeus and Athena."),
-            ("cyclops", "Cyclops", "cyclops", "A one-eyed brute, 1.4 times your size. As written: hard to push, and its blows throw you into the air.", "Hills and peaks: one at a time, weight 3."),
-            ("minotaur", "Minotaur", "minotaur", "The bull-headed thing of the labyrinth. See <a href=\"/labyrinth.html\">its page</a>. It has no natural spawn: the labyrinth places it.", "None; the labyrinth places one."))
-    for key, name, shotn, blurb, spawn in info:
-        a = c[key]
-        loot = ", ".join(label(e["name"]) for pool in jread(DATA / "loot_table/entities" / f"{key}.json")["pools"] for e in pool["entries"] if e.get("type") == "minecraft:item")
+    info = (("hoplite", "creatures", "A citizen-soldier in a bronze Corinthian helmet and breastplate with a sword and shield. As written in the data (watched only in tests): it does not burn in sunlight and calls no reinforcements.", "Plains: groups of 1 to 3; set to patrol the Greek ruin and to guard the temples of Zeus and Athena."),
+            ("cyclops", "cyclops", "A one-eyed brute, 1.4 times your size. Hard to push, and its blows throw you into the air.", None),
+            ("satyr", "satyr", "A goat-legged forest dweller. Neutral: it leaves you alone until you strike it, then its blows make you queasy (Nausea).", None),
+            ("gorgon", "gorgon", "A snake-crowned swamp hunter. Each blow slows you to a crawl, tires your arms and blinds you for a moment: a petrification of sorts, without the stone.", None),
+            ("minotaur", "minotaur", "The bull-headed thing of the labyrinth. See <a href=\"/labyrinth.html\">its page</a>. It has no natural spawn: the labyrinth places it.", "None; the labyrinth places one."))
+    for key, shotn, blurb, spawn in info:
+        spec = MOBS[key]
+        a = mob_attrs(key)
+        name = spec["name"]
+        if spawn is None:
+            sp = spec["spawn"]
+            spawn = f"{biome_words(spec).capitalize()}: {sp['min'] if sp['min'] == sp['max'] else str(sp['min']) + ' to ' + str(sp['max'])} at a time, weight {sp['weight']}."
+        loot = ", ".join(label(d["item"]) for d in spec["drops"])
+        fx = ", ".join(f"{label(b['effect'])} {roman(b.get('amplifier', 0) + 1)} for {b.get('seconds', 5)} s" for b in spec["behaviours"] if b["type"] == "on_hit_effect")
+        meas = jread(REPO / "playtest" / f"mobtest-{key}.json") if (REPO / "playtest" / f"mobtest-{key}.json").exists() else None
+        mrow = ""
+        if meas:
+            reach = f"reached a player {meas['reach_distance']} blocks away in {meas['reach_seconds']} s" if meas.get("reach_seconds") else ("did not attack until struck" if not meas.get("hostile", True) else "did not reach the player")
+            mrow = f'<tr><th scope="row">Measured</th><td>In a flat test world: {esc(reach)}; first hit took {meas["first_hit_damage"]:g} health on Easy; effects on the player: {esc(", ".join(label(e) for e in meas["effects_on_player"]) or "none")}. (One run each; <code>shadw-mod playtest mobtest</code>.)</td></tr>' if meas.get("first_hit_damage") is not None else ""
         cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{blurb}</p>{fig(shotn if key != 'hoplite' else 'creatures', name + ", with the AI off for the photograph.", name + " standing on grass")}
   <table class="data"><caption class="sr">{name}: facts</caption><tbody>
-  <tr><th scope="row">Stats</th><td>{a['health']:g} health ({a['health'] / 2:g} hearts), {a['damage']:g} attack damage, {a['armor']:g} armour</td></tr>
+  <tr><th scope="row">Stats</th><td>{a['health']:g} health ({a['health'] / 2:g} hearts), {a['damage']:g} attack damage, {a['armor']:g} armour{(', ' + fx + ' on hit') if fx else ''}</td></tr>
   <tr><th scope="row">Spawns</th><td>{esc(spawn)}</td></tr>
   <tr><th scope="row">Drops</th><td>{esc(loot)}</td></tr>
+  {mrow}
   <tr><th scope="row">Spawn egg</th><td>In the Spawn Eggs tab, and <code>/summon olympia:{key}</code></td></tr></tbody></table></section>"""
     body = f"""
 <section class="page">
-  <p class="eyebrow">Creatures</p><h1>Bronze, one eye, and a bull</h1><div class="rule"></div>
-  <p class="lede">Three creatures from the design's Phase 3. They use the zombie model with skins painted for the mod; the Minotaur's horns are painted on the head, not modelled.</p>
+  <p class="eyebrow">Creatures</p><h1>Bronze, one eye, goat legs and a bull</h1><div class="rule"></div>
+  <p class="lede">Five creatures from the design's Phase 3, each defined in a small data file (<code>mobs/*.json</code>) from which the mod's classes, skins, eggs and loot are generated. They use the zombie model with skins painted for the mod; the Minotaur's horns are painted on the head, not modelled.</p>
   {cards}
-  {status(["All three load, render with their skins and are summoned and photographed.", "The Minotaur's behaviour was watched in play (see the labyrinth page). The stats are the ones in the data file, read at build time."],
-          ["Hoplites and cyclopes spawning on their own, and a fight with either.", "Their drops (the tables are written, not yet watched).", "Custom models and animations: they reuse the zombie's."])}
+  {status(["All five load, render with their skins and are summoned and photographed.", "A test harness measured each in a running game: time to reach a player, the first hit, the effects it gives and its drops (the numbers above).", "The Minotaur's behaviour was watched in play (see the labyrinth page)."],
+          ["Hoplites, cyclopes, satyrs and gorgons spawning on their own, and a real fight with any of them.", "Custom models and animations: they reuse the zombie's.", "Whether the numbers are fun: that needs a person."])}
 </section>"""
-    return page("Creatures: hoplite, cyclops and Minotaur", "The hoplite, the cyclops and the Minotaur of the Olympia mod: stats, spawns, drops and what they do.", body, "creatures", "creatures.html", "creatures")
+    return page("Creatures: hoplite, cyclops, satyr, gorgon and Minotaur", "The five creatures of the Olympia mod: stats, spawns, drops, measured behaviour and what they do.", body, "creatures", "creatures.html", "creatures")
 
 
 def build_relics():
@@ -722,7 +748,7 @@ def build_install():
 cd minecraft-olympia
 gradle build
 # the jar is in build/libs/olympia-{esc(mf['version'])}.jar</code></pre>
-  <p>Copy the jar into your <code>mods</code> folder and start the game. The server log line <code>Olympia loaded: 5 potions, 5 brewing recipes, 0 unknown effects skipped; {len(block_ids())} blocks, 4 gods, 3 creatures</code> confirms the registration.</p>
+  <p>Copy the jar into your <code>mods</code> folder and start the game. The server log line <code>Olympia loaded: 5 potions, 5 brewing recipes, 0 unknown effects skipped; {len(block_ids())} blocks, 4 gods, 5 creatures</code> confirms the registration.</p>
   <h2>Commands</h2>
   <table class="data"><caption class="sr">Commands</caption><tbody><tr><th scope="row"><code>/olympia favor</code></th><td>Your favor and stage with each god.</td></tr>
   <tr><th scope="row"><code>/olympia offer &lt;god&gt;</code></th><td>Operators: offer the item in your hand to a god (the same code the altar runs).</td></tr>

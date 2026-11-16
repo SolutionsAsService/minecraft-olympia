@@ -20,6 +20,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import dev.shadw.olympia.mobs.GeneratedMobs;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
@@ -43,7 +44,7 @@ public class Mod implements ModInitializer {
 	public void onInitialize() {
 		OlympiaBlocks.init();
 		OlympiaItems.init();
-		OlympiaEntities.init();
+		GeneratedMobs.init();
 		Favor.init();
 		OlympiaCommands.init();
 		JsonObject root = load();
@@ -110,11 +111,7 @@ public class Mod implements ModInitializer {
 				entries.accept(altar);
 			}
 		});
-		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(entries -> {
-			entries.accept(OlympiaEntities.HOPLITE_SPAWN_EGG);
-			entries.accept(OlympiaEntities.CYCLOPS_SPAWN_EGG);
-			entries.accept(OlympiaEntities.MINOTAUR_SPAWN_EGG);
-		});
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(entries -> GeneratedMobs.EGGS.forEach(entries::accept));
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> entries.accept(OlympiaItems.THUNDERBOLT));
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> entries.accept(OlympiaItems.THREAD_OF_ARIADNE));
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(entries -> entries.accept(OlympiaItems.AMBROSIA));
@@ -123,8 +120,8 @@ public class Mod implements ModInitializer {
 			entries.accept(OlympiaItems.CYCLOPS_BLOODSTONE);
 			entries.accept(OlympiaItems.MINOTAUR_HORN);
 		});
-		LOGGER.info("Olympia loaded: {} potions, {} brewing recipes, {} unknown effects skipped; {} blocks, 4 gods, 3 creatures",
-				pending.size(), pending.size(), effectsSkipped, OlympiaBlocks.count());
+		LOGGER.info("Olympia loaded: {} potions, {} brewing recipes, {} unknown effects skipped; {} blocks, 4 gods, {} creatures",
+				pending.size(), pending.size(), effectsSkipped, OlympiaBlocks.count(), GeneratedMobs.EGGS.size());
 	}
 
 	private static ResourceKey<Item> itemKey(String path) {

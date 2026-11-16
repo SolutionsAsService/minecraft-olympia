@@ -1,0 +1,20 @@
+{
+  "mob": "olympia:cyclops",
+  "world_ground": -58,
+  "health": 70.0,
+  "speed_attribute": 0.2,
+  "scale": 1.4,
+  "follow_range": 35.0,
+  "hostile": true,
+  "reach_distance": 12,
+  "reach_seconds": 6.0,
+  "approach_blocks_per_second": 1.72,
+  "mob_effects_seen": [],
+  "player_health_before": 200.0,
+  "first_hit_damage": 5.0,
+  "player_health_after_8s": 189.0,
+  "effects_on_player": [],
+  "drops": [
+    "minecraft:bone x2"
+  ]
+}

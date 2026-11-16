@@ -1,0 +1,85 @@
+{
+  "id": "minotaur",
+  "name": "Minotaur",
+  "base": "zombie",
+  "hostile": true,
+  "attributes": {
+    "health": 140,
+    "damage": 8,
+    "armor": 6,
+    "speed": 0.24,
+    "knockback_resistance": 0.8,
+    "follow_range": 128,
+    "scale": 1.5
+  },
+  "flags": {
+    "sun_sensitive": false,
+    "converts_in_water": false,
+    "baby": false,
+    "reinforcements": false
+  },
+  "behaviours": [
+    {
+      "type": "hunt",
+      "through_walls": true,
+      "stalk": true
+    },
+    {
+      "type": "charge",
+      "min": 5,
+      "max": 14,
+      "cooldown_ticks": 160,
+      "seconds": 3,
+      "amplifier": 2
+    },
+    {
+      "type": "slam",
+      "cooldown_ticks": 200,
+      "radius": 4.5,
+      "damage": 6
+    },
+    {
+      "type": "enrage",
+      "below": 0.5,
+      "speed_bonus": 0.25,
+      "damage_bonus": 0.4
+    },
+    {
+      "type": "boss_bar",
+      "color": "red"
+    }
+  ],
+  "drops": [
+    {
+      "item": "olympia:minotaur_horn",
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "olympia:ambrosia",
+      "min": 2,
+      "max": 4
+    },
+    {
+      "item": "minecraft:diamond",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "olympia:obol",
+      "min": 10,
+      "max": 20
+    }
+  ],
+  "skin": {
+    "custom": true
+  },
+  "egg": [
+    "#563828",
+    "#d8ccaa"
+  ],
+  "tests": {
+    "reach_distance": 12,
+    "reach_max_seconds": 20
+  }
+}

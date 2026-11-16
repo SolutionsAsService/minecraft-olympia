@@ -131,14 +131,7 @@ def main():
     }
     for name, pools in chests.items():
         write(K / "loot_table/chests" / f"{name}.json", {"type": "minecraft:chest", "pools": pools})
-    write(K / "loot_table/entities/hoplite.json", {"type": "minecraft:entity", "pools": [
-        pool([item("olympia:obol", 1, 0, 2)], 1, 1), chance([item("minecraft:iron_nugget", 1, 1, 4)], 0.4), chance([item("minecraft:emerald", 1)], 0.08)]})
-    write(K / "loot_table/entities/cyclops.json", {"type": "minecraft:entity", "pools": [
-        pool([item("minecraft:bone", 1, 1, 3)], 1, 1), chance([item("olympia:cyclops_bloodstone", 1)], 0.5),
-        chance([item("minecraft:iron_ingot", 1, 1, 3)], 0.6), chance([item("olympia:obol", 1, 1, 4)], 0.5)]})
-    write(K / "loot_table/entities/minotaur.json", {"type": "minecraft:entity", "pools": [
-        sure([item("olympia:minotaur_horn", 1)]), pool([item("olympia:ambrosia", 1, 2, 4)], 1, 1), pool([item("minecraft:diamond", 1, 1, 3)], 1, 1),
-        pool([item("olympia:obol", 1, 10, 20)], 1, 1)]})
+    # entity loot tables are written by `shadw-mod mob gen` from mobs/*.json
     rec = K / "recipe"
     for n in STONES:
         if n == "white_marble":

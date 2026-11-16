@@ -1,0 +1,58 @@
+{
+  "id": "hoplite",
+  "name": "Hoplite",
+  "base": "zombie",
+  "hostile": true,
+  "attributes": {
+    "health": 24,
+    "damage": 4,
+    "armor": 6,
+    "speed": 0.22
+  },
+  "flags": {},
+  "equipment": {
+    "mainhand": "minecraft:iron_sword",
+    "offhand": "minecraft:shield"
+  },
+  "behaviours": [],
+  "spawn": {
+    "biomes": [
+      "minecraft:plains",
+      "minecraft:meadow",
+      "minecraft:sunflower_plains"
+    ],
+    "weight": 8,
+    "min": 1,
+    "max": 3
+  },
+  "drops": [
+    {
+      "item": "olympia:obol",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "min": 1,
+      "max": 4,
+      "chance": 0.4
+    },
+    {
+      "item": "minecraft:emerald",
+      "min": 1,
+      "max": 1,
+      "chance": 0.08
+    }
+  ],
+  "skin": {
+    "custom": true
+  },
+  "egg": [
+    "#b0743c",
+    "#b02828"
+  ],
+  "tests": {
+    "reach_distance": 12,
+    "reach_max_seconds": 20
+  }
+}

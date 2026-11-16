@@ -1,0 +1,23 @@
+{
+  "mob": "olympia:satyr",
+  "world_ground": -58,
+  "health": 22.0,
+  "speed_attribute": 0.27,
+  "scale": 1.0,
+  "follow_range": 35.0,
+  "hostile": false,
+  "reach_distance": null,
+  "reach_seconds": null,
+  "mob_effects_seen": [],
+  "provoked": true,
+  "player_health_before": 200.0,
+  "first_hit_damage": 2.5,
+  "player_health_after_8s": 188.5,
+  "effects_on_player": [
+    "minecraft:nausea"
+  ],
+  "drops": [
+    "minecraft:sweet_berries x1",
+    "minecraft:leather x1"
+  ]
+}

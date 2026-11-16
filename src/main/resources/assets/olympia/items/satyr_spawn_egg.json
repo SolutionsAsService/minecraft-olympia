@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "olympia:item/satyr_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12093536
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 15260864
+      }
+    ]
+  }
+}

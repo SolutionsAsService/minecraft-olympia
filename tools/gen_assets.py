@@ -59,6 +59,9 @@ def write_lang():
     extra = Path(__file__).resolve().parent / "content_lang.json"   # written by tools/gen_content.py
     if extra.exists():
         entries.update(json.loads(extra.read_text(encoding="utf-8")))
+    mobs = Path(__file__).resolve().parent / "mobs_lang.json"   # written by `shadw-mod mob gen`
+    if mobs.exists():
+        entries.update(json.loads(mobs.read_text(encoding="utf-8")))
     path.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 

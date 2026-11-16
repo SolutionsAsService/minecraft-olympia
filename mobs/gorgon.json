@@ -1,0 +1,107 @@
+{
+  "id": "gorgon",
+  "name": "Gorgon",
+  "base": "zombie",
+  "hostile": true,
+  "attributes": {
+    "health": 40,
+    "damage": 5,
+    "armor": 2,
+    "speed": 0.21
+  },
+  "flags": {},
+  "behaviours": [
+    {
+      "type": "hunt",
+      "through_walls": false,
+      "stalk": false,
+      "range": 40
+    },
+    {
+      "type": "on_hit_effect",
+      "effect": "minecraft:slowness",
+      "seconds": 4,
+      "amplifier": 5
+    },
+    {
+      "type": "on_hit_effect",
+      "effect": "minecraft:mining_fatigue",
+      "seconds": 4,
+      "amplifier": 2
+    },
+    {
+      "type": "on_hit_effect",
+      "effect": "minecraft:blindness",
+      "seconds": 2,
+      "amplifier": 0
+    }
+  ],
+  "spawn": {
+    "biomes": [
+      "minecraft:swamp",
+      "minecraft:mangrove_swamp"
+    ],
+    "weight": 4,
+    "min": 1,
+    "max": 1
+  },
+  "drops": [
+    {
+      "item": "minecraft:bone",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "item": "minecraft:emerald",
+      "min": 0,
+      "max": 2,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:poisonous_potato",
+      "min": 0,
+      "max": 1,
+      "chance": 0.3
+    }
+  ],
+  "skin": {
+    "parts": {
+      "head": "#7ea05a",
+      "body": "#5a7a48",
+      "arms": "#7ea05a",
+      "legs": "#4a6038"
+    },
+    "noise": 6,
+    "features": [
+      {
+        "type": "eyes",
+        "color": "#f0e030",
+        "y": 3,
+        "size": 1
+      },
+      {
+        "type": "mouth",
+        "color": "#3a2a1a"
+      },
+      {
+        "type": "crest",
+        "color": "#2a5a2a"
+      },
+      {
+        "type": "band",
+        "part": "body",
+        "y": 4,
+        "h": 2,
+        "color": "#3a5a30"
+      }
+    ]
+  },
+  "egg": [
+    "#5a7a48",
+    "#f0e030"
+  ],
+  "tests": {
+    "reach_distance": 12,
+    "reach_max_seconds": 20
+  }
+}
