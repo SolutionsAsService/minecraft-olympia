@@ -56,7 +56,8 @@ python3 _src/build_site.py                                    # the site
 sh playtest/run.sh                                            # rebuild the test world and take every photograph
 ```
 
+**Mounts:** the **Pegasus**, a winged white horse: tame it by riding it, saddle it and ride it, and it flies (jump climbs, look down to dive). Rare in meadows and cherry groves. Checked by summoning and riding by command and photographed; flight and taming were not driven.
+
 ## Credit
 
 All work in this repository is credited only to SolutionsAsService.
-\n\n**Mounts:** the **Pegasus** (a winged white horse: tame, saddle and ride it, and it flies; rare in meadows). Checked by summoning and riding by command, and photographed; flight and taming not driven.\n
