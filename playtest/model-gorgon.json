@@ -15,22 +15,22 @@
     },
     {
       "tp": [
-        3.5,
-        "G+-0.52",
-        -16.5,
-        145,
-        6
+        2.8,
+        "G+0.32",
+        -17.2,
+        135,
+        12
       ],
       "capture": "gorgon-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        5.0,
-        "G+-0.52",
+        4.0,
+        "G+0.32",
         -20,
         90,
-        6
+        12
       ],
       "capture": "gorgon-side",
       "wait": 6
@@ -72,8 +72,8 @@
   "setup": [
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
-    "kill @e[type=item]",
     "gamerule doMobSpawning false",
+    "kill @e[type=olympia:pegasus]",
     "kill @e[type=olympia:satyr]",
     "kill @e[type=olympia:gorgon]",
     "kill @e[type=olympia:hoplite]",
@@ -84,6 +84,7 @@
     "kill @e[type=olympia:scarab]",
     "kill @e[type=olympia:tomb_guardian]",
     "kill @e[type=olympia:forgotten_pharaoh]",
+    "kill @e[type=item]",
     "summon olympia:gorgon 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
   ]
 }

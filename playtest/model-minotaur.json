@@ -15,22 +15,22 @@
     },
     {
       "tp": [
-        4.8999999999999995,
-        "G+-0.02",
-        -15.100000000000001,
-        145,
-        6
+        4.165,
+        "G+1.23",
+        -15.835,
+        135,
+        12
       ],
       "capture": "minotaur-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        7.0,
-        "G+-0.02",
+        5.95,
+        "G+1.23",
         -20,
         90,
-        6
+        12
       ],
       "capture": "minotaur-side",
       "wait": 6
@@ -72,8 +72,8 @@
   "setup": [
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
-    "kill @e[type=item]",
     "gamerule doMobSpawning false",
+    "kill @e[type=olympia:pegasus]",
     "kill @e[type=olympia:satyr]",
     "kill @e[type=olympia:gorgon]",
     "kill @e[type=olympia:hoplite]",
@@ -84,6 +84,7 @@
     "kill @e[type=olympia:scarab]",
     "kill @e[type=olympia:tomb_guardian]",
     "kill @e[type=olympia:forgotten_pharaoh]",
+    "kill @e[type=item]",
     "summon olympia:minotaur 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
   ]
 }

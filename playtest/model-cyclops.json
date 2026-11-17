@@ -15,22 +15,22 @@
     },
     {
       "tp": [
-        4.4799999999999995,
-        "G+-0.17",
-        -15.52,
-        145,
-        6
+        3.5840000000000005,
+        "G+0.91",
+        -16.416,
+        135,
+        12
       ],
       "capture": "cyclops-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        6.4,
-        "G+-0.17",
+        5.120000000000001,
+        "G+0.91",
         -20,
         90,
-        6
+        12
       ],
       "capture": "cyclops-side",
       "wait": 6
@@ -72,8 +72,8 @@
   "setup": [
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
-    "kill @e[type=item]",
     "gamerule doMobSpawning false",
+    "kill @e[type=olympia:pegasus]",
     "kill @e[type=olympia:satyr]",
     "kill @e[type=olympia:gorgon]",
     "kill @e[type=olympia:hoplite]",
@@ -84,6 +84,7 @@
     "kill @e[type=olympia:scarab]",
     "kill @e[type=olympia:tomb_guardian]",
     "kill @e[type=olympia:forgotten_pharaoh]",
+    "kill @e[type=item]",
     "summon olympia:cyclops 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
   ]
 }

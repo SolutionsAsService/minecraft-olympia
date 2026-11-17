@@ -15,22 +15,22 @@
     },
     {
       "tp": [
-        3.08,
-        "G+-0.62",
-        -16.92,
-        145,
-        6
+        2.31,
+        "G+0.07",
+        -17.69,
+        135,
+        12
       ],
       "capture": "hoplite-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        4.4,
-        "G+-0.62",
+        3.3000000000000003,
+        "G+0.07",
         -20,
         90,
-        6
+        12
       ],
       "capture": "hoplite-side",
       "wait": 6
@@ -72,8 +72,8 @@
   "setup": [
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
-    "kill @e[type=item]",
     "gamerule doMobSpawning false",
+    "kill @e[type=olympia:pegasus]",
     "kill @e[type=olympia:satyr]",
     "kill @e[type=olympia:gorgon]",
     "kill @e[type=olympia:hoplite]",
@@ -84,6 +84,7 @@
     "kill @e[type=olympia:scarab]",
     "kill @e[type=olympia:tomb_guardian]",
     "kill @e[type=olympia:forgotten_pharaoh]",
+    "kill @e[type=item]",
     "summon olympia:hoplite 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
   ]
 }

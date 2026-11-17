@@ -520,7 +520,7 @@ def home_wall():
         ("structures", "Places", f"{n_structs() - 1} places", "Temples, shrines, groves and ruins.", "structures.html", "panels/greek-ruin", "marble_bricks"),
         ("labyrinth", "Labyrinth", "61 by 61 blocks", "A maze under a pavilion, and a bull in it.", "labyrinth.html", "panels/labyrinth-hall", "black_marble"),
         ("blocks", "Blocks", f"{len(block_ids())} blocks", "Marble, columns, stairs and slabs.", "blocks.html", "panels/blocks", "greek_mosaic"),
-        ("creatures", "Creatures", "5 creatures", "Hoplite, cyclops, satyr, gorgon, Minotaur.", "creatures.html", "panels/creatures", "hoplite-face"),
+        ("creatures", "Creatures", "6 creatures", "Hoplite, cyclops, satyr, gorgon, Minotaur.", "creatures.html", "panels/creatures", "hoplite-face"),
         ("relics", "Relics", "2 relics · 13 potions", "A thunderbolt, a thread, and ambrosia.", "relics.html", "panels/relics", "thunderbolt"),
     ]
     items = ""
@@ -681,24 +681,25 @@ def build_creatures():
             ("cyclops", "cyclops", "A hunched one-eyed brute with a shaggy pelt over its shoulders, a heavy brow and tusks, a ragged hide loincloth and a spiked club of one great log. Hard to push, and its blows throw you into the air.", None),
             ("satyr", "satyr", "A goat-legged forest dweller with curling ram horns, a goatee and a set of pan-pipes at its lips. It has its own model: digitigrade goat legs with hooves, swaying ears and tail. Neutral: it leaves you alone until you strike it, then its blows make you queasy (Nausea).", None),
             ("gorgon", "gorgon", "A serpent-bodied swamp hunter with a mane of twelve living snakes (each a chain of four moving parts), tusks, bronze gauntlets with claws and golden wings. It has its own model and a tail that slithers as it moves. Each blow slows you to a crawl, tires your arms and blinds you for a moment: a petrification of sorts, without the stone.", None),
+            ("pegasus", "pegasus", "A winged white horse with a flowing gold mane, a purple saddle blanket with gold trim and a pair of feathered wings. It is a horse underneath: tame it by riding it again and again, then saddle it and feed it. Once saddled and ridden it flies: hold jump to climb, look down while moving forward to dive, let go to hover. It takes no fall damage. A hand-written class on the horse, with its own model.", "Meadows and cherry groves: one or two at a time, spawn weight 2. Rare."),
             ("minotaur", "minotaur", "The bull-headed thing of the labyrinth: great curving horns, red eyes, a golden nose ring, a shaggy neck ruff, a gold-studded belt and a double-headed labrys. See <a href=\"/labyrinth.html\">its page</a>. It has no natural spawn: the labyrinth places it.", "None; the labyrinth places one."))
     for key, shotn, blurb, spawn in info:
         spec = MOBS[key]
-        a = mob_attrs(key)
+        a = mob_attrs(key) if not spec.get("external") else {"health": 30, "damage": 0, "armor": 0}
         name = spec["name"]
         if spawn is None:
             sp = spec["spawn"]
             spawn = f"{biome_words(spec).capitalize()}: {sp['min'] if sp['min'] == sp['max'] else str(sp['min']) + ' to ' + str(sp['max'])} at a time, weight {sp['weight']}."
         loot = ", ".join(label(d["item"]) for d in spec["drops"])
-        fx = ", ".join(f"{label(b['effect'])} {roman(b.get('amplifier', 0) + 1)} for {b.get('seconds', 5)} s" for b in spec["behaviours"] if b["type"] == "on_hit_effect")
+        fx = ", ".join(f"{label(b['effect'])} {roman(b.get('amplifier', 0) + 1)} for {b.get('seconds', 5)} s" for b in spec.get("behaviours", []) if b["type"] == "on_hit_effect")
         meas = jread(REPO / "playtest" / f"mobtest-{key}.json") if (REPO / "playtest" / f"mobtest-{key}.json").exists() else None
         mrow = ""
         if meas:
             reach = f"reached a player {meas['reach_distance']} blocks away in {meas['reach_seconds']} s" if meas.get("reach_seconds") else ("did not attack until struck" if not meas.get("hostile", True) else "did not reach the player")
             mrow = f'<tr><th scope="row">Measured</th><td>In a flat test world: {esc(reach)}; first hit took {meas["first_hit_damage"]:g} health on Easy; effects on the player: {esc(", ".join(label(e) for e in meas["effects_on_player"]) or "none")}. (One run each; <code>shadw-mod playtest mobtest</code>.)</td></tr>' if meas.get("first_hit_damage") is not None else ""
-        cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{blurb}</p><div class="shots two">{fig(key + "-full", name + " full length, three-quarter view, with its AI off for the photograph.", name + " seen full length")}{fig(key, name + ", close up.", name + " close up")}</div>
+        cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{blurb}</p><div class="shots two">{fig(key + "-full", name + ", three-quarter view, with its AI off for the photograph.", name + " seen from a three-quarter angle")}{fig(key, name + ", close up.", name + " close up")}</div>
   <table class="data"><caption class="sr">{name}: facts</caption><tbody>
-  <tr><th scope="row">Stats</th><td>{a['health']:g} health ({a['health'] / 2:g} hearts), {a['damage']:g} attack damage, {a['armor']:g} armour{(', ' + fx + ' on hit') if fx else ''}</td></tr>
+  <tr><th scope="row">Stats</th><td>{("30 health (15 hearts), speed 0.3, jump 0.9; it does not fight. Flies when saddled and ridden." if spec.get("external") else f"{a['health']:g} health ({a['health'] / 2:g} hearts), {a['damage']:g} attack damage, {a['armor']:g} armour" + ((', ' + fx + ' on hit') if fx else ''))}</td></tr>
   <tr><th scope="row">Spawns</th><td>{esc(spawn)}</td></tr>
   <tr><th scope="row">Drops</th><td>{esc(loot)}</td></tr>
   {mrow}
@@ -706,12 +707,12 @@ def build_creatures():
     body = f"""
 <section class="page">
   <p class="eyebrow">Creatures</p><h1>Bronze, one eye, goat legs and a bull</h1><div class="rule"></div>
-  <p class="lede">Five creatures from the design's Phase 3, each defined in a small data file (<code>mobs/*.json</code>) from which the mod's classes, models, textures, eggs and loot are generated. Every one has its own model, built from 30 to 100 small moving parts with a texture packed and painted by the generator.</p>
+  <p class="lede">Six creatures from the design's Phase 3 (five monsters and a mount), each defined in a small data file (<code>mobs/*.json</code>) from which the mod's classes, models, textures, eggs and loot are generated. Every one has its own model, built from 30 to 100 small moving parts with a texture packed and painted by the generator.</p>
   {cards}
-  {status(["All five load, render with their own models and are photographed from front, three-quarter, side, back and close up.", "A test harness measured each in a running game: time to reach a player, the first hit, the effects it gives and its drops (the numbers above).", "The Minotaur's behaviour was watched in play (see the labyrinth page)."],
+  {status(["All six load, render with their own models and are photographed from front, three-quarter, side, back and close up.", "A test harness measured each in a running game: time to reach a player, the first hit, the effects it gives and its drops (the numbers above).", "The Minotaur's behaviour was watched in play (see the labyrinth page)."],
           ["Hoplites, cyclopes, satyrs and gorgons spawning on their own, and a real fight with any of them.", "How the satyr and gorgon move in a fight (animation was checked only in still photographs).", "Whether the numbers are fun: that needs a person."])}
 </section>"""
-    return page("Creatures: hoplite, cyclops, satyr, gorgon and Minotaur", "The five creatures of the Olympia mod: stats, spawns, drops, measured behaviour and what they do.", body, "creatures", "creatures.html", "creatures")
+    return page("Creatures: hoplite, cyclops, satyr, gorgon, Minotaur and the Pegasus", "The six creatures of the Olympia mod: stats, spawns, drops, measured behaviour and what they do.", body, "creatures", "creatures.html", "creatures")
 
 
 def build_relics():
